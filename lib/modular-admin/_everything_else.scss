@@ -1,0 +1,33 @@
+/*
+ * Import variables + mixins.
+ */
+@import 'bootstrap/variables';
+@import 'bootstrap/mixins';
+@import 'mixins';
+
+/*
+ * Import all of Open Sans.
+ */
+$OpenSansPath: "/packages/ng2_modular_admin/open-sans/fonts" !default;
+$OpenSansVersion: "1.1.0" !default;
+
+@import 'open-sans/sass/mixins';
+@import 'open-sans/sass/Light';
+@import 'open-sans/sass/LightItalic';
+@import 'open-sans/sass/Regular';
+@import 'open-sans/sass/Italic';
+@import 'open-sans/sass/Semibold';
+@import 'open-sans/sass/SemiboldItalic';
+@import 'open-sans/sass/Bold';
+@import 'open-sans/sass/BoldItalic';
+@import 'open-sans/sass/ExtraBold';
+@import 'open-sans/sass/ExtraBoldItalic';
+
+/*
+ * Import the rest of Modular Admin.
+ */
+@import 'document';
+@import 'layout';
+@import 'misc';
+@import 'scrollbar';
+@import 'typography';

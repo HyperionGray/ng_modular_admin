@@ -1,0 +1,19 @@
+@import 'modular-admin/component';
+
+a {
+	display: block;
+	font-size: 14px;
+	color: $sidebar-color-text;
+	text-decoration: none;
+	padding: 15px 10px 15px 20px;
+}
+
+a:hover {
+	color: $sidebar-color-text-active;
+	background-color: $sidebar-color-secondary;
+}
+
+a.router-link-active {
+	color: $color-text-inverse;
+	background-color: $color-primary;
+}

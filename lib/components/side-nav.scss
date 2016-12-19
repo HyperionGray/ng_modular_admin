@@ -1,0 +1,33 @@
+@import 'modular-admin/component';
+
+:host {
+	background-color: $sidebar-color-primary;
+	width: $sidebar-width;
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	transition: left 0.3s ease;
+	z-index: 20;
+
+	// Position off screen on sm/md screens.
+	@include media-down(md) {
+		position: fixed;
+		left: -$sidebar-width;
+	}
+
+	// An inner container for the sidebar, useful for handling overflow-y, etc.
+	.sidebar-container {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		overflow-y: auto;
+		overflow-x: hidden;
+
+		&::-webkit-scrollbar-track {
+			background-color: darken($sidebar-color-primary, 6.5%);
+		}
+	}
+}
