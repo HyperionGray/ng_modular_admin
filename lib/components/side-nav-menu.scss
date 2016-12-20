@@ -1,3 +1,14 @@
+@import 'modular-admin/component';
+
 :host {
-	height: auto;
+  display: block;
+}
+
+:host(.open) {
+  background-color: darken($sidebar-color-primary, 3%);
+}
+
+div {
+  transition: height $fast-animation ease-out;
+  overflow: hidden;
 }

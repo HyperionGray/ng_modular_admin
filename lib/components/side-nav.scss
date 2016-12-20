@@ -1,6 +1,7 @@
 @import 'modular-admin/component';
 
 :host {
+	display: block;
 	background-color: $sidebar-color-primary;
 	width: $sidebar-width;
 	position: absolute;
@@ -15,19 +16,22 @@
 		position: fixed;
 		left: -$sidebar-width;
 	}
+}
 
-	// An inner container for the sidebar, useful for handling overflow-y, etc.
-	.sidebar-container {
-		position: absolute;
-		left: 0;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		overflow-y: auto;
-		overflow-x: hidden;
+// An inner container for the sidebar, useful for handling overflow-y, etc.
+.sidenav-container {
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	overflow-y: auto;
+	overflow-x: hidden;
 
-		&::-webkit-scrollbar-track {
-			background-color: darken($sidebar-color-primary, 6.5%);
-		}
+	// Create a new stacking context with the following null transform.
+	transform: translateX(0);
+
+	&::-webkit-scrollbar-track {
+		background-color: darken($sidebar-color-primary, 6.5%);
 	}
 }

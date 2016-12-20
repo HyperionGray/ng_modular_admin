@@ -1,5 +1,3 @@
-import 'dart:html'; // TODO
-
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
 
@@ -10,11 +8,10 @@ import 'package:angular2/router.dart';
     styleUrls: const ['side-nav-item.css'],
     directives: const [ROUTER_DIRECTIVES]
 )
-class MaSideNavItem implements OnInit {
+class MaSideNavItem {
     @Input()
     List routerLink;
 
-    void ngOnInit() {
-        window.console.log(routerLink);
-    }
+    @HostBinding('class.inside-menu')
+    bool insideMenu = false;
 }

@@ -1,5 +1,7 @@
 library ng2_modular_admin;
 
+import "package:angular2/di.dart" show Provider;
+
 import 'components/app.dart' show MaApp;
 export 'components/app.dart' show MaApp;
 import 'components/logo.dart' show MaLogo;
@@ -10,11 +12,23 @@ import 'components/side-nav-header.dart' show MaSideNavHeader;
 export 'components/side-nav-header.dart' show MaSideNavHeader;
 import 'components/side-nav-item.dart' show MaSideNavItem;
 export 'components/side-nav-item.dart' show MaSideNavItem;
+import 'components/side-nav-menu.dart' show MaSideNavMenu;
+export 'components/side-nav-menu.dart' show MaSideNavMenu;
+import 'components/side-nav-menu-header.dart' show MaSideNavMenuHeader;
+export 'components/side-nav-menu-header.dart' show MaSideNavMenuHeader;
+import 'services/side-nav.dart' show MaSideNavService;
+export 'services/side-nav.dart' show MaSideNavService;
 
 const List<dynamic> MA_DIRECTIVES = const [
     MaApp,
     MaLogo,
     MaSideNav,
     MaSideNavHeader,
-    MaSideNavItem
+    MaSideNavItem,
+    MaSideNavMenu,
+    MaSideNavMenuHeader,
+];
+
+const List<dynamic> MA_PROVIDERS = const [
+    MaSideNavService,
 ];

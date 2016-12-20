@@ -6,3 +6,6 @@
 @import 'bootstrap/variables';
 @import 'bootstrap/mixins';
 @import 'modular-admin/mixins';
+
+$fast-animation: 0.3s !default;
+$slow-animation: 1.0s !default;

@@ -1,1 +1,4 @@
-<ng-content></ng-content>
+<ng-content select='ma-side-nav-menu-header'></ng-content>
+<div [class.open]='isOpen'>
+  <ng-content select='ma-side-nav-item'></ng-content>
+</div>

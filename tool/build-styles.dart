@@ -47,7 +47,7 @@ buildComponents(bool debug) {
         var sasscArgs = ['-I', includeDir];
 
         if (!debug) {
-            sasscArgs.addAll(['-t', 'compressed', '-m']);
+            sasscArgs.addAll(['-t', 'compressed']);
         }
 
         sasscArgs.addAll([sourcePath, destPath]);
@@ -99,7 +99,7 @@ buildThemes(bool debug) {
         var sasscArgs = ['-I', includeDir];
 
         if (!debug) {
-            sasscArgs.addAll(['-t', 'compressed', '-m']);
+            sasscArgs.addAll(['-t', 'compressed']);
         }
 
         sasscArgs.addAll([sourcePath, destPath]);

@@ -1,2 +1,1 @@
-:host {
-  height: auto; }
+:host{display:block}:host(.open){background-color:#333e48}div{transition:height .3s ease-out;overflow:hidden}

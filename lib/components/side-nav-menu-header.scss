@@ -1,0 +1,21 @@
+@import 'modular-admin/component';
+
+// A menu header looks a lot like a nav item, so let's import all
+// of those styles.
+@import './side-nav-item.scss';
+
+:host-context(.open) a {
+	color: white;
+}
+
+fa {
+	float: right;
+	transition: transform $fast-animation ease-in-out;
+	font-size: 1.4em;
+	position: relative;
+	top: -0.25em; 
+}
+
+fa.rotated {
+	transform: rotate(-90deg);
+}

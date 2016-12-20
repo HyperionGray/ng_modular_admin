@@ -8,6 +8,7 @@ environment:
   sdk: '>=1.12.0 <2.0.0'
 dependencies:
   angular2: '^2.0.0'
+  ng2_fontawesome: any
 dev_dependencies:
   args: '^0.13.0'
   path: '^1.4.0'
