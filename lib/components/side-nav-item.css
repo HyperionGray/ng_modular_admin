@@ -1,1 +1,1 @@
-:host{display:block}a{display:block;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;padding:15px 10px 15px 20px}a:hover{color:#fff;background-color:#2d363f}a.router-link-active{color:#fff;background-color:#85CE36}:host(.inside-menu) a{padding:10px 10px 10px 50px}
+:host{display:block}a{display:block;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;padding:15px 10px 15px 20px}a:hover{color:#fff;background-color:#2d363f}a.router-link-active{color:#fff;background-color:#85CE36}:host-context(.is-menu) a{padding:10px 10px 10px 50px}

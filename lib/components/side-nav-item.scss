@@ -24,6 +24,6 @@ a.router-link-active {
 
 // `:host-context(ma-side-nav-menu)` doesn't work in the current
 // version of angular, so we have an annoying workaround:
-:host(.inside-menu) a {
+:host-context(.is-menu) a {
 	padding: 10px 10px 10px 50px;
 }

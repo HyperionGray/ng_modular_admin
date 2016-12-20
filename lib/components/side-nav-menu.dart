@@ -23,6 +23,9 @@ class MaSideNavMenu implements AfterContentInit {
     @HostBinding('class.open')
     bool isOpen = false;
 
+    @HostBinding('class.is-menu')
+    bool isMenu = true;
+
     DivElement _div;
     ElementRef _element;
     num _height;
@@ -52,12 +55,8 @@ class MaSideNavMenu implements AfterContentInit {
             }
         });
 
-        for (var item in items) {
-            item.insideMenu = true;
-        }
-
-        // Get content height after insideMenu has propagated to the
-        // menu items.
+        // Get div height on the next event loop so that the DOM
+        // can settle down.
         new Future(() {
             this._div = this._element.nativeElement.querySelector('div');
             this._height = this._div.clientHeight;
