@@ -1,0 +1,8 @@
+<button type='button'
+        class='{{type}} {{size}}'
+        [class.block]='block'
+        [class.outline]='outline'
+        [class.pill-left]='pill == "left" || pill == "both"'
+        [class.pill-right]='pill == "right" || pill == "both"'>
+  <ng-content></ng-content>
+</button>

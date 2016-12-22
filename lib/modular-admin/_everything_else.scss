@@ -24,10 +24,17 @@ $OpenSansVersion: "1.1.0" !default;
 @import 'open-sans/sass/ExtraBoldItalic';
 
 /*
+ * Import flexbox grid.
+ */
+
+$enable-flex: true;
+@import 'bootstrap/grid';
+.row {margin-bottom: 30px;}
+
+/*
  * Import the rest of Modular Admin.
  */
 @import 'document';
-@import 'layout';
 @import 'misc';
 @import 'scrollbar';
 @import 'typography';

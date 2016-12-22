@@ -1,0 +1,105 @@
+@import 'modular-admin/component';
+
+:host {
+  // display: inline-block;
+}
+
+button {
+  display: inline-block;
+  font-weight: normal;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 0;
+  margin-bottom: 5px;
+
+  &.primary {
+    @include button-variant($btn-primary-color-text, $color-primary, $color-primary);
+    &.outline {
+      @include button-outline-variant($color-primary);
+    }
+  }
+
+  &.secondary {
+    @include button-variant($color-text-inverse, $color-text, $color-text);
+    &.outline {
+      @include button-outline-variant($color-text);
+    }
+  }
+
+  &.success {
+    @include button-variant($color-text-inverse, $color-success, $color-success);
+    &.outline {
+      @include button-outline-variant($color-success);
+    }
+  }
+
+  &.info {
+    @include button-variant($color-text-inverse, $color-info, $color-info);
+    &.outline {
+      @include button-outline-variant($color-info);
+    }
+  }
+
+  &.warning {
+    @include button-variant($color-text-inverse, $color-warning, $color-warning);
+    &.outline {
+      @include button-outline-variant($color-warning);
+    }
+  }
+
+  &.danger {
+    @include button-variant($color-text-inverse, $color-danger, $color-danger);
+    &.outline {
+      @include button-outline-variant($color-danger);
+    }
+  }
+
+  &.large {
+    padding: 0.75rem 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  &.small {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &.pill-left {
+    border-top-left-radius: $btn-radius;
+    border-bottom-left-radius: $btn-radius;
+    padding-left: 1.3rem;
+  }
+
+  &.pill-right {
+    border-top-right-radius: $btn-radius;
+    border-bottom-right-radius: $btn-radius;
+    padding-right: 1.3rem;
+  }
+}
+
+// Buttons in the top nav are styled completely differently.
+:host-context(.is-top-nav) button {
+  @include button-outline-variant($color-text);
+  border-radius: 0.2rem;
+  position: relative;
+  top: 5px;
+}
+
+// Buttons in a group should be shifted over 1 pixel to their
+// borders overlap. (Note that ma-button-group is an inline-flex
+// container, so it handles removal of whitespace between buttons.)
+:host-context(.is-button-group) button {
+  margin-left: -1px;
+}

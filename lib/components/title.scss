@@ -1,0 +1,27 @@
+@import 'modular-admin/component';
+
+:host {
+  display: block;
+  padding-bottom: 15px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid $color-divider;
+
+  .title {
+    font-size: 1.45rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    margin: 0;
+    font-size: 0.9rem;
+    font-weight: normal;
+    color: $color-text-light;
+  }
+
+  @include clearfix();
+  @include media-down(sm) {
+    margin-bottom: 20px;
+  }
+}

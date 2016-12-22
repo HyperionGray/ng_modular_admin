@@ -2,6 +2,8 @@
  * Standard import for component stylesheets.
  */
 
+$enable-flex: true;
+
 @import 'modular-admin/variables';
 @import 'bootstrap/variables';
 @import 'bootstrap/mixins';

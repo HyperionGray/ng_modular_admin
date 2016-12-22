@@ -1,0 +1,34 @@
+@import 'modular-admin/component';
+
+:host {
+  display: flex;
+  color: $color-text-light;
+  background-color: $color-divider;
+  height: $header-height;
+  position: absolute;
+  left: $sidebar-width;
+  right: 0;
+  transition: left $fast-animation ease;
+  z-index: 10;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px;
+}
+
+fa {
+  height: 40px;
+}
+
+// TODO Using "deep" is cheating... should search be a separate component?
+/deep/ input {
+  @extend input;
+  color: $color-text;
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  max-width: 150px;
+  -webkit-appearance: none;
+  outline: none;
+  outline-offset: -2px;
+  font: inherit;
+}

@@ -1,0 +1,1 @@
+:host{display:block;padding-bottom:15px;margin-bottom:30px;border-bottom:1px solid #d7dde4}:host .title{font-size:1.45rem;font-weight:600;margin-top:0;margin-bottom:0}:host .subtitle{margin:0;font-size:0.9rem;font-weight:normal;color:#7e8e9f}:host::after{content:"";display:table;clear:both}@media (max-width: 767px){:host{margin-bottom:20px}}

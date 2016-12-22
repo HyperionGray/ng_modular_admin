@@ -77,3 +77,16 @@
 		background-color: #667380;
 	}
 }
+
+/deep/ code {
+	background-color: #eee;
+	padding: 1px 3px;
+}
+
+/deep/ div.code {
+	white-space: pre;
+	overflow-x: scroll;
+	font-family: monospace;
+	background-color: #eee;
+	padding: 5px 10px;
+}
