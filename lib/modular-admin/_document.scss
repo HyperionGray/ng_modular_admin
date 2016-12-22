@@ -26,3 +26,21 @@ body {
 		}
 	}
 }
+
+blockquote {
+	@extend .blockquote;
+
+	footer {
+		@extend .blockquote-footer;
+	}
+}
+
+.row {margin-bottom: 30px;}
+
+pre.code {
+  color: $code-color;
+  background-color: $code-bg;
+  max-height: $pre-scrollable-max-height;
+  overflow-y: scroll;
+	padding: 5px 10px;
+}

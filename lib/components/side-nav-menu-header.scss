@@ -1,10 +1,23 @@
 @import 'modular-admin/component';
 
-// A menu header looks a lot like a nav item, so let's import all
-// of those styles.
-@import './side-nav-item.scss';
+// Menu headers are styled similar to side-nav-item, but don't use the
+// <a> tag. Maybe this could be refactored to a mixin to eliminate this
+// duplication?
 
-:host-context(.open) a {
+:host {
+	display: block;
+	font-size: 14px;
+	color: $sidebar-color-text;
+	text-decoration: none;
+	padding: 15px 10px;
+}
+
+:host(:hover) {
+	color: $sidebar-color-text-active;
+	background-color: $sidebar-color-secondary;
+}
+
+:host-context(.open) {
 	color: white;
 }
 
@@ -13,7 +26,7 @@ fa {
 	transition: transform $fast-animation ease-in-out;
 	font-size: 1.4em;
 	position: relative;
-	top: -0.25em; 
+	top: -0.25em;
 }
 
 fa.rotated {

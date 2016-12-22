@@ -76,7 +76,8 @@ buildThemes(bool debug) {
             continue;
         }
 
-        sourcePaths.add(entity.path);
+        // TODO temporary hack: build "blue" theme only
+        if (basename.startsWith('blue')) sourcePaths.add(entity.path);
     }
 
     sourcePaths.sort();
@@ -86,7 +87,9 @@ buildThemes(bool debug) {
         String themeName = basename.substring(0, basename.length - 5);
         String destName = themeName + '.css';
         String destPath = path.join(cssDir, themeName + '.css');
-        bool cached = _styleSheetIsCurrent(sourcePath, destPath);
+
+        // TODO temporary hack, always build theme:
+        bool cached = false;//_styleSheetIsCurrent(sourcePath, destPath);
 
         print(' * lib/modular-admin/' + basename +
               ' → lib/css/' + destName +

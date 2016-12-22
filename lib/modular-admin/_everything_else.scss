@@ -24,15 +24,19 @@ $OpenSansVersion: "1.1.0" !default;
 @import 'open-sans/sass/ExtraBoldItalic';
 
 /*
- * Import flexbox grid.
+ * Import some things we need from Bootstrap.
  */
 
 $enable-flex: true;
+@import 'bootstrap/reboot';
+@import 'bootstrap/normalize';
 @import 'bootstrap/grid';
-.row {margin-bottom: 30px;}
+@import 'bootstrap/code';
+@import 'bootstrap/type';
+@import 'bootstrap/utilities';
 
 /*
- * Import the rest of Modular Admin.
+ * Import Modular Admin.
  */
 @import 'document';
 @import 'misc';

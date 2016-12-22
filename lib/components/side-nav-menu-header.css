@@ -1,1 +1,45 @@
-:host{display:block}:host-context(ma-side-nav-menu){background-color:blue}a{display:block;font-size:14px;color:rgba(255,255,255,0.5);text-decoration:none;padding:15px 10px 15px 20px}a:hover{color:#fff;background-color:#2d363f}a.router-link-active{color:#fff;background-color:#85CE36}:host-context(.open) a{color:white}fa{float:right;transition:transform .3s ease-in-out;font-size:1.4em;position:relative;top:-0.25em}fa.rotated{transform:rotate(-90deg)}
+/*
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
+ */
+/*************************************************************
+*						App Variables
+**************************************************************/
+/*************************************************************
+*					  Colors Definitions
+**************************************************************/
+/*************************************************************
+*					Common Element Variables
+**************************************************************/
+/* ***************************************************
+*			Page Specific Element Variables
+****************************************************** */
+/*****************************************
+*       Background-image: cover mixin
+******************************************/
+/*****************************************
+*       Media Query Mixins
+******************************************/
+:host {
+  display: block;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  padding: 15px 10px; }
+
+:host(:hover) {
+  color: #ffffff;
+  background-color: #2d363f; }
+
+:host-context(.open) {
+  color: white; }
+
+fa {
+  float: right;
+  transition: transform 0.3s ease-in-out;
+  font-size: 1.4em;
+  position: relative;
+  top: -0.25em; }
+
+fa.rotated {
+  transform: rotate(-90deg); }

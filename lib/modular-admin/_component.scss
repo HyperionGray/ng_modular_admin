@@ -1,8 +1,7 @@
 /*
- * Standard import for component stylesheets.
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
  */
-
-$enable-flex: true;
 
 @import 'modular-admin/variables';
 @import 'bootstrap/variables';

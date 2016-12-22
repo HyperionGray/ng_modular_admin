@@ -29,9 +29,12 @@ class MaSideNavMenuHeader {
         this.onClick = this._onClick.stream;
     }
 
-    /// Handle a click event by toggling the menu's open state and sending
-    /// the new state to subscribers.
+    /// Handle a click event by forwarding the event to the subscription
+    /// stream.
+    @HostListener('click', const [r'$event'])
     void handleClick(MouseEvent event) {
+        window.console.log(event);
         this._onClick.add(event);
+        event.preventDefault();
     }
 }
