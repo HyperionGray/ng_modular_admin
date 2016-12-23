@@ -8,7 +8,7 @@
 /*
  * Import all of Open Sans.
  */
-$OpenSansPath: "/packages/ng2_modular_admin/open-sans/fonts" !default;
+$OpenSansPath: "../open-sans/fonts" !default;
 $OpenSansVersion: "1.1.0" !default;
 
 @import 'open-sans/sass/mixins';
