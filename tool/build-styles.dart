@@ -76,8 +76,8 @@ buildThemes(bool debug) {
             continue;
         }
 
-        // TODO temporary hack: build "blue" theme only
-        if (basename.startsWith('blue')) sourcePaths.add(entity.path);
+        // TODO temporary hack: build "green" theme only
+        if (basename.startsWith('green')) sourcePaths.add(entity.path);
     }
 
     sourcePaths.sort();

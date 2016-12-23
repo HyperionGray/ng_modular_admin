@@ -11,4 +11,9 @@ class MaTopNav {
     /// `:host-context(element)`).
     @HostBinding('class.is-top-nav')
     bool isTopNav = true;
+
+    /// If true, the top nav will have fixed positioning.
+    @HostBinding('class.fixed')
+    @Input()
+    bool fixed = true;
 }

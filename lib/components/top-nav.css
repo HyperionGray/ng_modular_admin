@@ -1,1 +1,52 @@
-:host{display:flex;color:#7e8e9f;background-color:#d7dde4;height:70px;position:absolute;left:230px;right:0;transition:left .3s ease;z-index:10;align-items:center;justify-content:space-between;padding:0px 20px}fa{height:40px}/deep/ input{color:#4f5f6f;background-color:transparent;border:none;height:40px;max-width:150px;-webkit-appearance:none;outline:none;outline-offset:-2px;font:inherit}
+/*
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
+ */
+/*************************************************************
+*						App Variables
+**************************************************************/
+/*************************************************************
+*					  Colors Definitions
+**************************************************************/
+/*************************************************************
+*					Common Element Variables
+**************************************************************/
+/* ***************************************************
+*			Page Specific Element Variables
+****************************************************** */
+/*****************************************
+*       Background-image: cover mixin
+******************************************/
+/*****************************************
+*       Media Query Mixins
+******************************************/
+:host {
+  display: flex;
+  color: #7e8e9f;
+  background-color: #d7dde4;
+  height: 70px;
+  position: absolute;
+  left: 230px;
+  right: 0;
+  transition: left 0.3s ease;
+  z-index: 10;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 20px; }
+
+:host(.fixed) {
+  position: fixed; }
+
+fa {
+  height: 40px; }
+
+/deep/ input {
+  color: #4f5f6f;
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  max-width: 150px;
+  -webkit-appearance: none;
+  outline: none;
+  outline-offset: -2px;
+  font: inherit; }

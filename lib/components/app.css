@@ -22,42 +22,12 @@
 ******************************************/
 :host {
   display: block;
+  position: relative;
   width: 100%;
-  position: absolute;
-  height: 100%;
-  overflow-y: auto;
-  overflow-x: hidden; }
-
-:host > div {
-  padding-left: 230px;
   min-height: 100vh;
-  margin: 0 auto;
+  height: 100%;
+  padding-left: 230px;
+  overflow-y: auto;
+  overflow-x: hidden;
   background-color: #f0f3f6;
-  box-shadow: 0 0 3px #ccc;
-  transition: left 0.3s ease, padding-left 0.3s ease;
-  overflow: hidden; }
-  :host > div .content {
-    padding: 95px 20px 75px 20px;
-    min-height: 100vh; }
-    @media (min-width: 1200px) {
-      :host > div .content {
-        padding: 105px 40px 85px 40px; } }
-
-@media (min-width: 992px) and (max-width: 1199px) {
-  :host > div .content {
-    padding: 100px 35px 80px 35px; } }
-
-@media (min-width: 768px) and (max-width: 991px) {
-  :host > div .content {
-    padding: 95px 20px 75px 20px; } }
-    @media (max-width: 767px) {
-      :host > div .content {
-        padding: 70px 20px 70px 20px; } }
-  @media (max-width: 991px) {
-    :host > div {
-      padding-left: 0; } }
-  @media (max-width: 991px) {
-    :host > div.sidebar-open {
-      left: 0; } }
-  :host > div.blank {
-    background-color: #667380; }
+  transition: left 0.3s ease, padding-left 0.3s ease; }

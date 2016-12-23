@@ -6,4 +6,9 @@ import 'package:angular2/core.dart';
     templateUrl: 'side-nav.html',
     styleUrls: const ['side-nav.css']
 )
-class MaSideNav {}
+class MaSideNav {
+    /// If true, the side nav will have a fixed position.
+    @HostBinding('class.fixed')
+    @Input()
+    bool fixed = true;
+}

@@ -15,6 +15,10 @@
   padding: 0px 20px;
 }
 
+:host(.fixed) {
+  position: fixed;
+}
+
 fa {
   height: 40px;
 }

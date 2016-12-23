@@ -1,1 +1,38 @@
-:host{display:block;background-color:#3a4651;width:230px;position:absolute;left:0;top:0;bottom:0;transition:left 0.3s ease;z-index:20}@media (max-width: 991px){:host{position:fixed;left:-230px}}.sidenav-container{position:absolute;left:0;top:0;right:0;bottom:0;overflow-y:auto;overflow-x:hidden;transform:translateX(0)}.sidenav-container::-webkit-scrollbar-track{background-color:#2c353e}
+/*
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
+ */
+/*************************************************************
+*						App Variables
+**************************************************************/
+/*************************************************************
+*					  Colors Definitions
+**************************************************************/
+/*************************************************************
+*					Common Element Variables
+**************************************************************/
+/* ***************************************************
+*			Page Specific Element Variables
+****************************************************** */
+/*****************************************
+*       Background-image: cover mixin
+******************************************/
+/*****************************************
+*       Media Query Mixins
+******************************************/
+:host {
+  display: block;
+  background-color: #3a4651;
+  position: absolute;
+  left: 0;
+  transition: left 0.3s ease;
+  width: 230px;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto; }
+  :host::-webkit-scrollbar-track {
+    background-color: #2c353e; }
+
+:host(.fixed) {
+  position: fixed;
+  height: 100vh; }
