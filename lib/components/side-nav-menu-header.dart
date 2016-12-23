@@ -33,7 +33,6 @@ class MaSideNavMenuHeader {
     /// stream.
     @HostListener('click', const [r'$event'])
     void handleClick(MouseEvent event) {
-        window.console.log(event);
         this._onClick.add(event);
         event.preventDefault();
     }
