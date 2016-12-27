@@ -6,14 +6,13 @@
 	height: 25px;
 	vertical-align: middle;
 	margin-right: 5px;
-	// background-color: fade(#fff, 10%);
 	position: relative;
 
 	.l {
 		width: 11px;
 		height: 11px;
 		border-radius: 50%;
-		background-color: $color-primary;
+		background-color: var(--ma-primary-color);
 		position: absolute;
 
 		&.l1 {

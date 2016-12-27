@@ -7,14 +7,14 @@
 :host {
 	display: block;
 	font-size: 14px;
-	color: $sidebar-color-text;
+	color: var(--ma-side-nav-text-color);
 	text-decoration: none;
 	padding: 15px 10px;
 }
 
 :host(:hover) {
-	color: $sidebar-color-text-active;
-	background-color: $sidebar-color-secondary;
+	color: var(--ma-side-nav-active-text-color);
+	background-color: var(--ma-secondary-color-dark);
 }
 
 :host-context(.open) {
@@ -23,7 +23,7 @@
 
 fa {
 	float: right;
-	transition: transform $fast-animation ease-in-out;
+	transition: transform var(--ma-fast-animation) ease-in-out;
 	font-size: 1.4em;
 	position: relative;
 	top: -0.25em;

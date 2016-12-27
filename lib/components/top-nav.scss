@@ -2,13 +2,13 @@
 
 :host {
   display: flex;
-  color: $color-text-light;
-  background-color: $color-divider;
-  height: $header-height;
+  color: var(--ma-secondary-color-lighter);
+  background-color: var(--ma-divider-color);
+  height: var(--ma-top-nav-height);
   position: absolute;
-  left: $sidebar-width;
+  left: var(--ma-side-nav-width);
   right: 0;
-  transition: left $fast-animation ease;
+  transition: left var(--ma-fast-animation) ease;
   z-index: 10;
   align-items: center;
   justify-content: space-between;
@@ -24,9 +24,10 @@ fa {
 }
 
 // TODO Using "deep" is cheating... should search be a separate component?
+// Or should this be part of global stylesheet?
 /deep/ input {
   @extend input;
-  color: $color-text;
+  color: var(--ma-text-color);
   background-color: transparent;
   border: none;
   height: 40px;

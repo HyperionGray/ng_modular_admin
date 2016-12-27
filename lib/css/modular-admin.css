@@ -1,32 +1,27 @@
-/*************************************************************
-*						App Variables
-**************************************************************/
-/*************************************************************
-*					  Colors Definitions
-**************************************************************/
-/*************************************************************
-*					Common Element Variables
-**************************************************************/
-/* ***************************************************
-*			Page Specific Element Variables
-****************************************************** */
+@charset "UTF-8";
 /*
- * Import variables + mixins.
+ * Import mixins.
  */
-/*****************************************
-*       Background-image: cover mixin
-******************************************/
-/*****************************************
-*       Media Query Mixins
-******************************************/
+/*
+ * Background image mixin.
+ */
+/*
+ * Button mixin.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties.
+ * Namely, we need to avoid lighten() and darken().
+ */
+/*
+ * Create CSS custom properties for various shades of a base color.
+ */
 /*
  * Import all of Open Sans.
  */
 /* BEGIN Light */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Light/OpenSans-Light.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Light/OpenSans-Light.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/Light/OpenSans-Light.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/Light/OpenSans-Light.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/Light/OpenSans-Light.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/Light/OpenSans-Light.svg?v=1.1.0#Light") format("svg");
+  src: url("../open-sans/fonts/Light/OpenSans-Light.eot?v=1.1.0");
+  src: url("../open-sans/fonts/Light/OpenSans-Light.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/Light/OpenSans-Light.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/Light/OpenSans-Light.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/Light/OpenSans-Light.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/Light/OpenSans-Light.svg?v=1.1.0#Light") format("svg");
   font-weight: 300;
   font-style: normal; }
 
@@ -34,8 +29,8 @@
 /* BEGIN Light Italic */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/LightItalic/OpenSans-LightItalic.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/LightItalic/OpenSans-LightItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/LightItalic/OpenSans-LightItalic.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/LightItalic/OpenSans-LightItalic.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/LightItalic/OpenSans-LightItalic.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/LightItalic/OpenSans-LightItalic.svg?v=1.1.0#LightItalic") format("svg");
+  src: url("../open-sans/fonts/LightItalic/OpenSans-LightItalic.eot?v=1.1.0");
+  src: url("../open-sans/fonts/LightItalic/OpenSans-LightItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/LightItalic/OpenSans-LightItalic.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/LightItalic/OpenSans-LightItalic.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/LightItalic/OpenSans-LightItalic.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/LightItalic/OpenSans-LightItalic.svg?v=1.1.0#LightItalic") format("svg");
   font-weight: 300;
   font-style: italic; }
 
@@ -43,8 +38,8 @@
 /* BEGIN Regular */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Regular/OpenSans-Regular.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Regular/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/Regular/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/Regular/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/Regular/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/Regular/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
+  src: url("../open-sans/fonts/Regular/OpenSans-Regular.eot?v=1.1.0");
+  src: url("../open-sans/fonts/Regular/OpenSans-Regular.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/Regular/OpenSans-Regular.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/Regular/OpenSans-Regular.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/Regular/OpenSans-Regular.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/Regular/OpenSans-Regular.svg?v=1.1.0#Regular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -52,8 +47,8 @@
 /* BEGIN Italic */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Italic/OpenSans-Italic.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Italic/OpenSans-Italic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/Italic/OpenSans-Italic.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/Italic/OpenSans-Italic.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/Italic/OpenSans-Italic.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/Italic/OpenSans-Italic.svg?v=1.1.0#Italic") format("svg");
+  src: url("../open-sans/fonts/Italic/OpenSans-Italic.eot?v=1.1.0");
+  src: url("../open-sans/fonts/Italic/OpenSans-Italic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/Italic/OpenSans-Italic.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/Italic/OpenSans-Italic.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/Italic/OpenSans-Italic.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/Italic/OpenSans-Italic.svg?v=1.1.0#Italic") format("svg");
   font-weight: normal;
   font-style: italic; }
 
@@ -61,8 +56,8 @@
 /* BEGIN Semibold */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Semibold/OpenSans-Semibold.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Semibold/OpenSans-Semibold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/Semibold/OpenSans-Semibold.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/Semibold/OpenSans-Semibold.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/Semibold/OpenSans-Semibold.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/Semibold/OpenSans-Semibold.svg?v=1.1.0#Semibold") format("svg");
+  src: url("../open-sans/fonts/Semibold/OpenSans-Semibold.eot?v=1.1.0");
+  src: url("../open-sans/fonts/Semibold/OpenSans-Semibold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/Semibold/OpenSans-Semibold.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/Semibold/OpenSans-Semibold.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/Semibold/OpenSans-Semibold.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/Semibold/OpenSans-Semibold.svg?v=1.1.0#Semibold") format("svg");
   font-weight: 600;
   font-style: normal; }
 
@@ -70,8 +65,8 @@
 /* BEGIN Semibold Italic */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.svg?v=1.1.0#SemiboldItalic") format("svg");
+  src: url("../open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.eot?v=1.1.0");
+  src: url("../open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/SemiboldItalic/OpenSans-SemiboldItalic.svg?v=1.1.0#SemiboldItalic") format("svg");
   font-weight: 600;
   font-style: italic; }
 
@@ -79,8 +74,8 @@
 /* BEGIN Bold */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Bold/OpenSans-Bold.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/Bold/OpenSans-Bold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/Bold/OpenSans-Bold.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/Bold/OpenSans-Bold.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/Bold/OpenSans-Bold.svg?v=1.1.0#Bold") format("svg");
+  src: url("../open-sans/fonts/Bold/OpenSans-Bold.eot?v=1.1.0");
+  src: url("../open-sans/fonts/Bold/OpenSans-Bold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/Bold/OpenSans-Bold.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/Bold/OpenSans-Bold.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/Bold/OpenSans-Bold.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/Bold/OpenSans-Bold.svg?v=1.1.0#Bold") format("svg");
   font-weight: bold;
   font-style: normal; }
 
@@ -88,8 +83,8 @@
 /* BEGIN Bold Italic */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/BoldItalic/OpenSans-BoldItalic.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/BoldItalic/OpenSans-BoldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/BoldItalic/OpenSans-BoldItalic.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/BoldItalic/OpenSans-BoldItalic.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/BoldItalic/OpenSans-BoldItalic.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/BoldItalic/OpenSans-BoldItalic.svg?v=1.1.0#BoldItalic") format("svg");
+  src: url("../open-sans/fonts/BoldItalic/OpenSans-BoldItalic.eot?v=1.1.0");
+  src: url("../open-sans/fonts/BoldItalic/OpenSans-BoldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/BoldItalic/OpenSans-BoldItalic.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/BoldItalic/OpenSans-BoldItalic.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/BoldItalic/OpenSans-BoldItalic.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/BoldItalic/OpenSans-BoldItalic.svg?v=1.1.0#BoldItalic") format("svg");
   font-weight: bold;
   font-style: italic; }
 
@@ -97,8 +92,8 @@
 /* BEGIN Extrabold */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBold/OpenSans-ExtraBold.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBold/OpenSans-ExtraBold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBold/OpenSans-ExtraBold.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBold/OpenSans-ExtraBold.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBold/OpenSans-ExtraBold.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBold/OpenSans-ExtraBold.svg?v=1.1.0#ExtraBold") format("svg");
+  src: url("../open-sans/fonts/ExtraBold/OpenSans-ExtraBold.eot?v=1.1.0");
+  src: url("../open-sans/fonts/ExtraBold/OpenSans-ExtraBold.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/ExtraBold/OpenSans-ExtraBold.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/ExtraBold/OpenSans-ExtraBold.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/ExtraBold/OpenSans-ExtraBold.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/ExtraBold/OpenSans-ExtraBold.svg?v=1.1.0#ExtraBold") format("svg");
   font-weight: 800;
   font-style: normal; }
 
@@ -106,8 +101,8 @@
 /* BEGIN Extrabold Italic */
 @font-face {
   font-family: 'Open Sans';
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot?v=1.1.0");
-  src: url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff2?v=1.1.0") format("woff2"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff?v=1.1.0") format("woff"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.ttf?v=1.1.0") format("truetype"), url("/packages/ng2_modular_admin/open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.svg?v=1.1.0#ExtraBoldItalic") format("svg");
+  src: url("../open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot?v=1.1.0");
+  src: url("../open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.eot?#iefix&v=1.1.0") format("embedded-opentype"), url("../open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff2?v=1.1.0") format("woff2"), url("../open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.woff?v=1.1.0") format("woff"), url("../open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.ttf?v=1.1.0") format("truetype"), url("../open-sans/fonts/ExtraBoldItalic/OpenSans-ExtraBoldItalic.svg?v=1.1.0#ExtraBoldItalic") format("svg");
   font-weight: 800;
   font-style: italic; }
 
@@ -182,10 +177,10 @@ blockquote {
   margin: 0 0 1rem; }
 
 a {
-  color: #969696;
-  text-decoration: underline; }
+  color: #0275d8;
+  text-decoration: none; }
   a:focus, a:hover {
-    color: #70b02b;
+    color: #014c8c;
     text-decoration: underline; }
   a:focus {
     outline: 5px auto -webkit-focus-ring-color;
@@ -2061,173 +2056,196 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
  * Import Modular Admin.
  */
 /*
+ * Background image mixin.
+ */
+/*
+ * Button mixin.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties.
+ * Namely, we need to avoid lighten() and darken().
+ */
+/*
+ * Create CSS custom properties for various shades of a base color.
+ */
+/*
+ * Themes
+ *
+ * Themes are primarily driven by CSS custom properties, but SASS variables and
+ * mixins are used to make the styles more terse.
+ */
+ma-app {
+  --ma-primary-color-lighter: #adde78;
+  --ma-primary-color-light: #9ed85f;
+  --ma-primary-color: #85ce36;
+  --ma-primary-color-dark: #6ba829;
+  --ma-primary-color-darker: #5b8f23;
+  --ma-secondary-color-lighter: #5c6f81;
+  --ma-secondary-color-light: #4f606f;
+  --ma-secondary-color: #3a4651;
+  --ma-secondary-color-dark: #252c33;
+  --ma-secondary-color-darker: #181d21;
+  --ma-danger-color-lighter: #ff9696;
+  --ma-danger-color-light: #ff7777;
+  --ma-danger-color: #ff4444;
+  --ma-danger-color-dark: #ff1111;
+  --ma-danger-color-darker: #f10000;
+  --ma-info-color-lighter: #c2ecfb;
+  --ma-info-color-light: #a6e3f8;
+  --ma-info-color: #76d4f5;
+  --ma-info-color-dark: #46c5f2;
+  --ma-info-color-darker: #2abcef;
+  --ma-success-color-lighter: #8be0be;
+  --ma-success-color-light: #73dab0;
+  --ma-success-color: #4bcf99;
+  --ma-success-color-dark: #31b680;
+  --ma-success-color-darker: #2a9e6f;
+  --ma-warning-color-lighter: #fec69c;
+  --ma-warning-color-light: #feb47e;
+  --ma-warning-color: #fe974b;
+  --ma-warning-color-dark: #fe7a18;
+  --ma-warning-color-darker: #f66901;
+  --ma-background-color: #f0f3f6;
+  --ma-divider-color: #d7dde4;
+  --ma-fast-animation: 0.3s;
+  --ma-slow-animation: 1.0s;
+  --ma-code-color: #bd4147;
+  --ma-code-background-color: #f7f7f9;
+  --ma-code-max-height: 340px;
+  --ma-text-color: #4f5f6f;
+  --ma-text-color-inverse: #ffffff;
+  --ma-anchor-color: var(--ma-primary-color-dark);
+  --ma-anchor-decoration: underline;
+  --ma-anchor-hover-color: var(--ma-primary-color-darker);
+  --ma-anchor-hover-decoration: underline;
+  --ma-button-text-color: var(--ma-text-color-inverse);
+  --ma-button-pill-radius: 25px;
+  --ma-dropdown-border-color: rgba(0, 0, 0, 0.5);
+  --ma-dropdown-hover-background-color: #f5f5f5;
+  --ma-footer-height: 50px;
+  --ma-side-nav-width: 230px;
+  --ma-side-nav-active-text-color: var(--ma-text-color-inverse);
+  --ma-side-nav-text-color: rgba(255, 255, 255, 0.5);
+  --ma-top-nav-height: 70px; }
+  @media (max-width: 575px) {
+    ma-app {
+      --ma-gutter-width: 10px; } }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  ma-app {
+    --ma-gutter-width: 15px; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  ma-app {
+    --ma-gutter-width: 20px; } }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  ma-app {
+    --ma-gutter-width: 25px; } }
+  @media (min-width: 1200px) {
+    ma-app {
+      --ma-gutter-width: 30px; } }
+  @media (max-width: 767px) {
+    ma-app {
+      --ma-top-nav-height: 50px; } }
+  @media (max-width: 575px) {
+    ma-app {
+      --ma-card-padding: 10px;
+      --ma-content-padding: 15px; } }
+
+@media (min-width: 576px) and (max-width: 767px) {
+  ma-app {
+    --ma-card-padding: 12.5px;
+    --ma-content-padding: 20px; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  ma-app {
+    --ma-card-padding: 15px;
+    --ma-content-padding: 25px; } }
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  ma-app {
+    --ma-card-padding: 17.5px;
+    --ma-content-padding: 30px; } }
+  @media (min-width: 1200px) {
+    ma-app {
+      --ma-card-padding: 20px;
+      --ma-content-padding: 40px; } }
+
+.blue-theme {
+  --ma-primary-color-lighter: #93d5e4;
+  --ma-primary-color-light: #7bccdd;
+  --ma-primary-color: #52bcd3;
+  --ma-primary-color-dark: #31a7c1;
+  --ma-primary-color-darker: #2b92a9; }
+
+.orange-theme {
+  --ma-primary-color-lighter: #feaf6e;
+  --ma-primary-color-light: #fe9e50;
+  --ma-primary-color: #fe821d;
+  --ma-primary-color-dark: #e76801;
+  --ma-primary-color-darker: #c95a01; }
+
+.purple-theme {
+  --ma-primary-color-lighter: #a69bc5;
+  --ma-primary-color-light: #9587ba;
+  --ma-primary-color: #7867A7;
+  --ma-primary-color-dark: #60508b;
+  --ma-primary-color-darker: #524577; }
+
+.red-theme {
+  --ma-primary-color-lighter: #ffb3b3;
+  --ma-primary-color-light: #ff9494;
+  --ma-primary-color: #ff6161;
+  --ma-primary-color-dark: #ff2e2e;
+  --ma-primary-color-darker: #ff0f0f; }
+
+.seagreen-theme {
+  --ma-primary-color-lighter: #8be0be;
+  --ma-primary-color-light: #73dab0;
+  --ma-primary-color: #4bcf99;
+  --ma-primary-color-dark: #31b680;
+  --ma-primary-color-darker: #2a9e6f; }
+
+/*
  * Document-level styles.
  */
 html,
 body {
   padding: 0;
   margin: 0;
-  height: 100%;
-  min-height: 100%;
   font-family: 'Open Sans', sans-serif;
-  color: #4f5f6f;
+  color: var(--ma-text-color);
   overflow-x: hidden; }
 
-#ref .color-primary {
-  color: #52BCD3; }
-
-#ref .chart .color-primary {
-  color: #85CE36; }
-
-#ref .chart .color-secondary {
-  color: #9ed85f; }
+/*
+ * Inherit (and lightly modify) some Bootstrap styles.
+ *
+ * In particular, class selectors are converted to element selectors
+ * where appropriate, as in .blockquote → blockquote.
+ */
+pre.code {
+  color: var(--ma-code-color);
+  background-color: var(--ma-code-background-color);
+  max-height: var(--ma-code-max-height);
+  padding: 5px 10px; }
 
 .row {
   margin-bottom: 30px; }
 
-pre.code {
-  color: #bd4147;
-  background-color: #f7f7f9;
-  max-height: 340px;
-  overflow-y: scroll;
-  padding: 5px 10px; }
-
-.underline-animation {
-  position: absolute;
-  top: auto;
-  bottom: 1px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #52BCD3;
-  content: '';
-  transition: all 0.2s;
-  backface-visibility: hidden;
-  transform: scaleX(0); }
-
-.stat-chart {
-  border-radius: 50%; }
-
-.stat {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: inline-block;
-  margin-right: 10px; }
-  .stat .value {
-    font-size: 20px;
-    line-height: 24px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-weight: 500; }
-  .stat .name {
-    overflow: hidden;
-    text-overflow: ellipsis; }
-  .stat.lg .value {
-    font-size: 26px;
-    line-height: 28px; }
-  .stat.lg .name {
-    font-size: 16px; }
-
-.list-icon [class^='col'] {
-  cursor: pointer; }
-  .list-icon [class^='col'] em {
-    font-size: 14px;
-    width: 40px;
-    vertical-align: middle;
-    margin: 0;
-    display: inline-block;
-    text-align: center;
-    -webkit-transition: all 1s;
-    -o-transition: all 1s;
-    transition: all 1s;
-    line-height: 30px; }
-  .list-icon [class^='col']:hover em {
-    transform: scale(2, 2); }
-
-.well {
-  background-image: none;
-  background-color: #fff; }
-
-.jumbotron {
-  background-image: none;
-  background-color: #fff;
-  padding: 15px 30px; }
-  .jumbotron.jumbotron-fluid {
-    padding-left: 0;
-    padding-right: 0; }
-
-.rounded {
-  border-radius: 0.25rem; }
-
-.rounded-l {
-  border-radius: 0.3rem; }
-
-.rounded-s {
-  border-radius: 0.2rem; }
-
-.jqstooltip {
-  height: 25px !important;
-  width: auto !important;
-  border-radius: 0.2rem; }
-
-/* Let's get this party started */
-::-webkit-scrollbar {
-  width: 7px;
-  height: 7px; }
-
-/* Track */
-::-webkit-scrollbar-track {
-  -webkit-border-radius: 0;
-  border-radius: 0; }
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  -webkit-border-radius: 0;
-  border-radius: 0;
-  background: #3eb4ce; }
-
-::-webkit-scrollbar-thumb:window-inactive {
-  background: #52BCD3; }
-
-.title {
-  font-size: 1.45rem;
-  font-weight: 600;
-  margin-bottom: 0; }
-  .title.l {
-    font-size: 1.6rem; }
-  .title.s {
-    font-size: 1.4rem; }
-  .card .title {
-    font-size: 1.1rem;
-    color: #4f5f6f; }
-
-.title-description {
-  margin: 0;
-  font-size: 0.9rem;
-  font-weight: normal;
-  color: #7e8e9f; }
-  .title-description.s {
-    font-size: 0.8rem; }
-  @media (max-width: 767px) {
-    .title-description {
-      display: none; } }
-
-.subtitle {
-  font-size: 1.2rem;
-  margin: 0;
-  color: #7e8e9f; }
+/*
+ * Typography
+ */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.4em;
+  color: var(--ma-secondary-color); }
+  h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+    color: var(--ma-secondary-color-lighter); }
 
 .text-primary {
-  color: #52BCD3; }
+  color: var(--ma-primary-color-dark) !important; }
+
+.text-secondary {
+  color: var(--ma-secondary-color) !important; }
 
 .text-muted {
-  color: #9ba8b5; }
-
-pre {
-  padding: 0;
-  border: none;
-  background: none; }
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  color: #7e8e9f; }
+  color: var(--ma-secondary-color-lighter) !important; }

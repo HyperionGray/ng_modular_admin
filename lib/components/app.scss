@@ -6,9 +6,9 @@
 	width: 100%;
 	min-height: 100vh;
 	height: 100%;
-	padding-left: $sidebar-width;
+	padding-left: var(--ma-side-nav-width);
 	overflow-y: auto;
 	overflow-x: hidden;
-	background-color: $color-bg;
+	background-color: var(--ma-background-color);
 	transition: left 0.3s ease, padding-left 0.3s ease;
 }

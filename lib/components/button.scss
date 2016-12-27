@@ -1,9 +1,5 @@
 @import 'modular-admin/component';
 
-:host {
-  // display: inline-block;
-}
-
 button {
   display: inline-block;
   font-weight: normal;
@@ -20,45 +16,27 @@ button {
   margin-bottom: 5px;
 
   &.primary {
-    @include button-variant($btn-primary-color-text, $color-primary, $color-primary);
-    &.outline {
-      @include button-outline-variant($color-primary);
-    }
+    @include ma-button(primary, var(--ma-button-text-color));
   }
 
   &.secondary {
-    @include button-variant($color-text-inverse, $color-text, $color-text);
-    &.outline {
-      @include button-outline-variant($color-text);
-    }
-  }
-
-  &.success {
-    @include button-variant($color-text-inverse, $color-success, $color-success);
-    &.outline {
-      @include button-outline-variant($color-success);
-    }
-  }
-
-  &.info {
-    @include button-variant($color-text-inverse, $color-info, $color-info);
-    &.outline {
-      @include button-outline-variant($color-info);
-    }
-  }
-
-  &.warning {
-    @include button-variant($color-text-inverse, $color-warning, $color-warning);
-    &.outline {
-      @include button-outline-variant($color-warning);
-    }
+    @include ma-button(secondary, var(--ma-button-text-color));
   }
 
   &.danger {
-    @include button-variant($color-text-inverse, $color-danger, $color-danger);
-    &.outline {
-      @include button-outline-variant($color-danger);
-    }
+    @include ma-button(danger, var(--ma-button-text-color));
+  }
+
+  &.info {
+    @include ma-button(info, var(--ma-button-text-color));
+  }
+
+  &.success {
+    @include ma-button(success, var(--ma-button-text-color));
+  }
+
+  &.warning {
+    @include ma-button(warning, var(--ma-button-text-color));
   }
 
   &.large {
@@ -77,24 +55,37 @@ button {
   }
 
   &.pill-left {
-    border-top-left-radius: $btn-radius;
-    border-bottom-left-radius: $btn-radius;
+    border-top-left-radius: var(--ma-button-pill-radius);
+    border-bottom-left-radius: var(--ma-button-pill-radius);
     padding-left: 1.3rem;
   }
 
   &.pill-right {
-    border-top-right-radius: $btn-radius;
-    border-bottom-right-radius: $btn-radius;
+    border-top-right-radius: var(--ma-button-pill-radius);
+    border-bottom-right-radius: var(--ma-button-pill-radius);
     padding-right: 1.3rem;
   }
 }
 
 // Buttons in the top nav are styled completely differently.
 :host-context(.is-top-nav) button {
-  @include button-outline-variant($color-text);
+  color: var(--ma-secondary-color-light);
+  background-color: transparent;
+  border: 1px solid var(--ma-secondary-color-light);
   border-radius: 0.2rem;
   position: relative;
   top: 5px;
+
+  &:focus, &:hover {
+    background-color: transparent;
+    color: var(--ma-secondary-color-darker);
+    border-color: var(--ma-secondary-color-darker);
+  }
+
+  &:active {
+    color: var(--ma-divider-color);
+    background-color: var(--ma-secondary-color);
+  }
 }
 
 // Buttons in a group should be shifted over 1 pixel to their

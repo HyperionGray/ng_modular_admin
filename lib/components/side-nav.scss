@@ -2,18 +2,14 @@
 
 :host {
 	display: block;
-	background-color: $sidebar-color-primary;
+	background-color: var(--ma-secondary-color);
 	position: absolute;
 	left: 0;
 	transition: left 0.3s ease;
-	width: $sidebar-width;
+	width: var(--ma-side-nav-width);
 	height: 100%;
 	overflow-x: hidden;
 	overflow-y: auto;
-
-	&::-webkit-scrollbar-track {
-		background-color: darken($sidebar-color-primary, 6.5%);
-	}
 }
 
 :host(.fixed) {

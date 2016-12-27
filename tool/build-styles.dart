@@ -34,7 +34,9 @@ buildComponents(bool debug) {
         String component = basename.substring(0, basename.length - 5);
         String destName = component + '.css';
         String destPath = path.join(componentPath, destName);
-        bool cached = _styleSheetIsCurrent(sourcePath, destPath);
+
+        // TODO temporarily disable cache
+        bool cached = false;
 
         print(' * lib/components/' + basename +
               ' → lib/components/' + destName +
@@ -76,8 +78,8 @@ buildThemes(bool debug) {
             continue;
         }
 
-        // TODO temporary hack: build "green" theme only
-        if (basename.startsWith('green')) sourcePaths.add(entity.path);
+        // TODO temporary hack: build "modular-admin" theme only
+        if (basename.startsWith('modular-admin')) sourcePaths.add(entity.path);
     }
 
     sourcePaths.sort();

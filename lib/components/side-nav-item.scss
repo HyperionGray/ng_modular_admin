@@ -7,24 +7,24 @@
 a {
 	display: block;
 	font-size: 14px;
-	color: $sidebar-color-text;
+	color: var(--ma-side-nav-text-color);
 	text-decoration: none;
 	padding: 15px 10px;
 }
 
 a:hover {
-	color: $sidebar-color-text-active;
-	background-color: $sidebar-color-secondary;
+	color: var(--ma-side-nav-active-text-color);
+	background-color: var(--ma-secondary-color-dark);
 }
 
 a.router-link-active {
-	color: $color-text-inverse;
-	background-color: $color-primary;
+	color: var(--ma-side-nav-active-text-color);
+	background-color: var(--ma-primary-color);
 }
 
 a:not([href]):not([tabindex]),
 a:not([href]):not([tabindex]) {
-	color: $color-text-inverse;
+	color: var(--ma-text-color-inverse);
 }
 
 // `:host-context(ma-side-nav-menu)` doesn't work in the current

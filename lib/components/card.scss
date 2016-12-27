@@ -3,21 +3,20 @@
 :host {
   display: block;
   background-color: white;
-  box-shadow: 1px 1px 5px fade-out($color-text-light, 0.9);
-  margin-bottom: $card-margin-bottom;
+  box-shadow: 1px 1px 5px var(--ma-text-color-muted);
+  margin-bottom: var(--ma-gutter-width);
   border-radius: 0;
   border: none;
-  padding: 15px;
   flex-grow: 1;
+  padding: var(--ma-card-padding);
 
   .title {
     margin-top: 0;
-    font-size: 1.1rem;
-    color: $color-text;
+    font-size: 1.4rem;
     margin-bottom: 20px;
   }
 }
 
 :host-context(.row) {
-  margin: 0 15px;
+  margin: 0 calc(var(--ma-gutter-width) / 2);
 }

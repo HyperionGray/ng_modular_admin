@@ -1,0 +1,146 @@
+@import 'mixins';
+
+/*
+ * Themes
+ *
+ * Themes are primarily driven by CSS custom properties, but SASS variables and
+ * mixins are used to make the styles more terse.
+ */
+
+ma-app {
+  // Colors
+  @include ma-color-palette(primary, #85ce36);
+  @include ma-color-palette(secondary, #3a4651);
+  @include ma-color-palette(danger, #ff4444);
+  @include ma-color-palette(info, #76d4f5);
+  @include ma-color-palette(success, #4bcf99);
+  @include ma-color-palette(warning, #fe974b);
+  --ma-background-color: #f0f3f6;
+  --ma-divider-color: #d7dde4; // TODO this is really top nav background
+
+  // Animation
+  --ma-fast-animation: 0.3s;
+  --ma-slow-animation: 1.0s;
+
+  // Layout
+  @include media-breakpoint-only(xs) {--ma-gutter-width: 10px;}
+  @include media-breakpoint-only(sm) {--ma-gutter-width: 15px;}
+  @include media-breakpoint-only(md) {--ma-gutter-width: 20px;}
+  @include media-breakpoint-only(lg) {--ma-gutter-width: 25px;}
+  @include media-breakpoint-only(xl) {--ma-gutter-width: 30px;}
+
+  // Text
+  --ma-code-color: #bd4147;
+  --ma-code-background-color: #f7f7f9;
+  --ma-code-max-height: 340px;
+  --ma-text-color: #4f5f6f;
+  --ma-text-color-inverse: #ffffff;
+
+  // Anchors
+  --ma-anchor-color: var(--ma-primary-color-dark);
+  --ma-anchor-decoration: underline;
+  --ma-anchor-hover-color: var(--ma-primary-color-darker);
+  --ma-anchor-hover-decoration: underline;
+
+  // Buttons
+  --ma-button-text-color: var(--ma-text-color-inverse);
+  --ma-button-pill-radius: 25px;
+
+  // Dropdowns
+  --ma-dropdown-border-color: rgba(0, 0, 0, 0.5);
+  --ma-dropdown-hover-background-color: #f5f5f5;
+
+  // Navigation elements
+  --ma-footer-height: 50px;
+
+  $sideNavPrimaryColor: #3a4651;
+  --ma-side-nav-width: 230px;
+  --ma-side-nav-active-text-color: var(--ma-text-color-inverse); // TODO rename to text-color-hover
+  --ma-side-nav-text-color: rgba(255, 255, 255, 0.5);
+
+  --ma-top-nav-height: 70px;
+  @include media-breakpoint-down(sm) {
+    --ma-top-nav-height: 50px;
+  }
+
+  // Responsive content padding
+  @include media-breakpoint-only(xs) {
+    --ma-card-padding: 10px;
+    --ma-content-padding: 15px;
+  }
+
+  @include media-breakpoint-only(sm) {
+    --ma-card-padding: 12.5px;
+    --ma-content-padding: 20px;
+  }
+
+  @include media-breakpoint-only(md) {
+    --ma-card-padding: 15px;
+    --ma-content-padding: 25px;
+  }
+
+  @include media-breakpoint-only(lg) {
+    --ma-card-padding: 17.5px;
+    --ma-content-padding: 30px;
+  }
+
+  @include media-breakpoint-only(xl) {
+    --ma-card-padding: 20px;
+    --ma-content-padding: 40px;
+  }
+}
+
+.blue-theme {
+  @include ma-color-palette(primary, #52bcd3);
+}
+
+.orange-theme {
+  @include ma-color-palette(primary, #fe821d);
+
+// $color-primary: lighten(#FE7A0E, 3%);
+// $dashboard-stat-icon-color: #BDBDBD;
+//
+// $link-color: #969696;
+// $link-transition: initial;
+// $link-decoration: underline;
+//
+// $link-hover-color: desaturate(darken($color-primary, 4%), 4%);
+// $link-hover-decoration: underline;
+//
+// $chart-color-primary: lighten($color-primary, 10%);
+// $chart-color-secondary: lighten($chart-color-primary, 20%);
+}
+
+.purple-theme {
+  @include ma-color-palette(primary, #7867A7);
+	// $dashboard-stat-icon-color: #BDBDBD;
+	//
+	// $chart-color-primary: lighten($color-primary, 8%);
+	// $chart-color-secondary: lighten($chart-color-primary, 10%);
+}
+
+.red-theme {
+  @include ma-color-palette(primary, #ff6161);
+	//
+	// $link-color: #969696;
+	// $link-transition: initial;
+	// $link-decoration: underline;
+	//
+	// $link-hover-color: #E45252;
+	// $link-hover-decoration: underline;
+	//
+	// $chart-color-primary: #FF8585;
+	// $chart-color-secondary: #ccc;
+}
+
+.seagreen-theme {
+  @include ma-color-palette(primary, #4bcf99);
+	//
+	// // $link-color: darken($color-primary, 5%);
+	// $link-color: #969696;
+	// $link-transition: initial;
+	// $link-decoration: underline;
+	//
+	// $link-hover-color: darken($color-primary, 8%);
+	// $link-hover-decoration: underline;
+}

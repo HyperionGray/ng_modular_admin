@@ -1,66 +1,30 @@
-.title {
-	// font-size: 21px;
-	font-size: 1.45rem;
-	font-weight: 600;
-	margin-bottom: 0;
+/*
+ * Typography
+ */
 
-	// Title large
-	&.l {
-		// font-size: 23px;
-		font-size: 1.6rem;
+h1, h2, h3, h4, h5, h6 {
+	margin-bottom: 0.4em;
+	color: var(--ma-secondary-color);
+
+	small {
+		color: var(--ma-secondary-color-lighter);
 	}
-
-	&.s {
-		// font-size: 18px;
-		font-size: 1.4rem;
-	}
-
-	.card & {
-		font-size: 1.1rem;
-		color: $color-text;
-	}
-}
-
-.title-description {
-	margin: 0;
-	// font-size: 14px;
-	font-size: 0.9rem;
-	font-weight: normal;
-	color: $color-text-light;
-
-	// Small
-	&.s {
-		// font-size: 13px;
-		font-size: 0.8rem;
-	}
-
-	@include media-down(sm) {
-		display: none;
-	}
-}
-
-.subtitle {
-	font-size: 1.2rem;
-	margin: 0;
-	color: $color-text-light;
 }
 
 .text-primary {
-	color: $color-primary;
+	// Unfortunately, bootstrap's text classes are marked !important, so we
+	// have to do the same thing to our text class.
+	color: var(--ma-primary-color-dark) !important;
+}
+
+.text-secondary {
+	// Unfortunately, bootstrap's text classes are marked !important, so we
+	// have to do the same thing to our text class.
+	color: var(--ma-secondary-color) !important;
 }
 
 .text-muted {
-	color: lighten($color-text-light, 10%)
-}
-
-pre {
-	padding: 0;
-	border: none;
-	background: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-	small {
-		color: $color-text-light;
-	}
+	// Unfortunately, bootstrap's text classes are marked !important, so we
+	// have to do the same thing to our text class.
+	color: var(--ma-secondary-color-lighter) !important;
 }

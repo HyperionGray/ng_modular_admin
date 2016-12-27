@@ -2,32 +2,26 @@
  * Standard import for component stylesheets. This provides access
  * too all Bootstrap and Modular Admin variables and mixins.
  */
-/*************************************************************
-*						App Variables
-**************************************************************/
-/*************************************************************
-*					  Colors Definitions
-**************************************************************/
-/*************************************************************
-*					Common Element Variables
-**************************************************************/
-/* ***************************************************
-*			Page Specific Element Variables
-****************************************************** */
-/*****************************************
-*       Background-image: cover mixin
-******************************************/
-/*****************************************
-*       Media Query Mixins
-******************************************/
+/*
+ * Background image mixin.
+ */
+/*
+ * Button mixin.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties.
+ * Namely, we need to avoid lighten() and darken().
+ */
+/*
+ * Create CSS custom properties for various shades of a base color.
+ */
 :host {
   display: block;
   position: relative;
   width: 100%;
   min-height: 100vh;
   height: 100%;
-  padding-left: 230px;
+  padding-left: var(--ma-side-nav-width);
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #f0f3f6;
+  background-color: var(--ma-background-color);
   transition: left 0.3s ease, padding-left 0.3s ease; }

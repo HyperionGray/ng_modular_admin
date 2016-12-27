@@ -1,29 +1,22 @@
 /*
  * Document-level styles.
  */
+
 html,
 body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
-	color: $color-text;
+	color: var(--ma-text-color);
 	overflow-x: hidden;
 }
 
-#ref {
-	.color-primary {
-		color: $color-primary;
-	}
-
-	.chart {
-		.color-primary {
-			color: $chart-color-primary;
-		}
-		.color-secondary {
-			color: $chart-color-secondary;
-		}
-	}
-}
+/*
+ * Inherit (and lightly modify) some Bootstrap styles.
+ *
+ * In particular, class selectors are converted to element selectors
+ * where appropriate, as in .blockquote → blockquote.
+ */
 
 blockquote {
 	@extend .blockquote;
@@ -33,12 +26,11 @@ blockquote {
 	}
 }
 
-.row {margin-bottom: 30px;}
-
 pre.code {
-  color: $code-color;
-  background-color: $code-bg;
-  max-height: $pre-scrollable-max-height;
-  overflow-y: scroll;
+  color: var(--ma-code-color);
+  background-color: var(--ma-code-background-color);
+  max-height: var(--ma-code-max-height);
 	padding: 5px 10px;
 }
+
+.row {margin-bottom: 30px;}

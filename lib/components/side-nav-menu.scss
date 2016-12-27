@@ -5,10 +5,10 @@
 }
 
 :host(.open) {
-  background-color: darken($sidebar-color-primary, 3%);
+  background-color: var(--ma-secondary-color);
 }
 
 div {
-  transition: height $fast-animation ease-out;
+  transition: height var(--ma-fast-animation) ease-out;
   overflow: hidden;
 }
