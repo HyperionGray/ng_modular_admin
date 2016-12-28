@@ -19,7 +19,7 @@
   background-color: var(--ma-#{$paletteName}-color);
   border-color: transparent;
 
-  &:focus, &:hover {
+  &:hover {
     background-color: var(--ma-#{$paletteName}-color-dark);
   }
 
@@ -33,7 +33,7 @@
     border-color: var(--ma-#{$paletteName}-color-dark);
     background-color: transparent;
 
-    &:focus, &:hover {
+    &:hover {
       color: $textColor;
       border-color: var(--ma-#{$paletteName}-color);
       background-color: var(--ma-#{$paletteName}-color);

@@ -18,6 +18,16 @@ body {
  * where appropriate, as in .blockquote → blockquote.
  */
 
+a {
+	color: var(--ma-anchor-color);
+	text-decoration: var(--ma-anchor-decoration);
+}
+
+a:hover {
+	color: var(--ma-anchor-color-hover);
+	text-decoration: var(--ma-anchor-decoration-hover);
+}
+
 blockquote {
 	@extend .blockquote;
 
@@ -26,11 +36,27 @@ blockquote {
 	}
 }
 
+input {
+	height: initial;
+	padding: 0em 0.5em;
+}
+
 pre.code {
   color: var(--ma-code-color);
   background-color: var(--ma-code-background-color);
   max-height: var(--ma-code-max-height);
 	padding: 5px 10px;
+
+	input {
+		height: initial;
+    border-bottom: 1px solid var(--ma-code-color);
+		text-align: center;
+		padding: 0em 0.25em;
+	}
 }
 
-.row {margin-bottom: 30px;}
+.row {
+	margin-right: calc(0px - var(--ma-gutter-width) / 2);
+  margin-left: calc(0px - var(--ma-gutter-width) / 2);
+	margin-bottom: var(--ma-gutter-width);
+}

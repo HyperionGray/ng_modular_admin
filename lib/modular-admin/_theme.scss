@@ -39,8 +39,8 @@ ma-app {
   // Anchors
   --ma-anchor-color: var(--ma-primary-color-dark);
   --ma-anchor-decoration: underline;
-  --ma-anchor-hover-color: var(--ma-primary-color-darker);
-  --ma-anchor-hover-decoration: underline;
+  --ma-anchor-color-hover: var(--ma-primary-color-darker);
+  --ma-anchor-decoration-hover: underline;
 
   // Buttons
   --ma-button-text-color: var(--ma-text-color-inverse);
@@ -66,27 +66,27 @@ ma-app {
   // Responsive content padding
   @include media-breakpoint-only(xs) {
     --ma-card-padding: 10px;
-    --ma-content-padding: 15px;
+    --ma-content-padding: 20px 10px;
   }
 
   @include media-breakpoint-only(sm) {
     --ma-card-padding: 12.5px;
-    --ma-content-padding: 20px;
+    --ma-content-padding: 40px 15px;
   }
 
   @include media-breakpoint-only(md) {
     --ma-card-padding: 15px;
-    --ma-content-padding: 25px;
+    --ma-content-padding: 60px 20px;
   }
 
   @include media-breakpoint-only(lg) {
     --ma-card-padding: 17.5px;
-    --ma-content-padding: 30px;
+    --ma-content-padding: 80px 25px;
   }
 
   @include media-breakpoint-only(xl) {
     --ma-card-padding: 20px;
-    --ma-content-padding: 40px;
+    --ma-content-padding: 100px 35px;
   }
 }
 

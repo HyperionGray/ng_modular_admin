@@ -55,14 +55,14 @@ button {
   }
 
   &.pill-left {
-    border-top-left-radius: var(--ma-button-pill-radius);
-    border-bottom-left-radius: var(--ma-button-pill-radius);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
     padding-left: 1.3rem;
   }
 
   &.pill-right {
-    border-top-right-radius: var(--ma-button-pill-radius);
-    border-bottom-right-radius: var(--ma-button-pill-radius);
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
     padding-right: 1.3rem;
   }
 }
