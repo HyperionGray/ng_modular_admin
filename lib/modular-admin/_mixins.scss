@@ -48,7 +48,9 @@
 }
 
 /*
- * Create CSS custom properties for various shades of a base color.
+ * Color mixin.
+ *
+ * Create palette of lighter/darker colors from a base color.
  */
 @mixin ma-color-palette($paletteName, $baseColor) {
   --ma-#{$paletteName}-color-lighter: lighten($baseColor, 16%);
@@ -56,4 +58,16 @@
   --ma-#{$paletteName}-color: $baseColor;
   --ma-#{$paletteName}-color-dark: darken($baseColor, 10%);
   --ma-#{$paletteName}-color-darker: darken($baseColor, 16%);
+}
+
+/**
+ * Column mixin.
+ */
+@mixin ma-columns($columnCount, $breakPoint) {
+  @include media-breakpoint-up($breakPoint) {
+    .columns-#{$breakPoint}-#{$columnCount} {
+      column-count: $columnCount;
+      column-gap: var(--ma-gutter-width);
+    }
+  }
 }

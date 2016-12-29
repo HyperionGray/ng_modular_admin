@@ -12,6 +12,8 @@ import 'components/card.dart' show MaCard;
 export 'components/card.dart' show MaCard;
 import 'components/content.dart' show MaContent;
 export 'components/content.dart' show MaContent;
+import 'components/footer.dart' show MaFooter;
+export 'components/footer.dart' show MaFooter;
 import 'components/logo.dart' show MaLogo;
 export 'components/logo.dart' show MaLogo;
 import 'components/side-nav.dart' show MaSideNav;
@@ -37,6 +39,7 @@ const List<dynamic> MA_DIRECTIVES = const [
     MaButtonGroup,
     MaCard,
     MaContent,
+    MaFooter,
     MaLogo,
     MaSideNav,
     MaSideNavHeader,

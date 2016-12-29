@@ -1,1 +1,30 @@
-:host{display:block}:host(.open){background-color:var(--ma-secondary-color)}div{transition:height var(--ma-fast-animation) ease-out;overflow:hidden}
+/*
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
+ */
+/*
+ * Background image mixin.
+ */
+/*
+ * Button mixin.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties.
+ * Namely, we need to avoid lighten() and darken().
+ */
+/*
+ * Color mixin.
+ *
+ * Create palette of lighter/darker colors from a base color.
+ */
+/**
+ * Column mixin.
+ */
+:host {
+  display: block; }
+
+:host(.open) {
+  background-color: var(--ma-secondary-color); }
+
+div {
+  transition: height var(--ma-fast-animation) ease-out;
+  overflow: hidden; }

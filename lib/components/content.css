@@ -1,1 +1,30 @@
-:host{display:block;padding:var(--ma-content-padding)}
+/*
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
+ */
+/*
+ * Background image mixin.
+ */
+/*
+ * Button mixin.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties.
+ * Namely, we need to avoid lighten() and darken().
+ */
+/*
+ * Color mixin.
+ *
+ * Create palette of lighter/darker colors from a base color.
+ */
+/**
+ * Column mixin.
+ */
+:host {
+  display: block;
+  padding: var(--ma-content-padding); }
+
+:host-context(.has-top-nav) {
+  padding-top: calc(var(--ma-top-nav-height) + var(--ma-content-padding)); }
+
+:host-context(.has-footer) {
+  padding-bottom: calc(var(--ma-footer-height) + var(--ma-content-padding)); }

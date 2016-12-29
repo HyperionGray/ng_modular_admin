@@ -55,14 +55,18 @@ button {
   }
 
   &.pill-left {
-    border-top-left-radius: 50%;
-    border-bottom-left-radius: 50%;
+    // Set border radius to a very large value: the browser will clamp it
+    // to a perfect circle based on the size of the button.
+    border-top-left-radius: 1000px;
+    border-bottom-left-radius: 1000px;
     padding-left: 1.3rem;
   }
 
   &.pill-right {
-    border-top-right-radius: 50%;
-    border-bottom-right-radius: 50%;
+    // Set border radius to a very large value: the browser will clamp it
+    // to a perfect circle based on the size of the button.
+    border-top-right-radius: 1000px;
+    border-bottom-right-radius: 1000px;
     padding-right: 1.3rem;
   }
 }

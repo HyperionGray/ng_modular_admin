@@ -41,6 +41,23 @@ input {
 	padding: 0em 0.5em;
 }
 
+ma-card + ma-card {
+	margin-top: var(--ma-gutter-width);
+}
+
+ma-top-nav input {
+  @extend input;
+  color: var(--ma-text-color);
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  max-width: 150px;
+  -webkit-appearance: none;
+  outline: none;
+  outline-offset: -2px;
+  font: inherit;
+}
+
 pre.code {
   color: var(--ma-code-color);
   background-color: var(--ma-code-background-color);
@@ -55,8 +72,22 @@ pre.code {
 	}
 }
 
+@include ma-columns(2, xs);
+@include ma-columns(3, xs);
+@include ma-columns(2, sm);
+@include ma-columns(3, sm);
+@include ma-columns(2, md);
+@include ma-columns(3, md);
+@include ma-columns(2, lg);
+@include ma-columns(3, lg);
+@include ma-columns(2, xl);
+@include ma-columns(3, xl);
+
 .row {
 	margin-right: calc(0px - var(--ma-gutter-width) / 2);
   margin-left: calc(0px - var(--ma-gutter-width) / 2);
-	margin-bottom: var(--ma-gutter-width);
+
+	&:last-child {
+		margin-bottom: 0;
+	}
 }

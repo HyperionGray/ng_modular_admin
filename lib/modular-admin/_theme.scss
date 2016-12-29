@@ -52,12 +52,15 @@ ma-app {
 
   // Navigation elements
   --ma-footer-height: 50px;
+  --ma-footer-color: var(--ma-divider-color);
+  --ma-footer-padding: 20px;
 
   $sideNavPrimaryColor: #3a4651;
   --ma-side-nav-width: 230px;
   --ma-side-nav-active-text-color: var(--ma-text-color-inverse); // TODO rename to text-color-hover
   --ma-side-nav-text-color: rgba(255, 255, 255, 0.5);
 
+  --ma-top-nav-color: var(--ma-divider-color);
   --ma-top-nav-height: 70px;
   @include media-breakpoint-down(sm) {
     --ma-top-nav-height: 50px;
@@ -66,27 +69,27 @@ ma-app {
   // Responsive content padding
   @include media-breakpoint-only(xs) {
     --ma-card-padding: 10px;
-    --ma-content-padding: 20px 10px;
+    --ma-content-padding: 10px;
   }
 
   @include media-breakpoint-only(sm) {
     --ma-card-padding: 12.5px;
-    --ma-content-padding: 40px 15px;
+    --ma-content-padding: 15px;
   }
 
   @include media-breakpoint-only(md) {
     --ma-card-padding: 15px;
-    --ma-content-padding: 60px 20px;
+    --ma-content-padding: 20px;
   }
 
   @include media-breakpoint-only(lg) {
     --ma-card-padding: 17.5px;
-    --ma-content-padding: 80px 25px;
+    --ma-content-padding: 25px;
   }
 
   @include media-breakpoint-only(xl) {
     --ma-card-padding: 20px;
-    --ma-content-padding: 100px 35px;
+    --ma-content-padding: 35px;
   }
 }
 

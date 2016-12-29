@@ -4,11 +4,11 @@
   display: block;
   background-color: white;
   box-shadow: 1px 1px 5px var(--ma-text-color-muted);
-  margin-bottom: var(--ma-gutter-width);
   border-radius: 0;
   border: none;
   flex-grow: 1;
   padding: var(--ma-card-padding);
+  break-inside: avoid;
 
   .title {
     margin-top: 0;
@@ -18,5 +18,8 @@
 }
 
 :host-context(.row) {
-  margin: 0 calc(var(--ma-gutter-width) / 2);
+  margin-left: calc(var(--ma-gutter-width) / 2);
+  margin-right: calc(var(--ma-gutter-width) / 2);
+  margin-bottom: var(--ma-gutter-width);
+  margin-top: 0;
 }

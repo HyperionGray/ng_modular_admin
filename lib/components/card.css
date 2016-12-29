@@ -1,1 +1,40 @@
-:host{display:block;background-color:white;box-shadow:1px 1px 5px var(--ma-text-color-muted);margin-bottom:var(--ma-gutter-width);border-radius:0;border:none;flex-grow:1;padding:var(--ma-card-padding)}:host .title{margin-top:0;font-size:1.4rem;margin-bottom:20px}:host-context(.row){margin:0 calc(var(--ma-gutter-width) / 2)}
+/*
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
+ */
+/*
+ * Background image mixin.
+ */
+/*
+ * Button mixin.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties.
+ * Namely, we need to avoid lighten() and darken().
+ */
+/*
+ * Color mixin.
+ *
+ * Create palette of lighter/darker colors from a base color.
+ */
+/**
+ * Column mixin.
+ */
+:host {
+  display: block;
+  background-color: white;
+  box-shadow: 1px 1px 5px var(--ma-text-color-muted);
+  border-radius: 0;
+  border: none;
+  flex-grow: 1;
+  padding: var(--ma-card-padding);
+  break-inside: avoid; }
+  :host .title {
+    margin-top: 0;
+    font-size: 1.4rem;
+    margin-bottom: 20px; }
+
+:host-context(.row) {
+  margin-left: calc(var(--ma-gutter-width) / 2);
+  margin-right: calc(var(--ma-gutter-width) / 2);
+  margin-bottom: var(--ma-gutter-width);
+  margin-top: 0; }
