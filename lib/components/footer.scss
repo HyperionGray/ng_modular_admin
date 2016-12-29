@@ -6,7 +6,7 @@
   background-color: var(--ma-divider-color);
   height: var(--ma-footer-height);
   position: absolute;
-  left: var(--ma-side-nav-width);
+  left: 0;
   right: 0;
   bottom: 0;
   transition: left var(--ma-fast-animation) ease;
@@ -19,4 +19,8 @@
 :host(.fixed) {
   position: fixed;
   opacity: 0.95;
+}
+
+:host-context(.has-side-nav) {
+  left: var(--ma-side-nav-width);
 }

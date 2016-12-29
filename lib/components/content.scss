@@ -5,6 +5,8 @@
   padding: var(--ma-content-padding);
 }
 
+// Top nav and footer are handled here, because they are the same width
+// as the content, but side nav is handled in app.scss.
 :host-context(.has-top-nav) {
   padding-top: calc(var(--ma-top-nav-height) + var(--ma-content-padding));
 }
