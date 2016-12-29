@@ -2272,9 +2272,11 @@ pre.code {
   padding: 5px 10px; }
   pre.code input {
     height: initial;
-    border-bottom: 1px solid var(--ma-code-color);
     text-align: center;
-    padding: 0em 0.25em; }
+    padding: 0em 0.25em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ma-code-color); }
 
 .columns-xs-2 {
   column-count: 2;

@@ -16,6 +16,8 @@ import 'components/footer.dart' show MaFooter;
 export 'components/footer.dart' show MaFooter;
 import 'components/logo.dart' show MaLogo;
 export 'components/logo.dart' show MaLogo;
+import 'components/overlay.dart' show MaOverlay;
+export 'components/overlay.dart' show MaOverlay;
 import 'components/side-nav.dart' show MaSideNav;
 export 'components/side-nav.dart' show MaSideNav;
 import 'components/side-nav-header.dart' show MaSideNavHeader;
@@ -41,6 +43,7 @@ const List<dynamic> MA_DIRECTIVES = const [
     MaContent,
     MaFooter,
     MaLogo,
+    MaOverlay,
     MaSideNav,
     MaSideNavHeader,
     MaSideNavItem,

@@ -38,3 +38,7 @@
   margin-right: calc(var(--ma-gutter-width) / 2);
   margin-bottom: var(--ma-gutter-width);
   margin-top: 0; }
+
+:host-context(.is-overlay) {
+  flex-grow: initial;
+  opacity: 1.0; }
