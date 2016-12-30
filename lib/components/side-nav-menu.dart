@@ -43,9 +43,9 @@ class MaSideNavMenu implements AfterContentInit {
         this.header.isOpen = false;
     }
 
-    /// After content has been initialized, subscribe to the menu header's
-    /// event stream and set the "inside-menu" class on menu items.
+    /// Implementation of AfterContentInit.
     void ngAfterContentInit() {
+        // Listen for clicks on the menu header.
         header.onClick.listen((event) {
             if (this.isOpen) {
                 this.close();
@@ -55,12 +55,18 @@ class MaSideNavMenu implements AfterContentInit {
             }
         });
 
-        // Get div height on the next event loop so that the DOM
-        // can settle down.
+        // Wait one VM turn for DOM to settle.
         new Future(() {
+            // Store div's actual height so we can expand it later.
             this._div = this._element.nativeElement.querySelector('div');
             this._height = this._div.clientHeight;
             this._div.style.height = '0';
+
+            // If an active item is inside this menu, open this menu.
+            var ne = this._element.nativeElement;
+            if (ne.querySelector('.router-link-active') != null) {
+                this.open();
+            }
         });
     }
 

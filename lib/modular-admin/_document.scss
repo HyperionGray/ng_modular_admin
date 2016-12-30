@@ -41,10 +41,6 @@ input {
 	padding: 0em 0.5em;
 }
 
-ma-card + ma-card {
-	margin-top: var(--ma-gutter-width);
-}
-
 ma-top-nav input {
   @extend input;
   color: var(--ma-text-color);
@@ -74,8 +70,6 @@ pre.code {
 	}
 }
 
-@include ma-columns(2, xs);
-@include ma-columns(3, xs);
 @include ma-columns(2, sm);
 @include ma-columns(3, sm);
 @include ma-columns(2, md);

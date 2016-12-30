@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular2/core.dart';
 
 /// The top-level component for a Modular Admin application.

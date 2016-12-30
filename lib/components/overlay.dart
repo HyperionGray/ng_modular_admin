@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:angular2/core.dart';
 
 /// Overlay.
@@ -9,7 +11,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'overlay.html',
     styleUrls: const ['overlay.css']
 )
-class MaOverlay {
+class MaOverlay implements OnInit, OnDestroy {
     /// A work around for a bug in :host-context().
     @HostBinding('class.is-overlay')
     bool isOverlay = true;
@@ -18,4 +20,14 @@ class MaOverlay {
     /// a bit transparent.
     @Input()
     bool opaque = false;
+
+    /// Implementation of OnInit: disable document's scrollbar
+    void ngOnInit() {
+        window.document.documentElement.style.overflow = 'hidden';
+    }
+
+    /// Implementation of OnDestroy: re-enable document's scrollbar
+    void ngOnDestroy() {
+        window.document.documentElement.style.overflow = 'auto';
+    }
 }

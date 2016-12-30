@@ -2251,9 +2251,6 @@ input, ma-top-nav input {
   height: initial;
   padding: 0em 0.5em; }
 
-ma-card + ma-card {
-  margin-top: var(--ma-gutter-width); }
-
 ma-top-nav input {
   color: var(--ma-text-color);
   background-color: transparent;
@@ -2277,14 +2274,6 @@ pre.code {
     background-color: transparent;
     border: none;
     border-bottom: 1px solid var(--ma-code-color); }
-
-.columns-xs-2 {
-  column-count: 2;
-  column-gap: var(--ma-gutter-width); }
-
-.columns-xs-3 {
-  column-count: 3;
-  column-gap: var(--ma-gutter-width); }
 
 @media (min-width: 576px) {
   .columns-sm-2 {

@@ -8,7 +8,7 @@
   border: none;
   flex-grow: 1;
   padding: var(--ma-card-padding);
-  break-inside: avoid;
+	margin-bottom: var(--ma-gutter-width);
 
   .title {
     margin-top: 0;
@@ -20,8 +20,17 @@
 :host-context(.row) {
   margin-left: calc(var(--ma-gutter-width) / 2);
   margin-right: calc(var(--ma-gutter-width) / 2);
-  margin-bottom: var(--ma-gutter-width);
   margin-top: 0;
+}
+
+// Work around for `break-inside: avoid', which doesn't properly break columns
+// around margin-bottom. (I stole this trick from Bootstrap.)
+:host-context(.columns-sm-2), :host-context(.columns-sm-3),
+:host-context(.columns-md-2), :host-context(.columns-md-3),
+:host-context(.columns-lg-2), :host-context(.columns-lg-3),
+:host-context(.columns-xl-2), :host-context(.columns-xl-3) {
+  display: inline-block;
+  width: 100%;
 }
 
 :host-context(.is-overlay) {
