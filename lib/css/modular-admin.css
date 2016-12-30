@@ -2130,12 +2130,13 @@ ma-app {
   --ma-dropdown-hover-background-color: #f5f5f5;
   --ma-footer-height: 50px;
   --ma-footer-color: var(--ma-divider-color);
-  --ma-footer-padding: 20px;
+  --ma-footer-padding: 15px;
   --ma-side-nav-width: 230px;
   --ma-side-nav-active-text-color: var(--ma-text-color-inverse);
   --ma-side-nav-text-color: rgba(255, 255, 255, 0.5);
   --ma-top-nav-color: var(--ma-divider-color);
-  --ma-top-nav-height: 70px; }
+  --ma-top-nav-height: 70px;
+  --ma-top-nav-padding: 20px; }
   @media (max-width: 575px) {
     ma-app {
       --ma-gutter-width: 10px; } }
@@ -2156,7 +2157,8 @@ ma-app {
       --ma-gutter-width: 30px; } }
   @media (max-width: 767px) {
     ma-app {
-      --ma-top-nav-height: 50px; } }
+      --ma-top-nav-height: 50px;
+      --ma-top-nav-padding: 10px; } }
   @media (max-width: 575px) {
     ma-app {
       --ma-card-padding: 10px;
@@ -2218,6 +2220,10 @@ ma-app {
 
 /*
  * Document-level styles.
+ *
+ * We create some custom styles here, but we also inherit (and lightly modify)
+ * some Bootstrap styles. In particular, class selectors are converted to
+ * element selectors where appropriate, as in .blockquote → blockquote.
  */
 html,
 body {
@@ -2227,12 +2233,6 @@ body {
   color: var(--ma-text-color);
   overflow-x: hidden; }
 
-/*
- * Inherit (and lightly modify) some Bootstrap styles.
- *
- * In particular, class selectors are converted to element selectors
- * where appropriate, as in .blockquote → blockquote.
- */
 a {
   color: var(--ma-anchor-color);
   text-decoration: var(--ma-anchor-decoration); }
@@ -2241,33 +2241,12 @@ a:hover {
   color: var(--ma-anchor-color-hover);
   text-decoration: var(--ma-anchor-decoration-hover); }
 
+div.inline-block {
+  display: inline-block; }
+
 input, ma-top-nav input {
   height: initial;
   padding: 0em 0.5em; }
-
-ma-top-nav input {
-  color: var(--ma-text-color);
-  background-color: transparent;
-  border: none;
-  height: 40px;
-  max-width: 150px;
-  -webkit-appearance: none;
-  outline: none;
-  outline-offset: -2px;
-  font: inherit; }
-
-pre.code {
-  color: var(--ma-code-color);
-  background-color: var(--ma-code-background-color);
-  max-height: var(--ma-code-max-height);
-  padding: 5px 10px; }
-  pre.code input {
-    height: initial;
-    text-align: center;
-    padding: 0em 0.25em;
-    background-color: transparent;
-    border: none;
-    border-bottom: 1px solid var(--ma-code-color); }
 
 @media (min-width: 576px) {
   .columns-sm-2 {
@@ -2308,6 +2287,30 @@ pre.code {
   .columns-xl-3 {
     column-count: 3;
     column-gap: var(--ma-gutter-width); } }
+
+ma-top-nav input {
+  color: var(--ma-text-color);
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  max-width: 150px;
+  -webkit-appearance: none;
+  outline: none;
+  outline-offset: -2px;
+  font: inherit; }
+
+pre.code {
+  color: var(--ma-code-color);
+  background-color: var(--ma-code-background-color);
+  max-height: var(--ma-code-max-height);
+  padding: 5px 10px; }
+  pre.code input {
+    height: initial;
+    text-align: center;
+    padding: 0em 0.25em;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--ma-code-color); }
 
 .row {
   margin-right: calc(0px - var(--ma-gutter-width) / 2);

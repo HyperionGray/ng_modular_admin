@@ -1,5 +1,9 @@
 /*
  * Document-level styles.
+ *
+ * We create some custom styles here, but we also inherit (and lightly modify)
+ * some Bootstrap styles. In particular, class selectors are converted to
+ * element selectors where appropriate, as in .blockquote → blockquote.
  */
 
 html,
@@ -10,13 +14,6 @@ body {
 	color: var(--ma-text-color);
 	overflow-x: hidden;
 }
-
-/*
- * Inherit (and lightly modify) some Bootstrap styles.
- *
- * In particular, class selectors are converted to element selectors
- * where appropriate, as in .blockquote → blockquote.
- */
 
 a {
 	color: var(--ma-anchor-color);
@@ -36,10 +33,25 @@ blockquote {
 	}
 }
 
+div {
+	&.inline-block {
+		display: inline-block;
+	}
+}
+
 input {
 	height: initial;
 	padding: 0em 0.5em;
 }
+
+@include ma-columns(2, sm);
+@include ma-columns(3, sm);
+@include ma-columns(2, md);
+@include ma-columns(3, md);
+@include ma-columns(2, lg);
+@include ma-columns(3, lg);
+@include ma-columns(2, xl);
+@include ma-columns(3, xl);
 
 ma-top-nav input {
   @extend input;
@@ -69,15 +81,6 @@ pre.code {
     border-bottom: 1px solid var(--ma-code-color);
 	}
 }
-
-@include ma-columns(2, sm);
-@include ma-columns(3, sm);
-@include ma-columns(2, md);
-@include ma-columns(3, md);
-@include ma-columns(2, lg);
-@include ma-columns(3, lg);
-@include ma-columns(2, xl);
-@include ma-columns(3, xl);
 
 .row {
 	margin-right: calc(0px - var(--ma-gutter-width) / 2);

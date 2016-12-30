@@ -1,7 +1,6 @@
 @import 'modular-admin/component';
 
 :host {
-  display: flex;
   color: var(--ma-secondary-color-lighter);
   background-color: var(--ma-divider-color);
   height: var(--ma-footer-height);
@@ -11,14 +10,7 @@
   bottom: 0;
   transition: left var(--ma-fast-animation) ease;
   z-index: 10;
-  align-items: center;
-  justify-content: space-between;
   padding: var(--ma-footer-padding);
-}
-
-// Children should be spaced evenly.
-:host > * {
-  flex-grow: 1;
 }
 
 :host(.fixed) {

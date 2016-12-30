@@ -17,7 +17,7 @@
  * Column mixin.
  */
 :host {
-  display: flex;
+  display: block;
   color: var(--ma-secondary-color-lighter);
   background-color: var(--ma-divider-color);
   height: var(--ma-top-nav-height);
@@ -26,12 +26,7 @@
   right: 0;
   transition: left var(--ma-fast-animation) ease;
   z-index: 10;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0px 20px; }
-
-:host > * {
-  flex-grow: 1; }
+  padding: var(--ma-top-nav-padding); }
 
 :host(.fixed) {
   position: fixed;

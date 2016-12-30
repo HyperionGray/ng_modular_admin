@@ -53,7 +53,7 @@ ma-app {
   // Navigation elements
   --ma-footer-height: 50px;
   --ma-footer-color: var(--ma-divider-color);
-  --ma-footer-padding: 20px;
+  --ma-footer-padding: 15px;
 
   $sideNavPrimaryColor: #3a4651;
   --ma-side-nav-width: 230px;
@@ -62,8 +62,11 @@ ma-app {
 
   --ma-top-nav-color: var(--ma-divider-color);
   --ma-top-nav-height: 70px;
+  --ma-top-nav-padding: 20px;
+
   @include media-breakpoint-down(sm) {
     --ma-top-nav-height: 50px;
+    --ma-top-nav-padding: 10px;
   }
 
   // Responsive content padding
