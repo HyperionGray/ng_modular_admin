@@ -1,20 +1,10 @@
 /*
- * Background image mixin.
- */
-
-@mixin ma-bg-cover() {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/*
- * Button mixin.
+ * Button mixins.
  *
- * This is adapted from Bootstrap to work with CSS custom properties.
- * Namely, we need to avoid lighten() and darken().
+ * This is adapted from Bootstrap to work with CSS custom properties. Namely, we
+ * need to avoid lighten() and darken().
  */
-@mixin ma-button($paletteName, $textColor) {
+@mixin ma-button-variant($paletteName, $textColor) {
   color: $textColor;
   background-color: var(--ma-#{$paletteName}-color);
   border-color: transparent;

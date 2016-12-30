@@ -3,13 +3,10 @@
  * too all Bootstrap and Modular Admin variables and mixins.
  */
 /*
- * Background image mixin.
- */
-/*
- * Button mixin.
+ * Button mixins.
  *
- * This is adapted from Bootstrap to work with CSS custom properties.
- * Namely, we need to avoid lighten() and darken().
+ * This is adapted from Bootstrap to work with CSS custom properties. Namely, we
+ * need to avoid lighten() and darken().
  */
 /*
  * Color mixin.
@@ -33,6 +30,9 @@
   align-items: center;
   justify-content: space-between;
   padding: var(--ma-footer-padding); }
+
+:host > * {
+  flex-grow: 1; }
 
 :host(.fixed) {
   position: fixed;

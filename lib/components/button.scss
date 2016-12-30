@@ -16,27 +16,42 @@ button {
   margin-bottom: 5px;
 
   &.primary {
-    @include ma-button(primary, var(--ma-button-text-color));
+    @include ma-button-variant(primary, var(--ma-button-text-color));
   }
 
   &.secondary {
-    @include ma-button(secondary, var(--ma-button-text-color));
+    @include ma-button-variant(secondary, var(--ma-button-text-color));
   }
 
   &.danger {
-    @include ma-button(danger, var(--ma-button-text-color));
+    @include ma-button-variant(danger, var(--ma-button-text-color));
   }
 
   &.info {
-    @include ma-button(info, var(--ma-button-text-color));
+    @include ma-button-variant(info, var(--ma-button-text-color));
   }
 
   &.success {
-    @include ma-button(success, var(--ma-button-text-color));
+    @include ma-button-variant(success, var(--ma-button-text-color));
   }
 
   &.warning {
-    @include ma-button(warning, var(--ma-button-text-color));
+    @include ma-button-variant(warning, var(--ma-button-text-color));
+  }
+
+  &.link {
+    border: none;
+    color: var(--ma-primary-color-dark);
+    background-color: transparent;
+
+    &:hover {
+      color: var(--ma-primary-color-darker);
+      background-color: var(--ma-background-color);
+    }
+
+    &:active {
+      color: var(--ma-primary-color-lighter);
+    }
   }
 
   &.large {
@@ -92,7 +107,7 @@ button {
   }
 }
 
-// Buttons in a group should be shifted over 1 pixel to their
+// Buttons in a group should be shifted over 1 pixel so their
 // borders overlap. (Note that ma-button-group is an inline-flex
 // container, so it handles removal of whitespace between buttons.)
 :host-context(.is-button-group) button {

@@ -15,6 +15,11 @@
   padding: 0px 20px;
 }
 
+// Children should be spaced evenly.
+:host > * {
+  flex-grow: 1;
+}
+
 :host(.fixed) {
   position: fixed;
   opacity: 0.95;

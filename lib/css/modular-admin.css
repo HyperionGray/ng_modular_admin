@@ -3,13 +3,10 @@
  * Import mixins.
  */
 /*
- * Background image mixin.
- */
-/*
- * Button mixin.
+ * Button mixins.
  *
- * This is adapted from Bootstrap to work with CSS custom properties.
- * Namely, we need to avoid lighten() and darken().
+ * This is adapted from Bootstrap to work with CSS custom properties. Namely, we
+ * need to avoid lighten() and darken().
  */
 /*
  * Color mixin.
@@ -2064,13 +2061,10 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
  * Import Modular Admin.
  */
 /*
- * Background image mixin.
- */
-/*
- * Button mixin.
+ * Button mixins.
  *
- * This is adapted from Bootstrap to work with CSS custom properties.
- * Namely, we need to avoid lighten() and darken().
+ * This is adapted from Bootstrap to work with CSS custom properties. Namely, we
+ * need to avoid lighten() and darken().
  */
 /*
  * Color mixin.

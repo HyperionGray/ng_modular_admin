@@ -3,13 +3,10 @@
  * too all Bootstrap and Modular Admin variables and mixins.
  */
 /*
- * Background image mixin.
- */
-/*
- * Button mixin.
+ * Button mixins.
  *
- * This is adapted from Bootstrap to work with CSS custom properties.
- * Namely, we need to avoid lighten() and darken().
+ * This is adapted from Bootstrap to work with CSS custom properties. Namely, we
+ * need to avoid lighten() and darken().
  */
 /*
  * Color mixin.
@@ -159,6 +156,15 @@ button {
         color: var(--ma-button-text-color);
         border-color: var(--ma-warning-color-darker);
         background-color: var(--ma-warning-color-darker); }
+  button.link {
+    border: none;
+    color: var(--ma-primary-color-dark);
+    background-color: transparent; }
+    button.link:hover {
+      color: var(--ma-primary-color-darker);
+      background-color: var(--ma-background-color); }
+    button.link:active {
+      color: var(--ma-primary-color-lighter); }
   button.large {
     padding: 0.75rem 1.5rem;
     font-size: 1.25rem; }
