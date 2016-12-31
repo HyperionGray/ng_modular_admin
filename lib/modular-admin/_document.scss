@@ -90,3 +90,41 @@ pre.code {
 		margin-bottom: 0;
 	}
 }
+
+table {
+	width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+
+	th {
+		text-align: left;
+		vertical-align: top;
+		padding: 0.75rem;
+		border-bottom: 2px solid var(--ma-divider-color);
+		border-top: 1px solid var(--ma-divider-color);
+	}
+
+	td {
+		padding: 0.75rem;
+		vertical-align: top;
+		border-top: 1px solid var(--ma-divider-color);
+	}
+
+	&.bordered {
+		th, td {
+			border: 1px solid var(--ma-divider-color);
+		}
+
+		th {
+			border-bottom-width: 2px;
+		}
+	}
+
+	&.hover tbody tr:hover {
+		background-color: var(--ma-divider-color);
+	}
+
+	&.striped tbody tr:nth-child(odd) {
+		background-color: var(--ma-background-color);
+	}
+}
