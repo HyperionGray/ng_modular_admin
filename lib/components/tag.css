@@ -52,4 +52,5 @@ span {
 
 :host-context(.is-side-nav) span {
   font-size: 100%;
-  color: var(--ma-secondary-color); }
+  color: var(--ma-secondary-color);
+  border: 2px solid var(--ma-secondary-color); }
