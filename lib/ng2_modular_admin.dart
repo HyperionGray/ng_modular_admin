@@ -28,6 +28,8 @@ import 'components/side-nav-menu.dart' show MaSideNavMenu;
 export 'components/side-nav-menu.dart' show MaSideNavMenu;
 import 'components/side-nav-menu-header.dart' show MaSideNavMenuHeader;
 export 'components/side-nav-menu-header.dart' show MaSideNavMenuHeader;
+import 'components/tag.dart' show MaTag;
+export 'components/tag.dart' show MaTag;
 import 'components/title.dart' show MaTitle;
 export 'components/title.dart' show MaTitle;
 import 'components/top-nav.dart' show MaTopNav;
@@ -49,6 +51,7 @@ const List<dynamic> MA_DIRECTIVES = const [
     MaSideNavItem,
     MaSideNavMenu,
     MaSideNavMenuHeader,
+    MaTag,
     MaTitle,
     MaTopNav,
 ];

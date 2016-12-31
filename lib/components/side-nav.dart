@@ -7,6 +7,10 @@ import 'package:angular2/core.dart';
     styleUrls: const ['side-nav.css']
 )
 class MaSideNav {
+    /// Work-around for :host-context() bug.
+    @HostBinding('class.is-side-nav')
+    bool isSideNav = true;
+
     /// If true, the side nav will have a fixed position.
     @HostBinding('class.fixed')
     @Input()

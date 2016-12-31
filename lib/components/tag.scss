@@ -1,0 +1,59 @@
+@import 'modular-admin/component';
+
+:host {
+  display: inline-block;
+}
+
+span {
+  display: inline-block;
+  padding: 0.25em 0.4em;
+  font-size: 75%;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--ma-text-color-inverse);
+  text-align: center;
+  white-space: nowrap;
+  position: relative;
+  top: -0.1em;
+  @include border-radius();
+
+  // Empty tags collapse automatically
+  &:empty {
+    display: none;
+  }
+
+  &.primary {
+    background-color: var(--ma-primary-color);
+  }
+
+  &.secondary {
+    background-color: var(--ma-secondary-color);
+  }
+
+  &.success {
+    background-color: var(--ma-success-color);
+  }
+
+  &.info {
+    background-color: var(--ma-info-color);
+  }
+
+  &.warning {
+    background-color: var(--ma-warning-color);
+  }
+
+  &.danger {
+    background-color: var(--ma-danger-color);
+  }
+
+  &.pill {
+    padding-right: 0.6em;
+    padding-left: 0.6em;
+    @include border-radius(10rem);
+  }
+}
+
+:host-context(.is-side-nav) span {
+  font-size: 100%;
+  color: var(--ma-secondary-color);
+}
