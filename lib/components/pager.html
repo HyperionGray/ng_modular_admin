@@ -1,0 +1,23 @@
+<div *ngIf='showFirstLast'
+    [class.disabled]='disabled || firstPage.isDisabled'
+    (click)='handleClick($event, firstPage)'>
+  <fa name='angle-double-left'></fa>
+</div>
+<div *ngIf='showPreviousNext'
+    [class.disabled]='disabled || previousPage.isDisabled'
+    (click)='handleClick($event, previousPage)'>
+  <fa name='angle-left'></fa>
+</div>
+<div *ngFor='let page of pages'
+    [class.disabled]='page.isDisabled'
+    (click)='handleClick($event, page)'>{{page.pageNumber}}</div>
+<div *ngIf='showPreviousNext'
+    [class.disabled]='disabled || nextPage.isDisabled'
+    (click)='handleClick($event, nextPage)'>
+  <fa name='angle-right'></fa>
+</div>
+<div *ngIf='showFirstLast'
+    [class.disabled]='disabled || lastPage.isDisabled'
+    (click)='handleClick($event, lastPage)'>
+  <fa name='angle-double-right'></fa>
+</div>
