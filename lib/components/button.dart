@@ -12,6 +12,11 @@ class MaButton {
     @Input()
     bool block = false;
 
+    /// If true, the button color is faded out, and the button does not emit
+    /// click events.
+    @Input()
+    bool disabled;
+
     /// If set, a button click will trigger navigation
     @Input()
     String href;
@@ -28,6 +33,10 @@ class MaButton {
     /// Button size: small, medium, or large. Default: medium.
     @Input()
     String size = 'medium';
+
+    /// If true, make this a form submit button. If false, it's a normal button.
+    @Input()
+    bool submit = false;
 
     /// The type of button (primary, secondary, success, info, warning, danger,
     /// or link). Default: primary

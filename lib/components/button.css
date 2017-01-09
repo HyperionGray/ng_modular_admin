@@ -33,8 +33,12 @@ button {
   button.primary {
     color: var(--ma-button-text-color);
     background-color: var(--ma-primary-color);
-    border-color: transparent; }
-    button.primary:hover {
+    border-color: transparent;
+    transition: opacity var(--ma-slow-animation) ease-out; }
+    button.primary:disabled {
+      cursor: not-allowed;
+      opacity: 0.65; }
+    button.primary:hover:not(:disabled) {
       background-color: var(--ma-primary-color-dark); }
     button.primary:active {
       background-color: var(--ma-primary-color-darker); }
@@ -43,7 +47,7 @@ button {
       border: 1px solid var(--ma-primary-color-dark);
       border-color: var(--ma-primary-color-dark);
       background-color: transparent; }
-      button.primary.outline:hover {
+      button.primary.outline:hover:not(:disabled) {
         color: var(--ma-button-text-color);
         border-color: var(--ma-primary-color);
         background-color: var(--ma-primary-color); }
@@ -54,8 +58,12 @@ button {
   button.secondary {
     color: var(--ma-button-text-color);
     background-color: var(--ma-secondary-color);
-    border-color: transparent; }
-    button.secondary:hover {
+    border-color: transparent;
+    transition: opacity var(--ma-slow-animation) ease-out; }
+    button.secondary:disabled {
+      cursor: not-allowed;
+      opacity: 0.65; }
+    button.secondary:hover:not(:disabled) {
       background-color: var(--ma-secondary-color-dark); }
     button.secondary:active {
       background-color: var(--ma-secondary-color-darker); }
@@ -64,7 +72,7 @@ button {
       border: 1px solid var(--ma-secondary-color-dark);
       border-color: var(--ma-secondary-color-dark);
       background-color: transparent; }
-      button.secondary.outline:hover {
+      button.secondary.outline:hover:not(:disabled) {
         color: var(--ma-button-text-color);
         border-color: var(--ma-secondary-color);
         background-color: var(--ma-secondary-color); }
@@ -75,8 +83,12 @@ button {
   button.danger {
     color: var(--ma-button-text-color);
     background-color: var(--ma-danger-color);
-    border-color: transparent; }
-    button.danger:hover {
+    border-color: transparent;
+    transition: opacity var(--ma-slow-animation) ease-out; }
+    button.danger:disabled {
+      cursor: not-allowed;
+      opacity: 0.65; }
+    button.danger:hover:not(:disabled) {
       background-color: var(--ma-danger-color-dark); }
     button.danger:active {
       background-color: var(--ma-danger-color-darker); }
@@ -85,7 +97,7 @@ button {
       border: 1px solid var(--ma-danger-color-dark);
       border-color: var(--ma-danger-color-dark);
       background-color: transparent; }
-      button.danger.outline:hover {
+      button.danger.outline:hover:not(:disabled) {
         color: var(--ma-button-text-color);
         border-color: var(--ma-danger-color);
         background-color: var(--ma-danger-color); }
@@ -96,8 +108,12 @@ button {
   button.info {
     color: var(--ma-button-text-color);
     background-color: var(--ma-info-color);
-    border-color: transparent; }
-    button.info:hover {
+    border-color: transparent;
+    transition: opacity var(--ma-slow-animation) ease-out; }
+    button.info:disabled {
+      cursor: not-allowed;
+      opacity: 0.65; }
+    button.info:hover:not(:disabled) {
       background-color: var(--ma-info-color-dark); }
     button.info:active {
       background-color: var(--ma-info-color-darker); }
@@ -106,7 +122,7 @@ button {
       border: 1px solid var(--ma-info-color-dark);
       border-color: var(--ma-info-color-dark);
       background-color: transparent; }
-      button.info.outline:hover {
+      button.info.outline:hover:not(:disabled) {
         color: var(--ma-button-text-color);
         border-color: var(--ma-info-color);
         background-color: var(--ma-info-color); }
@@ -117,8 +133,12 @@ button {
   button.success {
     color: var(--ma-button-text-color);
     background-color: var(--ma-success-color);
-    border-color: transparent; }
-    button.success:hover {
+    border-color: transparent;
+    transition: opacity var(--ma-slow-animation) ease-out; }
+    button.success:disabled {
+      cursor: not-allowed;
+      opacity: 0.65; }
+    button.success:hover:not(:disabled) {
       background-color: var(--ma-success-color-dark); }
     button.success:active {
       background-color: var(--ma-success-color-darker); }
@@ -127,7 +147,7 @@ button {
       border: 1px solid var(--ma-success-color-dark);
       border-color: var(--ma-success-color-dark);
       background-color: transparent; }
-      button.success.outline:hover {
+      button.success.outline:hover:not(:disabled) {
         color: var(--ma-button-text-color);
         border-color: var(--ma-success-color);
         background-color: var(--ma-success-color); }
@@ -138,8 +158,12 @@ button {
   button.warning {
     color: var(--ma-button-text-color);
     background-color: var(--ma-warning-color);
-    border-color: transparent; }
-    button.warning:hover {
+    border-color: transparent;
+    transition: opacity var(--ma-slow-animation) ease-out; }
+    button.warning:disabled {
+      cursor: not-allowed;
+      opacity: 0.65; }
+    button.warning:hover:not(:disabled) {
       background-color: var(--ma-warning-color-dark); }
     button.warning:active {
       background-color: var(--ma-warning-color-darker); }
@@ -148,7 +172,7 @@ button {
       border: 1px solid var(--ma-warning-color-dark);
       border-color: var(--ma-warning-color-dark);
       background-color: transparent; }
-      button.warning.outline:hover {
+      button.warning.outline:hover:not(:disabled) {
         color: var(--ma-button-text-color);
         border-color: var(--ma-warning-color);
         background-color: var(--ma-warning-color); }
@@ -160,7 +184,7 @@ button {
     border: none;
     color: var(--ma-primary-color-dark);
     background-color: transparent; }
-    button.link:hover {
+    button.link:hover:not(:disabled) {
       color: var(--ma-primary-color-darker);
       background-color: var(--ma-background-color); }
     button.link:active {

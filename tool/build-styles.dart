@@ -5,13 +5,13 @@ import 'package:path/path.dart' as path;
 /// Build stylesheets for this package.
 main (List<String> rawArgs) {
     ArgResults args = _parseArgs(rawArgs);
-    buildComponents(args['debug']);
-    buildThemes(args['debug']);
+    buildComponentStyles(args['debug']);
+    buildSharedStyles(args['debug']);
 }
 
 /// Build a stylesheet for each component.
-buildComponents(bool debug) {
-    print('Building components…');
+buildComponentStyles(bool debug) {
+    print('Building component stylesheets…');
     var componentPath = _getPath('lib/components');
     var componentDir = new Directory(componentPath);
     var includeDir = _getPath('lib');
@@ -63,8 +63,8 @@ buildComponents(bool debug) {
 }
 
 /// Build a stylesheet for each theme.
-buildThemes(bool debug) {
-    print('Building themes…');
+buildSharedStyles(bool debug) {
+    print('Building shared stylesheets…');
     var themeDir = new Directory(_getPath('lib/modular-admin'));
     var cssDir = _getPath('lib/css');
     var includeDir = _getPath('lib');
@@ -78,8 +78,7 @@ buildThemes(bool debug) {
             continue;
         }
 
-        // TODO temporary hack: build "modular-admin" theme only
-        if (basename.startsWith('modular-admin')) sourcePaths.add(entity.path);
+        sourcePaths.add(entity.path);
     }
 
     sourcePaths.sort();

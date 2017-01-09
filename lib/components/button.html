@@ -1,4 +1,5 @@
-<button type='button'
+<button [attr.type]='submit ? "submit" : "button"'
+        [disabled]='disabled'
         class='{{type}} {{size}}'
         [class.block]='block'
         [class.outline]='outline'

@@ -20,7 +20,7 @@ ma-app {
 
   // Animation
   --ma-fast-animation: 0.3s;
-  --ma-slow-animation: 1.0s;
+  --ma-slow-animation: 0.8s;
 
   // Layout
   @include media-breakpoint-only(xs) {--ma-gutter-width: 10px;}

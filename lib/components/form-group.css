@@ -1,0 +1,75 @@
+/*
+ * Standard import for component stylesheets. This provides access
+ * too all Bootstrap and Modular Admin variables and mixins.
+ */
+/*
+ * Button mixins.
+ *
+ * This is adapted from Bootstrap to work with CSS custom properties. Namely, we
+ * need to avoid lighten() and darken().
+ */
+/*
+ * Color mixin.
+ *
+ * Create palette of lighter/darker colors from a base color.
+ */
+/**
+ * Column mixin.
+ */
+:host {
+  display: block;
+  margin-bottom: 1em; }
+  :host div.input {
+    position: relative; }
+    :host div.input fa {
+      position: absolute;
+      right: 0.5em;
+      bottom: 0.5em; }
+  :host div.validation {
+    font-size: 0.8em;
+    padding-left: 0.2em; }
+  :host input, :host textarea {
+    outline: none;
+    display: block;
+    width: 100%;
+    line-height: 1.25;
+    padding: 0.5em 0.75em;
+    color: var(--ma-text-color);
+    background-color: white;
+    background-image: none;
+    background-clip: padding-box;
+    box-shadow: none;
+    border: 1px solid var(--ma-divider-color);
+    border-radius: 0; }
+    :host input.underlined, :host textarea.underlined {
+      border: none;
+      border-bottom: 1px solid var(--ma-divider-color); }
+    :host input:disabled, :host textarea:disabled {
+      cursor: not-allowed;
+      background-color: var(--ma-background-color);
+      opacity: 1; }
+    :host input[readonly], :host textarea[readonly] {
+      border: none;
+      cursor: text; }
+  :host label {
+    display: inline-block;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    cursor: pointer; }
+  :host textarea {
+    resize: vertical;
+    min-height: 5em; }
+    :host textarea.underlined {
+      border-top: 1px solid var(--ma-divider-color); }
+
+:host(.danger) input {
+  border-color: var(--ma-danger-color-dark); }
+
+:host(.danger) div.input fa, :host(.danger) div.validation {
+  color: var(--ma-danger-color-dark); }
+
+:host(.success) input {
+  border-color: var(--ma-success-color-dark); }
+
+:host(.success) div.input fa, :host(.success) div.validation {
+  color: var(--ma-success-color-dark); }

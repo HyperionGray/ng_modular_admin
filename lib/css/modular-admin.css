@@ -2114,7 +2114,7 @@ ma-app {
   --ma-background-color: #f0f3f6;
   --ma-divider-color: #d7dde4;
   --ma-fast-animation: 0.3s;
-  --ma-slow-animation: 1.0s;
+  --ma-slow-animation: 0.8s;
   --ma-code-color: #bd4147;
   --ma-code-background-color: #f7f7f9;
   --ma-code-max-height: 340px;
@@ -2230,7 +2230,6 @@ body {
   padding: 0;
   margin: 0;
   font-family: 'Open Sans', sans-serif;
-  color: var(--ma-text-color);
   overflow-x: hidden; }
 
 a {
@@ -2287,6 +2286,9 @@ input, ma-top-nav input {
   .columns-xl-3 {
     column-count: 3;
     column-gap: var(--ma-gutter-width); } }
+
+ma-app {
+  color: var(--ma-text-color); }
 
 ma-top-nav input {
   color: var(--ma-text-color);

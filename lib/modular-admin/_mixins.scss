@@ -8,8 +8,14 @@
   color: $textColor;
   background-color: var(--ma-#{$paletteName}-color);
   border-color: transparent;
+  transition: opacity var(--ma-slow-animation) ease-out;
 
-  &:hover {
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+
+  &:hover:not(:disabled) {
     background-color: var(--ma-#{$paletteName}-color-dark);
   }
 
@@ -23,7 +29,7 @@
     border-color: var(--ma-#{$paletteName}-color-dark);
     background-color: transparent;
 
-    &:hover {
+    &:hover:not(:disabled) {
       color: $textColor;
       border-color: var(--ma-#{$paletteName}-color);
       background-color: var(--ma-#{$paletteName}-color);

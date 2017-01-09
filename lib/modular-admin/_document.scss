@@ -11,7 +11,6 @@ body {
 	padding: 0;
 	margin: 0;
 	font-family: 'Open Sans', sans-serif;
-	color: var(--ma-text-color);
 	overflow-x: hidden;
 }
 
@@ -52,6 +51,10 @@ input {
 @include ma-columns(3, lg);
 @include ma-columns(2, xl);
 @include ma-columns(3, xl);
+
+ma-app {
+	color: var(--ma-text-color);
+}
 
 ma-top-nav input {
   @extend input;

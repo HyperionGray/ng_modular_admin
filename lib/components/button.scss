@@ -44,7 +44,7 @@ button {
     color: var(--ma-primary-color-dark);
     background-color: transparent;
 
-    &:hover {
+    &:hover:not(:disabled) {
       color: var(--ma-primary-color-darker);
       background-color: var(--ma-background-color);
     }

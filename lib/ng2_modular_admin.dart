@@ -14,6 +14,8 @@ import 'components/content.dart' show MaContent;
 export 'components/content.dart' show MaContent;
 import 'components/footer.dart' show MaFooter;
 export 'components/footer.dart' show MaFooter;
+import 'components/form-group.dart' show MaFormGroup;
+export 'components/form-group.dart' show MaFormGroup;
 import 'components/logo.dart' show MaLogo;
 export 'components/logo.dart' show MaLogo;
 import 'components/overlay.dart' show MaOverlay;
@@ -46,6 +48,7 @@ const List<dynamic> MA_DIRECTIVES = const [
     MaCard,
     MaContent,
     MaFooter,
+    MaFormGroup,
     MaLogo,
     MaOverlay,
     MaPager,
