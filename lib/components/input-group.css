@@ -52,7 +52,7 @@
       border: none;
       cursor: text; }
   :host label {
-    display: inline-block;
+    display: block;
     font-weight: 600;
     margin-bottom: 0.5em;
     cursor: pointer; }

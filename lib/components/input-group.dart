@@ -7,12 +7,12 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
 
 /// A container for a label and an input.
 @Component(
-    selector: 'ma-form-group',
-    templateUrl: 'form-group.html',
-    styleUrls: const ['form-group.css'],
-    directives: const [FORM_DIRECTIVES, FontAwesomeIconComponent]
+    selector: 'ma-input-group',
+    templateUrl: 'input-group.html',
+    styleUrls: const ['input-group.css'],
+    directives: const [FontAwesomeIconComponent]
 )
-class MaFormGroup implements AfterContentInit, DoCheck {
+class MaInputGroup implements AfterContentInit, DoCheck {
     /// A form control for validating the element contained herein.
     @Input()
     Control control;
@@ -28,45 +28,22 @@ class MaFormGroup implements AfterContentInit, DoCheck {
     /// Reference to the host element.
     ElementRef host;
 
-    /// Reference to the label element.
-    LabelElement label;
-
     /// Name of icon to display.
     String iconName;
 
-    /// Reference to the input element, e.g. <input>, <textarea>, etc.
-    HtmlElement input;
-
     /// Constructor.
-    MaFormGroup(this.host);
+    MaInputGroup(this.host);
 
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {
-        // Wire the label and input together (if the user didn't do it).
-        this.label = this.host.nativeElement.querySelector('label');
-        this.input = this.host.nativeElement.querySelector(
-            'input,textarea'
+        var inputs = this.host.nativeElement.querySelectorAll(
+            'input[type=text],input[type=password],textarea'
         );
 
-        if (this.label == null) {
-            var msg = '<ma-form-group> requires a label';
+        if (inputs.length != 1) {
+            var msg = '<ma-input-group> requires exactly one'
+                      ' text/password/textarea input';
             throw new Exception(msg);
-        }
-
-        if (this.input == null) {
-            var msg = '<ma-form-group> requires an input/textarea';
-            throw new Exception(msg);
-        }
-
-        var inputId = this.input.attributes['id'];
-
-        if (inputId == null) {
-            inputId = 'ma-' + this._randomName(8);
-            this.input.attributes['id'] = inputId;
-        }
-
-        if (this.label.attributes['for'] == null) {
-            this.label.attributes['for'] = inputId;
         }
     }
 

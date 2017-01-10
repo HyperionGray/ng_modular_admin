@@ -10,18 +10,22 @@ import 'components/button-group.dart' show MaButtonGroup;
 export 'components/button-group.dart' show MaButtonGroup;
 import 'components/card.dart' show MaCard;
 export 'components/card.dart' show MaCard;
+import 'components/checkbox-group.dart' show MaCheckboxGroup;
+export 'components/checkbox-group.dart' show MaCheckboxGroup;
 import 'components/content.dart' show MaContent;
 export 'components/content.dart' show MaContent;
 import 'components/footer.dart' show MaFooter;
 export 'components/footer.dart' show MaFooter;
-import 'components/form-group.dart' show MaFormGroup;
-export 'components/form-group.dart' show MaFormGroup;
+import 'components/input-group.dart' show MaInputGroup;
+export 'components/input-group.dart' show MaInputGroup;
 import 'components/logo.dart' show MaLogo;
 export 'components/logo.dart' show MaLogo;
 import 'components/overlay.dart' show MaOverlay;
 export 'components/overlay.dart' show MaOverlay;
 import 'components/pager.dart' show MaPager;
 export 'components/pager.dart' show MaPager;
+import 'components/radio-group.dart' show MaRadioGroup;
+export 'components/radio-group.dart' show MaRadioGroup;
 import 'components/side-nav.dart' show MaSideNav;
 export 'components/side-nav.dart' show MaSideNav;
 import 'components/side-nav-header.dart' show MaSideNavHeader;
@@ -46,12 +50,14 @@ const List<dynamic> MA_DIRECTIVES = const [
     MaButton,
     MaButtonGroup,
     MaCard,
+    MaCheckboxGroup,
     MaContent,
     MaFooter,
-    MaFormGroup,
+    MaInputGroup,
     MaLogo,
     MaOverlay,
     MaPager,
+    MaRadioGroup,
     MaSideNav,
     MaSideNavHeader,
     MaSideNavItem,
