@@ -4,6 +4,8 @@ import 'dart:math';
 import 'package:angular2/core.dart';
 import 'package:ng2_fontawesome/ng2_fontawesome.dart';
 
+import 'package:ng2_modular_admin/util.dart';
+
 /// A container for a label and an input.
 @Component(
     selector: 'ma-radio-group',
@@ -27,15 +29,14 @@ class MaRadioGroup implements AfterContentInit {
     void ngAfterContentInit() {
         // Wire the labels and radios together (if the user didn't do it).
         var hostEl = this.host.nativeElement;
-        var labels = hostEl.querySelectorAll('label');
         var inputs = hostEl.querySelectorAll('input[type=radio]');
 
-        if (labels.length != inputs.length + 1) {
+        if (inputs.length == 0) {
             var msg = '<ma-radio-group> requires at least 1 radio button';
             throw new Exception(msg);
         }
 
-        var groupName = 'ma-name-' + _randomName(8);
+        var groupName = 'ma-name-' + randomElementName(8);
 
         for (var input in inputs) {
             if (input.attributes['name'] == null) {
@@ -47,12 +48,5 @@ class MaRadioGroup implements AfterContentInit {
                 input.parent.classes.add('disabled');
             }
         }
-    }
-
-    /// Create a random name for an input element.
-    String _randomName(int length) {
-        var rand = new Random();
-        var chars = new List.generate(length, (i) => rand.nextInt(26) + 97);
-        return new String.fromCharCodes(chars);
     }
 }

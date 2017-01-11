@@ -52,13 +52,6 @@ class MaInputGroup implements AfterContentInit, DoCheck {
         this._updateValidity();
     }
 
-    /// Create a random name for an input element.
-    String _randomName(int length) {
-        var rand = new Random();
-        var chars = new List.generate(length, (i) => rand.nextInt(26) + 97);
-        return new String.fromCharCodes(chars);
-    }
-
     /// Update validity properties from control status.
     void _updateValidity () {
         this.iconName = null;

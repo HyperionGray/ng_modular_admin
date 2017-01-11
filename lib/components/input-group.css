@@ -40,7 +40,8 @@
     background-clip: padding-box;
     box-shadow: none;
     border: 1px solid var(--ma-divider-color);
-    border-radius: 0; }
+    border-radius: 0;
+    font-weight: 400; }
     :host input.underlined, :host textarea.underlined {
       border: none;
       border-bottom: 1px solid var(--ma-divider-color); }
