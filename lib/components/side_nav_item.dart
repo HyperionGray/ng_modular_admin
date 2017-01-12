@@ -10,7 +10,7 @@ import 'package:angular2/router.dart';
 )
 class MaSideNavItem {
     @Input()
-    List routerLink;
+    List route;
 
     @HostBinding('class.inside-menu')
     bool insideMenu = false;
