@@ -8,8 +8,8 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
 /// A container for a label and an input.
 @Component(
     selector: 'ma-input-group',
-    templateUrl: 'input-group.html',
-    styleUrls: const ['input-group.css'],
+    templateUrl: 'input_group.html',
+    styleUrls: const ['input_group.css'],
     directives: const [FaIcon]
 )
 class MaInputGroup implements AfterContentInit, DoCheck {

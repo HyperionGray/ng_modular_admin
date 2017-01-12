@@ -4,14 +4,14 @@ import 'dart:html';
 import 'package:angular2/core.dart';
 import 'package:ng2_fontawesome/ng2_fontawesome.dart';
 
-import 'package:ng2_modular_admin/components/side-nav-menu.dart';
-import 'package:ng2_modular_admin/components/side-nav-item.dart';
+import 'package:ng2_modular_admin/components/side_nav_menu.dart';
+import 'package:ng2_modular_admin/components/side_nav_item.dart';
 
 /// Header for a side nav menu.
 @Component(
     selector: 'ma-side-nav-menu-header',
-    templateUrl: 'side-nav-menu-header.html',
-    styleUrls: const ['side-nav-menu-header.css'],
+    templateUrl: 'side_nav_menu_header.html',
+    styleUrls: const ['side_nav_menu_header.css'],
     directives: const [FaIcon]
 )
 class MaSideNavMenuHeader {

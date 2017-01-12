@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:angular2/core.dart';
 
-import 'package:ng2_modular_admin/components/side-nav-menu.dart';
+import 'package:ng2_modular_admin/components/side_nav_menu.dart';
 
 /// A service that keeps track of the sidenav's state.
 @Injectable()

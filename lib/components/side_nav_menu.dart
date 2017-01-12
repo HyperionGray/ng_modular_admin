@@ -3,15 +3,15 @@ import 'dart:html';
 
 import 'package:angular2/core.dart';
 
-import 'package:ng2_modular_admin/components/side-nav-item.dart';
-import 'package:ng2_modular_admin/components/side-nav-menu-header.dart';
-import 'package:ng2_modular_admin/services/side-nav.dart';
+import 'package:ng2_modular_admin/components/side_nav_item.dart';
+import 'package:ng2_modular_admin/components/side_nav_menu_header.dart';
+import 'package:ng2_modular_admin/services/side_nav.dart';
 
 /// A menu in the sidenav.
 @Component(
     selector: 'ma-side-nav-menu',
-    templateUrl: 'side-nav-menu.html',
-    styleUrls: const ['side-nav-menu.css']
+    templateUrl: 'side_nav_menu.html',
+    styleUrls: const ['side_nav_menu.css']
 )
 class MaSideNavMenu implements AfterContentInit {
     @ContentChild(MaSideNavMenuHeader)

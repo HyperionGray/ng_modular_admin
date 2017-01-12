@@ -3,9 +3,10 @@ import 'dart:html';
 
 import 'package:angular2/core.dart';
 import 'package:angular2/router.dart';
+
 import 'package:ng2_modular_admin/components/footer.dart';
-import 'package:ng2_modular_admin/components/side-nav.dart';
-import 'package:ng2_modular_admin/components/top-nav.dart';
+import 'package:ng2_modular_admin/components/side_nav.dart';
+import 'package:ng2_modular_admin/components/top_nav.dart';
 
 /// The top-level component for a Modular Admin application.
 @Component(

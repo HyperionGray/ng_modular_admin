@@ -3,8 +3,8 @@ import 'package:angular2/core.dart';
 /// Side navigation component.
 @Component(
     selector: 'ma-side-nav',
-    templateUrl: 'side-nav.html',
-    styleUrls: const ['side-nav.css']
+    templateUrl: 'side_nav.html',
+    styleUrls: const ['side_nav.css']
 )
 class MaSideNav {
     /// Work-around for :host-context() bug.
