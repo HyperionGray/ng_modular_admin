@@ -7,7 +7,7 @@
   div.input {
     position: relative;
 
-    fa {
+    fa.validation {
       position: absolute;
       right: 0.5em;
       bottom: 0.5em;
@@ -57,6 +57,21 @@
 		margin-bottom: 0.5em;
     cursor: pointer;
 	}
+
+  span.ma-add-ons {
+    display: flex;
+
+    input {
+      flex-grow: 1;
+    }
+
+    span {
+      background-color: var(--ma-divider-color);
+      padding: 0.5em 0.75em;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
 
   textarea {
     resize: vertical;

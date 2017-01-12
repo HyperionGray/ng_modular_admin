@@ -1,6 +1,9 @@
 <div class='input'>
   <ng-content></ng-content>
-  <fa *ngIf='iconName != null' [name]='iconName' [fw]='true'></fa>
+  <fa *ngIf='iconName != null'
+      class='validation'
+      [name]='iconName'
+      [fw]='true'></fa>
 </div>
 <div *ngIf='danger' class='validation'>
   <span *ngFor='let error of control.errors.keys'>{{error}} </span>
