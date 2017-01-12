@@ -6,7 +6,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'tag.html',
     styleUrls: const ['tag.css']
 )
-class MaTag {
+class Tag {
     /// The type of tag (primary, secondary, success, info, warning, or danger).
     /// Default: primary
     @Input()

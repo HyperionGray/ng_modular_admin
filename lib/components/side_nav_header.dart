@@ -6,4 +6,4 @@ import 'package:angular2/core.dart';
     templateUrl: 'side_nav_header.html',
     styleUrls: const ['side_nav_header.css']
 )
-class MaSideNavHeader {}
+class SideNavHeader {}

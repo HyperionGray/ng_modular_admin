@@ -8,4 +8,4 @@ import 'package:angular2/core.dart';
     templateUrl: 'content.html',
     styleUrls: const ['content.css']
 )
-class MaContent {}
+class Content {}

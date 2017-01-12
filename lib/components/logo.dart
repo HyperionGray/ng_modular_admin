@@ -9,4 +9,4 @@ import 'package:angular2/core.dart';
     templateUrl: 'logo.html',
     styleUrls: const ['logo.css']
 )
-class MaLogo {}
+class Logo {}

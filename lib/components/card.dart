@@ -6,7 +6,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'card.html',
     styleUrls: const ['card.css']
 )
-class MaCard {
+class Card {
     /// The title of this card  (optional)
     @Input('title-text')
     String title = '';

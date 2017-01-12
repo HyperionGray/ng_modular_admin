@@ -6,16 +6,16 @@ import 'package:ng2_modular_admin/components/side_nav_menu.dart';
 
 /// A service that keeps track of the sidenav's state.
 @Injectable()
-class MaSideNavService {
-    List<MaSideNavMenu> menus;
+class SideNavService {
+    List<SideNavMenu> menus;
 
     /// Constructor.
-    MaSideNavService() {
-        this.menus = new List<MaSideNavMenu>();
+    SideNavService() {
+        this.menus = new List<SideNavMenu>();
     }
 
     /// Close all menus except the specified menu.
-    void closeAllExcept(MaSideNavMenu openMenu) {
+    void closeAllExcept(SideNavMenu openMenu) {
         for (var menu in this.menus) {
             if (!identical(menu, openMenu)) {
                 menu.close();
@@ -24,7 +24,7 @@ class MaSideNavService {
     }
 
     /// Register a menu with the service.
-    void register(MaSideNavMenu menu) {
+    void register(SideNavMenu menu) {
         this.menus.add(menu);
     }
 }

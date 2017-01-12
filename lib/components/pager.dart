@@ -14,7 +14,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     styleUrls: const ['pager.css'],
     directives: const [FaIcon]
 )
-class MaPager implements OnInit, OnChanges {
+class Pager implements OnInit, OnChanges {
     /// If true, the pager is automatically hidden when it only has one page.
     @Input()
     bool autohide = true;
@@ -65,7 +65,7 @@ class MaPager implements OnInit, OnChanges {
     List<Page> pages;
 
     /// Constructor
-    MaPager () {
+    Pager () {
         this.selectPage = new EventEmitter<Page>();
     }
 

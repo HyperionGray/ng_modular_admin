@@ -14,7 +14,7 @@ import 'package:ng2_modular_admin/components/side_nav_item.dart';
     styleUrls: const ['side_nav_menu_header.css'],
     directives: const [FaIcon]
 )
-class MaSideNavMenuHeader {
+class SideNavMenuHeader {
     /// This property is controlled by the parent component.
     bool isOpen;
 
@@ -24,7 +24,7 @@ class MaSideNavMenuHeader {
     StreamController<MouseEvent> _onClick;
 
     /// Constructor.
-    MaSideNavMenuHeader() {
+    SideNavMenuHeader() {
         this._onClick = new StreamController<MouseEvent>.broadcast();
         this.onClick = this._onClick.stream;
     }

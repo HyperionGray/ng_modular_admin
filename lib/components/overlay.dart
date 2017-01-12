@@ -11,7 +11,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'overlay.html',
     styleUrls: const ['overlay.css']
 )
-class MaOverlay implements OnInit, OnDestroy {
+class Overlay implements OnInit, OnDestroy {
     /// A work around for a bug in :host-context().
     @HostBinding('class.is-overlay')
     bool isOverlay = true;

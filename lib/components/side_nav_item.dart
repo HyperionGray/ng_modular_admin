@@ -8,7 +8,7 @@ import 'package:angular2/router.dart';
     styleUrls: const ['side_nav_item.css'],
     directives: const [ROUTER_DIRECTIVES]
 )
-class MaSideNavItem {
+class SideNavItem {
     @Input()
     List route;
 

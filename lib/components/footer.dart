@@ -6,7 +6,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'footer.html',
     styleUrls: const ['footer.css']
 )
-class MaFooter {
+class Footer {
     /// If true, the footer will have fixed positioning.
     @HostBinding('class.fixed')
     @Input()

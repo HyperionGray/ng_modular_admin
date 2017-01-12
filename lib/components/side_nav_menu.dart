@@ -13,12 +13,12 @@ import 'package:ng2_modular_admin/services/side_nav.dart';
     templateUrl: 'side_nav_menu.html',
     styleUrls: const ['side_nav_menu.css']
 )
-class MaSideNavMenu implements AfterContentInit {
-    @ContentChild(MaSideNavMenuHeader)
-    MaSideNavMenuHeader header;
+class SideNavMenu implements AfterContentInit {
+    @ContentChild(SideNavMenuHeader)
+    SideNavMenuHeader header;
 
-    @ContentChildren(MaSideNavItem)
-    List<MaSideNavItem> items;
+    @ContentChildren(SideNavItem)
+    List<SideNavItem> items;
 
     @HostBinding('class.open')
     bool isOpen = false;
@@ -29,10 +29,10 @@ class MaSideNavMenu implements AfterContentInit {
     DivElement _div;
     ElementRef _element;
     num _height;
-    MaSideNavService _sideNav;
+    SideNavService _sideNav;
 
     /// Constructor.
-    MaSideNavMenu(this._element, this._sideNav) {
+    SideNavMenu(this._element, this._sideNav) {
         this._sideNav.register(this);
     }
 

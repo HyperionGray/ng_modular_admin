@@ -13,7 +13,7 @@ import 'package:ng2_modular_admin/util.dart';
     styleUrls: const ['radio_group.css'],
     directives: const [FaIcon]
 )
-class MaRadioGroup implements AfterContentInit {
+class RadioGroup implements AfterContentInit {
     /// If true, the radio buttons and labels are displayed inline.
     @HostBinding('class.inline')
     @Input()
@@ -23,7 +23,7 @@ class MaRadioGroup implements AfterContentInit {
     ElementRef host;
 
     /// Constructor.
-    MaRadioGroup(this.host);
+    RadioGroup(this.host);
 
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {

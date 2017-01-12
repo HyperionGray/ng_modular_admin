@@ -6,7 +6,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'side_nav.html',
     styleUrls: const ['side_nav.css']
 )
-class MaSideNav {
+class SideNav {
     /// Work-around for :host-context() bug.
     @HostBinding('class.is-side-nav')
     bool isSideNav = true;

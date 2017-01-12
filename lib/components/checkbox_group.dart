@@ -11,7 +11,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     styleUrls: const ['checkbox_group.css'],
     directives: const [FaIcon]
 )
-class MaCheckboxGroup implements AfterContentInit {
+class CheckboxGroup implements AfterContentInit {
     /// If true, the radio buttons and labels are displayed inline.
     @HostBinding('class.inline')
     @Input()
@@ -21,7 +21,7 @@ class MaCheckboxGroup implements AfterContentInit {
     ElementRef host;
 
     /// Constructor.
-    MaCheckboxGroup(this.host);
+    CheckboxGroup(this.host);
 
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {

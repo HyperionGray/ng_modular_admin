@@ -14,10 +14,10 @@ import 'package:ng2_modular_admin/components/top_nav.dart';
     templateUrl: 'app.html',
     styleUrls: const ['app.css']
 )
-class MaApp implements AfterViewInit {
+class App implements AfterViewInit {
     /// A reference to the top navigation (if there is one).
-    @ContentChildren(MaTopNav)
-    QueryList<MaTopNav> topNav;
+    @ContentChildren(TopNav)
+    QueryList<TopNav> topNav;
 
     /// True if this application has a top nav.
     @HostBinding('class.has-top-nav')
@@ -25,8 +25,8 @@ class MaApp implements AfterViewInit {
     bool hasTopNav = false;
 
     /// A reference to the side navigation (if there is one).
-    @ContentChildren(MaSideNav)
-    QueryList<MaSideNav> sideNav;
+    @ContentChildren(SideNav)
+    QueryList<SideNav> sideNav;
 
     /// True if this application has a side nav.
     @HostBinding('class.has-side-nav')
@@ -34,8 +34,8 @@ class MaApp implements AfterViewInit {
     bool hasSideNav = false;
 
     /// A reference to the footer (if there is one).
-    @ContentChildren(MaFooter)
-    QueryList<MaFooter> footer;
+    @ContentChildren(Footer)
+    QueryList<Footer> footer;
 
     /// True if this application has a footer.
     @HostBinding('class.has-footer')
@@ -43,7 +43,7 @@ class MaApp implements AfterViewInit {
     bool hasFooter = false;
 
     /// Constructor
-    MaApp(Router router) {
+    App(Router router) {
         var rootRouter = router.root;
 
         rootRouter.subscribe((nextUrl) {
@@ -51,7 +51,7 @@ class MaApp implements AfterViewInit {
             // changes, so we do that explictly:
             window.scrollTo(0, 0);
 
-            // Make sure the current route's nav item is visible in the side
+            // ke sure the current route's nav item is visible in the side
             // nav.
             rootRouter.recognize(nextUrl).then((instruction) {
                 // window.console.log(instruction.urlPath);

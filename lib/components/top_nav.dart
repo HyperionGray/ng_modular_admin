@@ -6,7 +6,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'top_nav.html',
     styleUrls: const ['top_nav.css']
 )
-class MaTopNav {
+class TopNav {
     /// Work around for a bug in angular2 (it doesn't support
     /// `:host-context(element)`).
     @HostBinding('class.is-top-nav')

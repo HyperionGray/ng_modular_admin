@@ -6,7 +6,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'title.html',
     styleUrls: const ['title.css']
 )
-class MaTitle {
+class Title {
     /// A title to display.
     @Input('title-text')
     String title = 'Title';

@@ -7,7 +7,7 @@ import 'package:angular2/core.dart';
     templateUrl: 'button.html',
     styleUrls: const ['button.css']
 )
-class MaButton {
+class Button {
     /// If true, the button becomes a 100% width block element.
     @Input()
     bool block = false;

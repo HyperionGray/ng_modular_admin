@@ -12,7 +12,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     styleUrls: const ['input_group.css'],
     directives: const [FaIcon]
 )
-class MaInputGroup implements AfterContentInit, DoCheck {
+class InputGroup implements AfterContentInit, DoCheck {
     /// A form control for validating the element contained herein.
     @Input()
     Control control;
@@ -37,7 +37,7 @@ class MaInputGroup implements AfterContentInit, DoCheck {
     String iconName;
 
     /// Constructor.
-    MaInputGroup(this.host);
+    InputGroup(this.host);
 
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {
@@ -75,11 +75,3 @@ class MaInputGroup implements AfterContentInit, DoCheck {
         }
     }
 }
-
-/// A container for an input add-on.
-@Component(
-    selector: 'ma-input-add-on',
-    template: '<ng-content></ng-content>',
-    styles: const [':host {display: inline-block;}']
-)
-class MaInputAddOn {}
