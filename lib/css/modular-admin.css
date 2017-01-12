@@ -2331,6 +2331,9 @@ ma-top-nav input {
   outline-offset: -2px;
   font: inherit; }
 
+p:last-child {
+  margin-bottom: 0; }
+
 pre.code {
   color: var(--ma-code-color);
   background-color: var(--ma-code-background-color);
