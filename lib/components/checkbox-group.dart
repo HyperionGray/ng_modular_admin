@@ -9,7 +9,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     selector: 'ma-checkbox-group',
     templateUrl: 'checkbox-group.html',
     styleUrls: const ['checkbox-group.css'],
-    directives: const [FontAwesomeIconComponent]
+    directives: const [FaIcon]
 )
 class MaCheckboxGroup implements AfterContentInit {
     /// If true, the radio buttons and labels are displayed inline.

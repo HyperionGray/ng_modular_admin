@@ -10,7 +10,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     selector: 'ma-input-group',
     templateUrl: 'input-group.html',
     styleUrls: const ['input-group.css'],
-    directives: const [FontAwesomeIconComponent]
+    directives: const [FaIcon]
 )
 class MaInputGroup implements AfterContentInit, DoCheck {
     /// A form control for validating the element contained herein.

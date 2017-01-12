@@ -11,7 +11,7 @@ import 'package:ng2_modular_admin/util.dart';
     selector: 'ma-radio-group',
     templateUrl: 'radio-group.html',
     styleUrls: const ['radio-group.css'],
-    directives: const [FontAwesomeIconComponent]
+    directives: const [FaIcon]
 )
 class MaRadioGroup implements AfterContentInit {
     /// If true, the radio buttons and labels are displayed inline.

@@ -12,7 +12,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     selector: 'ma-pager',
     templateUrl: 'pager.html',
     styleUrls: const ['pager.css'],
-    directives: const [FontAwesomeIconComponent]
+    directives: const [FaIcon]
 )
 class MaPager implements OnInit, OnChanges {
     /// If true, the pager is automatically hidden when it only has one page.

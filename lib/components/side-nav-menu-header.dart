@@ -12,7 +12,7 @@ import 'package:ng2_modular_admin/components/side-nav-item.dart';
     selector: 'ma-side-nav-menu-header',
     templateUrl: 'side-nav-menu-header.html',
     styleUrls: const ['side-nav-menu-header.css'],
-    directives: const [FontAwesomeIconComponent]
+    directives: const [FaIcon]
 )
 class MaSideNavMenuHeader {
     /// This property is controlled by the parent component.
