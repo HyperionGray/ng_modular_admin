@@ -3,12 +3,12 @@ version: 0.0.1
 description: Modular Admin for Angular2Dart
 authors:
   - Mark E. Haase <mehaase@gmail.com>
-homepage: https://github.com/mehaase/ng2_modular_admin
+homepage: https://gitlab.com/hyperion-gray/ng2_modular_admin
 environment:
   sdk: '>=1.12.0 <2.0.0'
 dependencies:
   angular2: '^2.0.0'
-  ng2_fontawesome: any
+  ng2_fontawesome: '^4.7.0'
 dev_dependencies:
   args: '^0.13.0'
   path: '^1.4.0'
