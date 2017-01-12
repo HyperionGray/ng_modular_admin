@@ -69,6 +69,11 @@
 :host(.danger) div.input fa, :host(.danger) div.validation {
   color: var(--ma-danger-color-dark); }
 
+:host(.inline) input, :host(.inline) textarea {
+  display: inline-block;
+  width: 50%;
+  margin-left: 0.2em; }
+
 :host(.success) input {
   border-color: var(--ma-success-color-dark); }
 

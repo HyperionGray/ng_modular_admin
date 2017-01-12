@@ -23,16 +23,12 @@
   border-radius: 0;
   border: none;
   padding: var(--ma-card-padding);
-  margin-bottom: var(--ma-gutter-width); }
+  height: 100%;
+  width: 100%; }
   :host .title {
     margin-top: 0;
     font-size: 1.4rem;
     margin-bottom: 20px; }
-
-:host-context(.row) {
-  margin-left: calc(var(--ma-gutter-width) / 2);
-  margin-right: calc(var(--ma-gutter-width) / 2);
-  margin-top: 0; }
 
 :host-context(.columns-sm-2), :host-context(.columns-sm-3),
 :host-context(.columns-md-2), :host-context(.columns-md-3),

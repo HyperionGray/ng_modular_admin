@@ -78,6 +78,14 @@
   }
 }
 
+:host(.inline) {
+  input, textarea {
+    display: inline-block;
+    width: 50%;
+    margin-left: 0.2em;
+  }
+}
+
 :host(.success) {
   input {
     border-color: var(--ma-success-color-dark);

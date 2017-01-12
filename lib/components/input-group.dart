@@ -17,13 +17,18 @@ class MaInputGroup implements AfterContentInit, DoCheck {
     @Input()
     Control control;
 
-    /// True if the input passes validation after dirtying.
-    @HostBinding('class.success')
-    bool success = false;
-
     /// True if the input fails validation after dirtying.
     @HostBinding('class.danger')
     bool danger = false;
+
+    /// If true, display the input inline with the label.
+    @HostBinding('class.inline')
+    @Input()
+    bool inline = false;
+
+    /// True if the input passes validation after dirtying.
+    @HostBinding('class.success')
+    bool success = false;
 
     /// Reference to the host element.
     ElementRef host;
@@ -43,6 +48,7 @@ class MaInputGroup implements AfterContentInit, DoCheck {
         if (inputs.length != 1) {
             var msg = '<ma-input-group> requires exactly one'
                       ' text/password/textarea input';
+            window.console.log(this.host.nativeElement);
             throw new Exception(msg);
         }
     }
@@ -69,3 +75,11 @@ class MaInputGroup implements AfterContentInit, DoCheck {
         }
     }
 }
+
+/// A container for an input add-on.
+@Component(
+    selector: 'ma-input-add-on',
+    template: '<ng-content></ng-content>',
+    styles: const [':host {display: inline-block;}']
+)
+class MaInputAddOn {}

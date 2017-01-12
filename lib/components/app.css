@@ -25,7 +25,7 @@
   overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--ma-background-color);
-  transition: left 0.3s ease, padding-left 0.3s ease; }
+  transition: padding-left var(--ma-fast-animation) ease; }
 
 :host(.has-side-nav) {
   padding-left: var(--ma-side-nav-width); }

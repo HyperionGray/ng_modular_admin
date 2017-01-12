@@ -33,6 +33,7 @@ class MaRadioGroup implements AfterContentInit {
 
         if (inputs.length == 0) {
             var msg = '<ma-radio-group> requires at least 1 radio button';
+            window.console.log(this.host.nativeElement);
             throw new Exception(msg);
         }
 

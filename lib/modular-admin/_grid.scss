@@ -1,0 +1,66 @@
+/**
+ * Enhancements to grid system.
+ */
+
+// Turn each column into a vertical flex container.
+//
+// The use of @extend leads to an efficient stylesheet where all of the column
+// classes are grouped together in one declaration.
+%col {
+	display: flex;
+	flex-direction: column;
+
+	// Subtract vertical margins to vertically center.
+	margin-top: calc(0px - var(--ma-gutter-width) / 2);
+  margin-bottom: calc(0px - var(--ma-gutter-width) / 2);
+
+	// Remove side margin.
+	margin-left: 0;
+	margin-right: 0;
+
+	// Remove side padding:
+	padding-left: 0;
+	padding-right: 0;
+
+	// Direct children are flex items and should have margins set to create
+	// the gutter.
+	& > * {
+		margin-top: calc(var(--ma-gutter-width) / 2) !important;
+		margin-bottom: calc(var(--ma-gutter-width) / 2) !important;
+	}
+}
+
+.col {
+  @extend %col;
+}
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .col-#{$breakpoint} {
+    @extend %col;
+  }
+
+  @for $i from 1 through $grid-columns {
+    .col-#{$breakpoint}-#{$i} {
+      @extend %col;
+    }
+  }
+}
+
+// Modify the row class to use CSS properties and calculations.
+.row {
+	// Subtract vertical margins to vertically center.
+	margin-right: calc(0px - var(--ma-gutter-width) / 2);
+  margin-left: calc(0px - var(--ma-gutter-width) / 2);
+
+	// Consecutive rows have margin between them.
+	& + .row {
+		margin-top: var(--ma-gutter-width);
+	}
+
+	// Direct children are flex items and should have margins set to create
+	// the gutter.
+	& > * {
+	  margin-left: calc(var(--ma-gutter-width) / 2) !important;
+	  margin-right: calc(var(--ma-gutter-width) / 2) !important;
+	}
+}

@@ -31,6 +31,7 @@ class MaCheckboxGroup implements AfterContentInit {
 
         if (inputs.length == 0) {
             var msg = '<ma-checkbox-group> requires at least 1 checkbox';
+            window.console.log(this.host.nativeElement);
             throw new Exception(msg);
         }
 

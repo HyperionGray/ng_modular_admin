@@ -56,6 +56,14 @@ ma-app {
 	color: var(--ma-text-color);
 }
 
+ma-card {
+	margin-bottom: var(--ma-gutter-width);
+
+	&:last-child {
+		margin-bottom: 0px;
+	}
+}
+
 ma-top-nav input {
   @extend input;
   color: var(--ma-text-color);
@@ -82,15 +90,6 @@ pre.code {
 		background-color: transparent;
 		border: none;
     border-bottom: 1px solid var(--ma-code-color);
-	}
-}
-
-.row {
-	margin-right: calc(0px - var(--ma-gutter-width) / 2);
-  margin-left: calc(0px - var(--ma-gutter-width) / 2);
-
-	&:last-child {
-		margin-bottom: 0;
 	}
 }
 
