@@ -5,6 +5,6 @@
       [name]='iconName'
       [fw]='true'></fa>
 </div>
-<div *ngIf='danger' class='validation'>
+<div *ngIf='warning || danger' class='validation'>
   <span *ngFor='let error of control.errors.keys'>{{error}} </span>
 </div>

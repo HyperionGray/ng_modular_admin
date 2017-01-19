@@ -30,6 +30,10 @@ class InputGroup implements AfterContentInit, DoCheck {
     @HostBinding('class.success')
     bool success = false;
 
+    /// True if the input fails validation after touching (before dirtying).
+    @HostBinding('class.warning')
+    bool warning = false;
+
     /// Reference to the host element.
     ElementRef host;
 
@@ -61,16 +65,24 @@ class InputGroup implements AfterContentInit, DoCheck {
     /// Update validity properties from control status.
     void _updateValidity () {
         this.iconName = null;
-        this.success = false;
         this.danger = false;
+        this.success = false;
+        this.warning = false;
 
-        if (control != null && control.dirty) {
+        if (control != null) {
             if (control.valid) {
-                this.success = true;
-                this.iconName = 'check';
-            } else if (control.errors != null) {
-                this.danger = true;
-                this.iconName = 'exclamation-triangle';
+                if (control.dirty) {
+                    this.success = true;
+                    this.iconName = 'check';
+                }
+            } else {
+                if (control.touched) {
+                    this.danger = true;
+                    this.iconName = 'exclamation';
+                } else if (control.dirty) {
+                    this.warning = true;
+                    this.iconName = 'exclamation';
+                }
             }
         }
     }

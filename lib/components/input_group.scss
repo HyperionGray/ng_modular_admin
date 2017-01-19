@@ -119,3 +119,13 @@
     color: var(--ma-success-color-dark);
   }
 }
+
+:host(.warning) {
+  input {
+    border-color: var(--ma-warning-color-dark);
+  }
+
+  div.input fa, div.validation {
+    color: var(--ma-warning-color-dark);
+  }
+}
