@@ -92,10 +92,8 @@ button {
   background-color: transparent;
   border: 1px solid var(--ma-secondary-color-light);
   border-radius: 0.2rem;
-  position: relative;
-  top: 5px;
 
-  &:focus, &:hover {
+  &:hover:not(:disabled) {
     background-color: transparent;
     color: var(--ma-secondary-color-darker);
     border-color: var(--ma-secondary-color-darker);
