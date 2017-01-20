@@ -1,0 +1,15 @@
+<div *ngFor='let toast of service?.toasts; #i = index'
+     class='toast {{toast.type}}'
+     [style.animation]='toast.toBeDeleted ? "toast-fade-out 0.3s ease-out" : "toast-fade-in 0.3s ease-in"'
+     [style.top]='styleTop(i)'>
+  <div class='timer'>
+    <div class='elapsed'
+         [style.animation]='"timer " + toast.cssDuration + " linear 0.3s"'>
+    </div>
+  </div>
+  <fa *ngIf='toast.icon != null' [name]='toast.icon' [fw]='true'></fa>
+  <div>
+    <span class='title' *ngIf='toast.title != null'>{{toast.title}}</span>
+    <span class='message' *ngIf='toast.message != null'>{{toast.message}}</span>
+  </div>
+</div>

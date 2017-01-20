@@ -1,0 +1,110 @@
+@import 'modular-admin/component';
+
+@keyframes toast-fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes toast-fade-out {
+  from {opacity: 1;}
+  to {opacity: 0;}
+}
+
+@keyframes timer {
+  from {width: 0%;}
+  to {width: 100%;}
+}
+
+:host {
+  display: block;
+  z-index: 100;
+  position: fixed;
+  top: 1em;
+  right: 1em;
+  bottom: 1em;
+  width: 16em;
+  color: var(--ma-text-color-inverse);
+  overflow: hidden;
+  pointer-events: none;
+
+  div.toast {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100px;
+    pointer-events: auto;
+
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    padding: 0.5em;
+
+    // Not using CSS properties for animation speed because other parts of the code
+    // rely on these values and the Dart API for getting custom property values is
+    // buggy.
+    transition: top ease-out 0.3s;
+
+    fa {
+      font-size: 2.5em;
+    }
+
+    .title {
+      font-weight: 600;
+    }
+
+    &.primary {
+      background-color: var(--ma-primary-color);
+      .elapsed {
+        background-color: var(--ma-primary-color-dark);
+      }
+    }
+
+    &.secondary {
+      background-color: var(--ma-secondary-color);
+      .elapsed {
+        background-color: var(--ma-secondary-color-dark);
+      }
+    }
+
+    &.success {
+      background-color: var(--ma-success-color);
+      .elapsed {
+        background-color: var(--ma-success-color-dark);
+      }
+    }
+
+    &.info {
+      background-color: var(--ma-info-color);
+      .elapsed {
+        background-color: var(--ma-info-color-dark);
+      }
+    }
+
+    &.warning {
+      background-color: var(--ma-warning-color);
+      .elapsed {
+        background-color: var(--ma-warning-color-dark);
+      }
+    }
+
+    &.danger {
+      background-color: var(--ma-danger-color);
+      .elapsed {
+        background-color: var(--ma-danger-color-dark);
+      }
+    }
+
+    .timer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 0.25em;
+
+      .elapsed {
+        height: 100%;
+        width: 0;
+      }
+    }
+  }
+}

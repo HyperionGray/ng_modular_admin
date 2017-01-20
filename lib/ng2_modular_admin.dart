@@ -40,10 +40,14 @@ import 'components/tag.dart' show Tag;
 export 'components/tag.dart' show Tag;
 import 'components/title.dart' show Title;
 export 'components/title.dart' show Title;
+import 'components/toast_outlet.dart' show ToastOutlet;
+export 'components/toast_outlet.dart' show ToastOutlet;
 import 'components/top_nav.dart' show TopNav;
 export 'components/top_nav.dart' show TopNav;
 import 'services/side_nav.dart' show SideNavService;
 export 'services/side_nav.dart' show SideNavService;
+import 'services/toast.dart' show Toast, ToastService;
+export 'services/toast.dart' show Toast, ToastService;
 
 const List<dynamic> MA_DIRECTIVES = const [
     App,
@@ -65,9 +69,11 @@ const List<dynamic> MA_DIRECTIVES = const [
     SideNavMenuHeader,
     Tag,
     Title,
+    ToastOutlet,
     TopNav,
 ];
 
 const List<dynamic> MA_PROVIDERS = const [
     SideNavService,
+    ToastService,
 ];
