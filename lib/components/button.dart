@@ -1,16 +1,22 @@
 import 'dart:html';
 import 'package:angular2/core.dart';
+import 'package:ng2_fontawesome/ng2_fontawesome.dart';
 
 /// A push button.
 @Component(
     selector: 'ma-button',
     templateUrl: 'button.html',
-    styleUrls: const ['button.css']
+    styleUrls: const ['button.css'],
+    directives: const [FA_DIRECTIVES]
 )
 class Button {
     /// If true, the button becomes a 100% width block element.
     @Input()
     bool block = false;
+
+    /// If true, the button content is hidden a spinner is displayed.
+    @Input()
+    bool busy = false;
 
     /// If true, the button color is faded out, and the button does not emit
     /// click events.

@@ -1,9 +1,13 @@
 <button [attr.type]='submit ? "submit" : "button"'
-        [disabled]='disabled'
+        [disabled]='disabled || busy'
         class='{{type}} {{size}}'
         [class.block]='block'
         [class.outline]='outline'
         [class.pill-left]='pill == "left" || pill == "both"'
         [class.pill-right]='pill == "right" || pill == "both"'>
-  <ng-content></ng-content>
+  <span [class.invisible]='busy'><ng-content></ng-content></span>
+  <fa name='spinner'
+      class='busy-spinner text-xs-center'
+      [class.invisible]='!busy'
+      [pulse]='true'></fa>
 </button>

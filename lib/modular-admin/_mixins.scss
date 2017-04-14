@@ -19,7 +19,7 @@
     background-color: var(--ma-#{$paletteName}-color-dark);
   }
 
-  &:active {
+  &:active:not(:disabled) {
     background-color: var(--ma-#{$paletteName}-color-darker);
   }
 
@@ -35,7 +35,7 @@
       background-color: var(--ma-#{$paletteName}-color);
     }
 
-    &:active {
+    &:active:not(:disabled) {
       color: $textColor;
       border-color: var(--ma-#{$paletteName}-color-darker);
       background-color: var(--ma-#{$paletteName}-color-darker);
