@@ -38,8 +38,6 @@ import 'components/side_nav_menu_header.dart' show SideNavMenuHeader;
 export 'components/side_nav_menu_header.dart' show SideNavMenuHeader;
 import 'components/tag.dart' show Tag;
 export 'components/tag.dart' show Tag;
-import 'components/title.dart' show Title;
-export 'components/title.dart' show Title;
 import 'components/toast_outlet.dart' show ToastOutlet;
 export 'components/toast_outlet.dart' show ToastOutlet;
 import 'components/top_nav.dart' show TopNav;
@@ -68,7 +66,6 @@ const List<dynamic> MA_DIRECTIVES = const [
     SideNavMenu,
     SideNavMenuHeader,
     Tag,
-    Title,
     ToastOutlet,
     TopNav,
 ];
