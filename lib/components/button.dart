@@ -9,7 +9,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     styleUrls: const ['button.css'],
     directives: const [FA_DIRECTIVES]
 )
-class Button {
+class Button implements AfterViewInit {
     /// If true, the button becomes a 100% width block element.
     @Input()
     bool block = false;
@@ -49,10 +49,26 @@ class Button {
     @Input()
     String type = 'primary';
 
-    /// Handle navigation to an href, if an href is set.
-    @HostListener('click', const [r'$event'])
+    /// Reference to the host element.
+    ElementRef host;
+
+    /// Constructor.
+    Button(this.host);
+
+    /// Bind to click event.
+    ///
+    /// We use this method instead of `HostListener` so that we can set
+    /// `useCapture` to true.
+    void ngAfterViewInit() {
+        this.host.nativeElement.addEventListener('click', this.onClick, true);
+    }
+
+    /// Prevent clicks on disabled buttons and handle navigation for link
+    /// buttons.
     void onClick(MouseEvent event) {
-        if (this.href != null) {
+        if (this.disabled || this.busy) {
+            event.stopPropagation();
+        } else if (this.href != null) {
             window.location.replace(this.href);
             event.stopPropagation();
         }
