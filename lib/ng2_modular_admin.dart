@@ -4,8 +4,8 @@ import "package:angular2/di.dart" show Provider;
 
 import 'components/app.dart' show App;
 export 'components/app.dart' show App;
-import 'components/button.dart' show Button;
-export 'components/button.dart' show Button;
+import 'components/button.dart' show Button, ButtonClick;
+export 'components/button.dart' show Button, ButtonClick;
 import 'components/button_group.dart' show ButtonGroup;
 export 'components/button_group.dart' show ButtonGroup;
 import 'components/card.dart' show Card;

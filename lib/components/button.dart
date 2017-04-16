@@ -49,6 +49,9 @@ class Button implements AfterViewInit {
     @Input()
     String type = 'primary';
 
+    @Output()
+    final click = new EventEmitter<ButtonClick>();
+
     /// Reference to the host element.
     ElementRef host;
 
@@ -71,6 +74,16 @@ class Button implements AfterViewInit {
         } else if (this.href != null) {
             window.location.replace(this.href);
             event.stopPropagation();
+        } else {
+            event.stopPropagation();
+            this.click.emit(new ButtonClick(event, this));
         }
     }
+}
+
+/// A little wrapper for click events that contains a reference to the button.
+class ButtonClick {
+    MouseEvent event;
+    Button button;
+    ButtonClick(this.event, this.button);
 }
