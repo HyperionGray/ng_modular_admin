@@ -71,17 +71,17 @@ class InputGroup implements AfterContentInit, DoCheck {
 
         if (control != null) {
             if (control.valid) {
-                if (control.dirty) {
+                if (control.dirty && control.value.trim().isNotEmpty) {
                     this.success = true;
                     this.iconName = 'check';
                 }
             } else {
                 if (control.touched) {
                     this.danger = true;
-                    this.iconName = 'exclamation';
+                    this.iconName = 'exclamation-triangle';
                 } else if (control.dirty) {
                     this.warning = true;
-                    this.iconName = 'exclamation';
+                    this.iconName = 'exclamation-triangle';
                 }
             }
         }
