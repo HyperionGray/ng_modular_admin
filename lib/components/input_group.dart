@@ -5,6 +5,8 @@ import 'package:angular2/core.dart';
 import 'package:angular2/common.dart';
 import 'package:ng2_fontawesome/ng2_fontawesome.dart';
 
+import 'package:ng2_modular_admin/util.dart';
+
 /// A container for a label and an input.
 @Component(
     selector: 'ma-input-group',
@@ -26,6 +28,11 @@ class InputGroup implements AfterContentInit, DoCheck {
     @Input()
     bool inline = false;
 
+    /// If true, display the input inline with surrounding text.
+    @HostBinding('class.in-text')
+    @Input('in-text')
+    bool inText = false;
+
     /// True if the input passes validation after dirtying.
     @HostBinding('class.success')
     bool success = false;
@@ -46,14 +53,31 @@ class InputGroup implements AfterContentInit, DoCheck {
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {
         var inputs = this.host.nativeElement.querySelectorAll(
-            'input[type=text],input[type=password],textarea'
+            'input[type=text],input[type=password],select,textarea'
         );
 
         if (inputs.length != 1) {
             var msg = '<ma-input-group> requires exactly one'
-                      ' text/password/textarea input';
+                      ' text/password/select/textarea input';
             window.console.log(this.host.nativeElement);
             throw new Exception(msg);
+        }
+
+        var input = inputs[0];
+        var hostEl = this.host.nativeElement;
+        var inputId;
+
+        // Wire the label to the form, if not already wired.
+        if (input.attributes['id'] == null) {
+            inputId = 'ma-input-' + randomElementName(8);
+            input.attributes['id'] = inputId;
+        } else {
+            inputId = input.attributes['id'];
+        }
+
+        var label = this.host.nativeElement.querySelector('label');
+        if (label != null && !label.attributes.containsKey('for')) {
+            label.attributes['for'] = inputId;
         }
     }
 

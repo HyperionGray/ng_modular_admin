@@ -58,6 +58,15 @@
     cursor: pointer;
 	}
 
+  select {
+    line-height: 1.25em;
+    color: var(--ma-text-color);
+    background-color: white;
+    border: 1px solid var(--ma-divider-color);
+    border-radius: 0;
+    font-weight: 400;
+  }
+
   span.ma-add-ons {
     display: flex;
     cursor: intial;
@@ -95,18 +104,39 @@
 }
 
 :host(.inline) {
+  div.input {
+    display: flex;
+
+    label {
+      text-align: right;
+      padding-right: 0.5em;
+      position: relative;
+      top: 0.4em;
+    }
+
+    input, select, textarea {
+      flex: 1 1 auto;
+    }
+  }
+}
+
+:host(.in-text) {
+  display: inline-block;
+  margin-bottom: 0.25em;
+
   label {
     display: flex;
-    align-items: center;
 
     span {
       white-space: nowrap;
     }
   }
 
-  input, textarea {
-    display: inline-block;
-    margin-left: 0.5em;
+  input, select {
+    line-height: 1;
+    margin-left: 0.25em;
+    padding: 0.25em 0.5em;
+    text-align: center;
   }
 }
 
