@@ -3,8 +3,13 @@
  */
 
 h1, h2, h3, h4, h5, h6 {
+	margin-top: 1em;
 	margin-bottom: 0.4em;
 	color: var(--ma-secondary-color);
+
+	&:first-child {
+		margin-top: 0;
+	}
 
 	small {
 		color: var(--ma-secondary-color-lighter);
