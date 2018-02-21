@@ -1,9 +1,9 @@
 name: ng2_modular_admin
-version: 0.0.2
+version: 0.0.3
 description: Modular Admin for Angular2Dart
 authors:
   - Mark E. Haase <mehaase@gmail.com>
-homepage: https://gitlab.com/hyperion-gray/ng2_modular_admin
+homepage: https://github.com/hyperiongray/ng2_modular_admin
 environment:
   sdk: '>=1.12.0 <2.0.0'
 dependencies:

@@ -1,6 +1,6 @@
 # Modular Admin for Angular2Dart
 
-[View Demo](https://hyperion-gray.gitlab.io/ng2_modular_admin_demo/)
+[View Demo](https://hyperiongray.github.io/ng2_modular_admin/build/web/)
 
 ## Overview
 
