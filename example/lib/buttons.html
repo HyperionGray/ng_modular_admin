@@ -1,0 +1,295 @@
+<div class='columns-lg-2'>
+  <ma-card>
+    <h2>Colors</h2>
+    <p class='lead'>There are 7 color schemes for buttons.</p>
+    <p><em>Open the developer console to view button events.</em></p>
+    <p>
+      <ma-button type='primary'
+                 (click)='showClickAlert($event)'>Primary</ma-button>
+      <ma-button type='secondary'
+                 (click)='showClickAlert($event)'>Secondary</ma-button>
+      <ma-button type='link'
+                 (click)='showClickAlert($event)'>Link</ma-button>
+      <ma-button type='success'
+                 (click)='showClickAlert($event)'>Success</ma-button>
+      <ma-button type='info'
+                 (click)='showClickAlert($event)'>Info</ma-button>
+      <ma-button type='warning'
+                 (click)='showClickAlert($event)'>Warning</ma-button>
+      <ma-button type='danger'
+                 (click)='showClickAlert($event)'>Danger</ma-button>
+    </p>
+    <p>Example markup:</p>
+    <pre class='code'>&lt;ma-button
+  type=&apos;primary&apos;
+  (click)=&apos;showClickAlert($event)&apos;&gt;
+    Primary
+&lt;/ma-button&gt;</pre>
+    <p>
+      Set the <code>type</code> to <code>primary</code>,
+      <code>secondary</code>, <code>link</code>, <code>success</code>,
+      <code>info</code>, <code>warning</code>, or <code>danger</code>. The
+      <code>click</code> emitter fires when the button is clicked.
+    </p>
+    <p>
+      Modular Admin fires a special <code>Click</code> event that contains a
+      reference to an underlying <code>MouseEvent</code> and a reference to the
+      <code>Button</code>.
+    </p>
+    <pre class='code'>void showClickAlert(ButtonClick click) {
+  var target = (click.event
+    .currentTarget) as Element;
+  var text = target.text.trim()
+  window.console.log(
+    'You clicked on $text.'
+  );
+  click.button.busy = true;
+  new Timer(
+    new Duration(seconds:1),
+    () => click.button.busy = false
+  );
+}</pre>
+  <p>
+    The event handler attached to all of the buttons on this page prints the
+    button's text to the console and sets the button's busy state for 1 second.
+    (Read more about busy/disabled states below.)
+  </p>
+  </ma-card>
+  <ma-card>
+    <h2>Links</h2>
+    <p class='lead'>Buttons may be used as links.</p>
+    <p>
+      As a convenience, you may set the <code>[href]</code> property of any button
+      to trigger navigation to a URL. Keep in mind that it still behaves like
+      a button, not an anchor, e.g. the target URL doesn't appear in the status
+      bar when you hover over it, etc.
+    </p>
+    <p>
+      <ma-button type='primary'
+                 href='https://google.com'>
+        <fa name='google'></fa>
+        Google
+      </ma-button>
+    </p>
+    <pre class='code'>&#x3C;ma-button
+  type=&#x27;primary&#x27;
+  href=&#x27;https://google.com&#x27;&#x3E;
+    &#x3C;fa name=&#x27;google&#x27;&#x3E;&#x3C;/fa&#x3E;
+    Google
+&#x3C;/ma-button&#x3E;</pre>
+  </ma-card>
+  <ma-card>
+    <h2>Links</h2>
+    <p class='lead'>A link may be styled to resemble a button.</p>
+    <p>
+      Link buttons are useful when placing real buttons and links on the same
+      line. A link button will be sized correctly and will look a bit like a
+      button.
+    </p>
+    <p>
+      <ma-button type='primary'
+                 (click)='showClickAlert($event)'>Button</ma-button>
+      <a class='button' href='http://google.com'>Link</a>
+    </p>
+    <p>Example markup:</p>
+    <pre class='code'>&lt;ma-button
+  type=&apos;primary&apos;
+  (click)=&apos;showClickAlert($event)&apos;&gt;
+    Primary
+&lt;/ma-button&gt;</pre>
+    <p>
+      Set the <code>type</code> to <code>primary</code>,
+      <code>secondary</code>, <code>success</code>, <code>info</code>,
+      <code>warning</code>, or <code>danger</code>. The <code>click</code>
+      emitter fires when the button is clicked.
+    </p>
+  </ma-card>
+  <ma-card>
+    <h2>Outlines</h2>
+    <p class='lead'>Buttons can be outlines instead of solid colors.</p>
+    <p>
+      <ma-button type='primary'
+                 [outline]='true'
+                 (click)='showClickAlert($event)'>Primary</ma-button>
+      <ma-button type='secondary'
+                 [outline]='true'
+                 (click)='showClickAlert($event)'>Secondary</ma-button>
+      <ma-button type='success'
+                 [outline]='true'
+                 (click)='showClickAlert($event)'>Success</ma-button>
+      <ma-button type='info'
+                 [outline]='true'
+                 (click)='showClickAlert($event)'>Info</ma-button>
+      <ma-button type='warning'
+                 [outline]='true'
+                 (click)='showClickAlert($event)'>Warning</ma-button>
+      <ma-button type='danger'
+                 [outline]='true'
+                 (click)='showClickAlert($event)'>Danger</ma-button>
+    </p>
+    <p>
+      Set the <code>[outline]</code> property to <code>true</code>
+      to render a button with outlines.
+    </p>
+    <pre class='code'>&lt;ma-button
+  type=&apos;primary&apos;
+  [outline]=&apos;true&apos;
+  (click)=&apos;showClickAlert($event)&apos;&gt;
+    Primary
+&lt;/ma-button&gt;</pre>
+  </ma-card>
+  <ma-card>
+    <h2>Sizes</h2>
+    <p class='lead'>Buttons come in 3 sizes.</p>
+    <p>
+      <ma-button type='primary'
+                 size='small'
+                 (click)='showClickAlert($event)'>Small</ma-button>
+      <ma-button type='primary'
+                 (click)='showClickAlert($event)'>Medium</ma-button>
+      <ma-button type='primary'
+                 size='large'
+                 (click)='showClickAlert($event)'>Large</ma-button>
+    </p>
+    <p>
+      Set the <code>size</code> property to <code>small</code>,
+      <code>medium</code>, or <code>large</code>. The default is medium.
+    </p>
+    <pre class='code'>&lt;ma-button
+  type=&apos;primary&apos;
+  size=&apos;small&apos;
+  (click)=&apos;showClickAlert($event)&apos;&gt;
+    Small
+&lt;/ma-button&gt;</pre>
+  </ma-card>
+  <ma-card>
+    <h2>Blocks</h2>
+    <p class='lead'>A button can be a 100% width block element.</p>
+    <p>
+      <ma-button type='success'
+                 [block]='true'
+                 (click)='showClickAlert($event)'>Block</ma-button>
+    </p>
+    <p>
+      Set the <code>[block]</code> property to <code>true</code>
+      to render a button as a block element.
+    </p>
+    <pre class='code'>&lt;ma-button
+  type=&apos;success&apos;
+  [block]=&apos;true&apos;
+  (click)=&apos;showClickAlert($event)&apos;&gt;
+     Block
+&lt;/ma-button&gt;</pre>
+  </ma-card>
+  <ma-card>
+    <h2>Groups</h2>
+    <p class='lead'>Buttons can be grouped together.</p>
+    <p>
+      <ma-button-group>
+        <ma-button type='info'
+                   (click)='showClickAlert($event)'>Left</ma-button>
+        <ma-button type='info'
+                   (click)='showClickAlert($event)'>Middle</ma-button>
+        <ma-button type='info'
+                   (click)='showClickAlert($event)'>Right</ma-button>
+      </ma-button-group>
+      <ma-button-group>
+        <ma-button type='info'
+                   [outline]='true'
+                   (click)='showClickAlert($event)'>Left</ma-button>
+        <ma-button type='info'
+                   [outline]='true'
+                   (click)='showClickAlert($event)'>Middle</ma-button>
+        <ma-button type='info'
+                   [outline]='true'
+                   (click)='showClickAlert($event)'>Right</ma-button>
+      </ma-button-group>
+    </p>
+    <p>
+      Wrap two or more <code>&lt;ma-button&gt;</code> elements with a
+      <code>&lt;ma-button-group&gt;</code> to render them as a group.
+    </p>
+    <pre class='code'>&lt;ma-button-group&gt;
+  &lt;ma-button
+    type=&apos;info&apos;
+    (click)=&apos;showClickAlert($event)&apos;&gt;
+      Left
+  &lt;/ma-button&gt;
+  &lt;ma-button
+    type=&apos;info&apos;
+    (click)=&apos;showClickAlert($event)&apos;&gt;
+      Middle
+  &lt;/ma-button&gt;
+  &lt;ma-button
+    type=&apos;info&apos;
+    (click)=&apos;showClickAlert($event)&apos;&gt;
+      Right
+  &lt;/ma-button&gt;
+&lt;/ma-button-group&gt;</pre>
+  </ma-card>
+  <ma-card>
+    <h2>Shapes</h2>
+    <p class='lead'>A button can have rounded corners.</p>
+    <p>
+      <ma-button type='warning'
+                 pill='left'
+                 (click)='showClickAlert($event)'>Pill Left</ma-button>
+      <ma-button type='warning'
+                 pill='right'
+                 (click)='showClickAlert($event)'>Pill Right</ma-button>
+      <ma-button type='warning'
+                 pill='both'
+                 (click)='showClickAlert($event)'>Pill Both</ma-button>
+    </p>
+    <p>
+      Set the <code>pill</code> property to <code>left</code>,
+      <code>right</code>, or <code>both</code>.
+    </p>
+    <pre class='code'>&lt;ma-button
+  type=&apos;warning&apos;
+  pill=&apos;left&apos;
+  (click)=&apos;showClickAlert($event)&apos;&gt;
+    Pill Left
+&lt;/ma-button&gt;</pre>
+    <p>Pills work nicely with button groups.</p>
+    <p>
+      <ma-button-group>
+        <ma-button type='danger'
+                   pill='left'
+                   (click)='showClickAlert($event)'>Left</ma-button>
+        <ma-button type='danger'
+                   (click)='showClickAlert($event)'>Middle</ma-button>
+        <ma-button type='danger'
+                   pill='right'
+                   (click)='showClickAlert($event)'>Right</ma-button>
+      </ma-button-group>
+    </p>
+  </ma-card>
+  <ma-card>
+    <h2>States</h2>
+    <p class='lead'>Display disabled or busy buttons.</p>
+    <p>
+      A button's disabled or busy state may be manipulated inside an event
+      handler (as seen in the first card on this page) or may be set via
+      component attributes.
+    </p>
+    <p>
+      <ma-button (click)='showClickAlertNoBusy($event)'
+                 [disabled]='disabledDemo'>Disable Demo</ma-button>
+      <input id='disabledDemo' type='checkbox' [(ngModel)]='disabledDemo'>
+      <label for='disabledDemo'>Disabled</label>
+    </p>
+    <p>
+      <ma-button (click)='showClickAlertNoBusy($event)'
+                 [busy]='busyDemo'>Busy Demo</ma-button>
+      <input id='busyDemo' type='checkbox' [(ngModel)]='busyDemo'>
+      <label for='busyDemo'>Busy</label>
+    </p>
+    <pre class='code'>&lt;ma-button [disabled]=&apos;{{disabledDemo}}&apos;&gt;
+  Disable Demo
+&lt;/ma-button&gt;
+&lt;ma-button [busy]=&apos;{{busyDemo}}&apos;&gt;
+  Disable Demo
+&lt;/ma-button&gt;</pre>
+  </ma-card>
+</div>

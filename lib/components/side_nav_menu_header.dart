@@ -1,11 +1,8 @@
 import 'dart:async';
 import 'dart:html';
 
-import 'package:angular2/core.dart';
-import 'package:ng2_fontawesome/ng2_fontawesome.dart';
-
-import 'package:ng2_modular_admin/components/side_nav_menu.dart';
-import 'package:ng2_modular_admin/components/side_nav_item.dart';
+import 'package:angular/angular.dart';
+import 'package:ng_fontawesome/ng_fontawesome.dart';
 
 /// Header for a side nav menu.
 @Component(

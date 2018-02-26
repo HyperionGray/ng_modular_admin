@@ -1,10 +1,8 @@
-library ng2_modular_admin;
-
-import "package:angular2/di.dart" show Provider;
+library ng_modular_admin;
 
 import 'components/app.dart' show App;
 export 'components/app.dart' show App;
-import 'components/button.dart' show Button, ButtonClick;
+import 'components/button.dart' show Button;
 export 'components/button.dart' show Button, ButtonClick;
 import 'components/button_group.dart' show ButtonGroup;
 export 'components/button_group.dart' show ButtonGroup;
@@ -23,7 +21,7 @@ export 'components/logo.dart' show Logo;
 import 'components/overlay.dart' show Overlay;
 export 'components/overlay.dart' show Overlay;
 import 'components/pager.dart' show Pager;
-export 'components/pager.dart' show Pager;
+export 'components/pager.dart' show Page, Pager;
 import 'components/radio_group.dart' show RadioGroup;
 export 'components/radio_group.dart' show RadioGroup;
 import 'components/side_nav.dart' show SideNav;
@@ -44,7 +42,7 @@ import 'components/top_nav.dart' show TopNav;
 export 'components/top_nav.dart' show TopNav;
 import 'services/side_nav.dart' show SideNavService;
 export 'services/side_nav.dart' show SideNavService;
-import 'services/toast.dart' show Toast, ToastService;
+import 'services/toast.dart' show ToastService;
 export 'services/toast.dart' show Toast, ToastService;
 
 const List<dynamic> MA_DIRECTIVES = const [

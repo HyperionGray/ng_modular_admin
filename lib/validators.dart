@@ -1,5 +1,4 @@
-import 'package:angular2/core.dart';
-import 'package:angular2/common.dart';
+import 'package:angular_forms/angular_forms.dart';
 
 /// Form value is either blank or can be parsed as an int, with optional min
 /// and max values (inclusive).
@@ -10,7 +9,7 @@ ValidatorFn integer({num min, num max}) {
         if (control.value.trim().isNotEmpty) {
             try {
                 parsed = int.parse(control.value, radix: 10);
-            } catch (exc, stack) {
+            } catch (exc) {
                 print(exc);
                 errors['Must be an integer'] = true;
             }
@@ -44,7 +43,7 @@ ValidatorFn number({num min, num max}) {
         if (control.value.trim().isNotEmpty) {
             try {
                 parsed = double.parse(control.value);
-            } catch (exc, stack) {
+            } catch (exc) {
                 errors['Must be a decimal number'] = true;
             }
         }

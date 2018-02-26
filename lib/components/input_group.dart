@@ -1,18 +1,17 @@
 import 'dart:html';
-import 'dart:math';
 
-import 'package:angular2/core.dart';
-import 'package:angular2/common.dart';
-import 'package:ng2_fontawesome/ng2_fontawesome.dart';
+import 'package:angular/angular.dart';
+import 'package:angular_forms/angular_forms.dart';
+import 'package:ng_fontawesome/ng_fontawesome.dart';
 
-import 'package:ng2_modular_admin/util.dart';
+import 'package:ng_modular_admin/util.dart';
 
 /// A container for a label and an input.
 @Component(
     selector: 'ma-input-group',
     templateUrl: 'input_group.html',
     styleUrls: const ['input_group.css'],
-    directives: const [FaIcon]
+    directives: const [CORE_DIRECTIVES, FaIcon]
 )
 class InputGroup implements AfterContentInit, DoCheck {
     /// A form control for validating the element contained herein.
@@ -64,7 +63,6 @@ class InputGroup implements AfterContentInit, DoCheck {
         }
 
         var input = inputs[0];
-        var hostEl = this.host.nativeElement;
         var inputId;
 
         // Wire the label to the form, if not already wired.

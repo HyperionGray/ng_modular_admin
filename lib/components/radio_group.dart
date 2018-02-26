@@ -1,10 +1,9 @@
 import 'dart:html';
-import 'dart:math';
 
-import 'package:angular2/core.dart';
-import 'package:ng2_fontawesome/ng2_fontawesome.dart';
+import 'package:angular/angular.dart';
+import 'package:ng_fontawesome/ng_fontawesome.dart';
 
-import 'package:ng2_modular_admin/util.dart';
+import 'package:ng_modular_admin/util.dart';
 
 /// A container for a label and an input.
 @Component(

@@ -1,7 +1,7 @@
-<div *ngFor='let toast of service?.toasts; #i = index'
+<div *ngFor='let toast of service?.toasts; let toastIndex=index;'
      class='toast {{toast.type}}'
      [style.animation]='toast.toBeDeleted ? "toast-fade-out 0.3s ease-out" : "toast-fade-in 0.3s ease-in"'
-     [style.top]='styleTop(i)'>
+     [style.top]='styleTop(toastIndex)'>
   <div class='timer'>
     <div class='elapsed'
          [style.animation]='"timer " + toast.cssDuration + " linear 0.3s"'>

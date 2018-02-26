@@ -1,8 +1,9 @@
+import 'dart:async';
 import 'dart:html';
 import 'dart:math';
 
-import 'package:angular2/core.dart';
-import 'package:ng2_fontawesome/ng2_fontawesome.dart';
+import 'package:angular/angular.dart';
+import 'package:ng_fontawesome/ng_fontawesome.dart';
 
 /// A pager component.
 ///
@@ -12,7 +13,7 @@ import 'package:ng2_fontawesome/ng2_fontawesome.dart';
     selector: 'ma-pager',
     templateUrl: 'pager.html',
     styleUrls: const ['pager.css'],
-    directives: const [FaIcon]
+    directives: const [CORE_DIRECTIVES, FaIcon]
 )
 class Pager implements OnInit, OnChanges {
     /// If true, the pager is automatically hidden when it only has one page.
@@ -51,8 +52,9 @@ class Pager implements OnInit, OnChanges {
     int totalItems;
 
     /// When a page is clicked, emit a Page instance.
+    final _onSelectPage = new StreamController<Page>.broadcast();
     @Output()
-    EventEmitter<Page> selectPage;
+    Stream<Page> get onSelectPage => _onSelectPage.stream;
 
     /// Automatically hide this element when it has only 1 page.
     @HostBinding('hidden')
@@ -64,16 +66,11 @@ class Pager implements OnInit, OnChanges {
     /// Numbered pages.
     List<Page> pages;
 
-    /// Constructor
-    Pager () {
-        this.selectPage = new EventEmitter<Page>();
-    }
-
     /// Handle click events by forwarding to `onPage` emitter.
     void handleClick(MouseEvent event, Page page) {
         event.stopPropagation();
         if (!page.isDisabled) {
-            this.selectPage.emit(page);
+            this._onSelectPage.add(page);
         }
     }
 

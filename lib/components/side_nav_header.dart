@@ -1,4 +1,4 @@
-import 'package:angular2/core.dart';
+import 'package:angular/angular.dart';
 
 /// Header for side nav.
 @Component(

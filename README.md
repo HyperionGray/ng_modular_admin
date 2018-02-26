@@ -1,11 +1,11 @@
-# Modular Admin for Angular2Dart
+# Modular Admin for Angular Dart
 
-[View Demo](https://hyperiongray.github.io/ng2_modular_admin/build/web/)
+[View Demo](https://hyperiongray.github.io/ng_modular_admin/)
 
 ## Overview
 
 This project is a port of [Modular
-Admin](https://github.com/modularcode/modular-admin-html) to Angular2Dart.
+Admin](https://github.com/modularcode/modular-admin-html) to Angular Dart.
 Modular Admin is a Bootstrap 4 admin theme written with HTML, monolithic CSS,
 and some JavaScript. This port focuses on converting monolithic CSS to web
 components with encapsulated styles and reimplementing the JavaScript logic with
@@ -23,4 +23,4 @@ To build styles, run `dart tool/build-styles.dart`.
 
 ---
 
-[![define hyperion gray](https://hyperiongray.s3.amazonaws.com/define-hg.svg)](https://hyperiongray.com/?pk_campaign=github&pk_kwd=ng2_modular_admin "Hyperion Gray")
+[![define hyperion gray](https://hyperiongray.s3.amazonaws.com/define-hg.svg)](https://hyperiongray.com/?pk_campaign=github&pk_kwd=ng_modular_admin "Hyperion Gray")

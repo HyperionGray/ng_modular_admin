@@ -1,0 +1,67 @@
+<ma-card>
+  <h2>Pagers</h2>
+  <p class='lead'>Navigate large collections of items.</p>
+  <p>
+    A pager is used for navigating through a large, ordered collection. The
+    pager component handles the details of figuring out which page numbers to
+    show and which pages to disable. You only need to tell the pager how many
+    items are in the collection and what the current page is. You may also
+    control the number of items per page (default: 10) and the maximum number of
+    pages to display (default: 5).
+  </p>
+  <p>Example:</p>
+  <ul>
+    <li *ngFor='let item of items'>{{item}}</li>
+  </ul>
+  <ma-pager [currentPage]='currentPage'
+            [totalItems]='totalItems'
+            [itemsPerPage]='itemsPerPage'
+            [maxPages]='maxPages'
+            (selectPage)='selectPage($event)'></ma-pager>
+  <p>You may adjust the pager settings using the code example below.</p>
+  <pre class='code'>&#x3C;ma-pager [currentPage]=&#x27;currentPage&#x27;
+          [totalItems]=&#x27;77&#x27;
+          [itemsPerPage]=&#x27;<input size='5'
+                                 value='{{itemsPerPage}}'
+                                 (change)='setItemsPerPage($event)'>&#x27;
+          [maxPages]=&#x27;<input size='5'
+                                 value='{{maxPages}}'
+                                 (change)='setMaxPages($event)'>&#x27;
+          (selectPage)=&#x27;selectPage($event)&#x27;&#x3E;
+&#x3C;/ma-pager&#x3E;</pre>
+  <p>
+    The <code>[currentPage]</code> property should generally be set to some
+    variable in your own component that keeps track of the current page number.
+    In your <code>(selectPage)</code> handler, you may update your current page
+    number, which will cause the pager to re-render itself.
+  </p>
+  <p>
+    The <code>selectPage()</code> handler might look like this:
+  </p>
+  <pre class='code'>void selectPage(Page page) {
+    this.currentPage = page.pageNumber;
+
+    /* Your logic to fetch and render items here. */
+}</pre>
+</ma-card>
+<ma-card>
+  <h2>Layout</h2>
+  <p class='lead'>Pagers are inline elements.</p>
+  <p>
+    Pagers are easy to position because they are inline elements. You may
+    use text alignment to position a pager. <em>Note: these pagers aren't
+    functional — just used to demonstrate layout.</em>
+  </p>
+  <div class='text-xs-center'>
+    <ma-pager [currentPage]='1' [totalItems]='50'></ma-pager>
+  </div>
+  <pre class='code'>&#x3C;div class=&#x27;text-xs-center&#x27;&#x3E;
+  &#x3C;ma-pager [currentPage]=&#x27;3&#x27; [totalItems]=&#x27;50&#x27;&#x3E;&#x3C;/ma-pager&#x3E;
+&#x3C;/div&#x3E;</pre>
+  <div class='text-xs-right'>
+    <ma-pager [currentPage]='1' [totalItems]='50'></ma-pager>
+  </div>
+  <pre class='code'>&#x3C;div class=&#x27;text-xs-right&#x27;&#x3E;
+  &#x3C;ma-pager [currentPage]=&#x27;3&#x27; [totalItems]=&#x27;50&#x27;&#x3E;&#x3C;/ma-pager&#x3E;
+&#x3C;/div&#x3E;</pre>
+</ma-card>

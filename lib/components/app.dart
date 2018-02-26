@@ -1,12 +1,12 @@
 import 'dart:async';
 import 'dart:html';
 
-import 'package:angular2/core.dart';
-import 'package:angular2/router.dart';
+import 'package:angular/angular.dart';
+import 'package:angular_router/angular_router.dart';
 
-import 'package:ng2_modular_admin/components/footer.dart';
-import 'package:ng2_modular_admin/components/side_nav.dart';
-import 'package:ng2_modular_admin/components/top_nav.dart';
+import 'package:ng_modular_admin/components/footer.dart';
+import 'package:ng_modular_admin/components/side_nav.dart';
+import 'package:ng_modular_admin/components/top_nav.dart';
 
 /// The top-level component for a Modular Admin application.
 @Component(
@@ -22,7 +22,7 @@ class App implements AfterViewInit {
     /// True if this application has a top nav.
     @HostBinding('class.has-top-nav')
     @Input()
-    bool hasTopNav = false;
+    bool hasTopNav = true;
 
     /// A reference to the side navigation (if there is one).
     @ContentChildren(SideNav)
@@ -62,7 +62,7 @@ class App implements AfterViewInit {
 
     /// Implementation of AfterViewInit.
     void ngAfterViewInit() {
-        this.updateLayout();
+        scheduleMicrotask(updateLayout);
         this.topNav.changes.listen((_) => updateLayout());
         this.sideNav.changes.listen((_) => updateLayout());
         this.footer.changes.listen((_) => updateLayout());

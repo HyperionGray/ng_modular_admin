@@ -1,16 +1,14 @@
-import 'dart:math';
+import 'package:angular/angular.dart';
+import 'package:ng_fontawesome/ng_fontawesome.dart';
 
-import 'package:angular2/core.dart';
-import 'package:ng2_fontawesome/ng2_fontawesome.dart';
-
-import 'package:ng2_modular_admin/services/toast.dart';
+import 'package:ng_modular_admin/services/toast.dart';
 
 /// Top navigation component.
 @Component(
     selector: 'ma-toast-outlet',
     templateUrl: 'toast_outlet.html',
     styleUrls: const ['toast_outlet.css'],
-    directives: const[FaIcon]
+    directives: const[CORE_DIRECTIVES, FaIcon]
 )
 class ToastOutlet {
     @Input()

@@ -1,6 +1,8 @@
+import 'dart:async';
 import 'dart:html';
-import 'package:angular2/core.dart';
-import 'package:ng2_fontawesome/ng2_fontawesome.dart';
+
+import 'package:angular/angular.dart';
+import 'package:ng_fontawesome/ng_fontawesome.dart';
 
 /// A push button.
 @Component(
@@ -21,7 +23,7 @@ class Button implements AfterViewInit {
     /// If true, the button color is faded out, and the button does not emit
     /// click events.
     @Input()
-    bool disabled;
+    bool disabled = false;
 
     /// If set, a button click will trigger navigation
     @Input()
@@ -49,8 +51,9 @@ class Button implements AfterViewInit {
     @Input()
     String type = 'primary';
 
+    final _onClick = new StreamController<ButtonClick>.broadcast();
     @Output()
-    final click = new EventEmitter<ButtonClick>();
+    Stream<ButtonClick> get click => _onClick.stream;
 
     /// Reference to the host element.
     ElementRef host;
@@ -76,7 +79,7 @@ class Button implements AfterViewInit {
             event.stopPropagation();
         } else {
             event.stopPropagation();
-            this.click.emit(new ButtonClick(event, this));
+            this._onClick.add(new ButtonClick(event, this));
         }
     }
 }

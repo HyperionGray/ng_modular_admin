@@ -1,8 +1,6 @@
 import 'dart:async';
 
-import 'package:angular2/core.dart';
-
-import 'package:ng2_modular_admin/components/side_nav_menu.dart';
+import 'package:angular/angular.dart';
 
 /// A service that manages toasts that should be displayed.
 @Injectable()
@@ -21,10 +19,11 @@ class ToastService {
 
         var toast = new Toast(type, title, message, icon, durationSeconds);
         this.toasts.insert(0, toast);
+        var milliseconds = (1000 * toast.durationSeconds + 300).round();
         // How to get size of each toast?
-        new Timer(new Duration(seconds: (0.3 + toast.durationSeconds) as num), () {
+        new Timer(new Duration(milliseconds: milliseconds), () {
             toast.toBeDeleted = true;
-            new Timer(new Duration(seconds: 0.3 as num), () {
+            new Timer(new Duration(milliseconds: 300), () {
                 this.toasts.remove(toast);
             });
         });
