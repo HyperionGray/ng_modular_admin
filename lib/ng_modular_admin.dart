@@ -1,74 +1,23 @@
-library ng_modular_admin;
-
-import 'components/app.dart' show App;
-export 'components/app.dart' show App;
-import 'components/button.dart' show Button;
-export 'components/button.dart' show Button, ButtonClick;
-import 'components/button_group.dart' show ButtonGroup;
-export 'components/button_group.dart' show ButtonGroup;
-import 'components/card.dart' show Card;
-export 'components/card.dart' show Card;
-import 'components/checkbox_group.dart' show CheckboxGroup;
-export 'components/checkbox_group.dart' show CheckboxGroup;
-import 'components/content.dart' show Content;
-export 'components/content.dart' show Content;
-import 'components/footer.dart' show Footer;
-export 'components/footer.dart' show Footer;
-import 'components/input_group.dart' show InputGroup;
-export 'components/input_group.dart' show InputGroup;
-import 'components/logo.dart' show Logo;
-export 'components/logo.dart' show Logo;
-import 'components/overlay.dart' show Overlay;
-export 'components/overlay.dart' show Overlay;
-import 'components/pager.dart' show Pager;
-export 'components/pager.dart' show Page, Pager;
-import 'components/radio_group.dart' show RadioGroup;
-export 'components/radio_group.dart' show RadioGroup;
-import 'components/side_nav.dart' show SideNav;
-export 'components/side_nav.dart' show SideNav;
-import 'components/side_nav_header.dart' show SideNavHeader;
-export 'components/side_nav_header.dart' show SideNavHeader;
-import 'components/side_nav_item.dart' show SideNavItem;
-export 'components/side_nav_item.dart' show SideNavItem;
-import 'components/side_nav_menu.dart' show SideNavMenu;
-export 'components/side_nav_menu.dart' show SideNavMenu;
-import 'components/side_nav_menu_header.dart' show SideNavMenuHeader;
-export 'components/side_nav_menu_header.dart' show SideNavMenuHeader;
-import 'components/tag.dart' show Tag;
-export 'components/tag.dart' show Tag;
-import 'components/toast_outlet.dart' show ToastOutlet;
-export 'components/toast_outlet.dart' show ToastOutlet;
-import 'components/top_nav.dart' show TopNav;
-export 'components/top_nav.dart' show TopNav;
-import 'services/side_nav.dart' show SideNavService;
-export 'services/side_nav.dart' show SideNavService;
-import 'services/toast.dart' show ToastService;
-export 'services/toast.dart' show Toast, ToastService;
-
-const List<dynamic> MA_DIRECTIVES = const [
-    App,
-    Button,
-    ButtonGroup,
-    Card,
-    CheckboxGroup,
-    Content,
-    Footer,
-    InputGroup,
-    Logo,
-    Overlay,
-    Pager,
-    RadioGroup,
-    SideNav,
-    SideNavHeader,
-    SideNavItem,
-    SideNavMenu,
-    SideNavMenuHeader,
-    Tag,
-    ToastOutlet,
-    TopNav,
-];
-
-const List<dynamic> MA_PROVIDERS = const [
-    SideNavService,
-    ToastService,
-];
+export 'src/components/app.dart';
+export 'src/components/button.dart';
+export 'src/components/button_group.dart';
+export 'src/components/card.dart';
+export 'src/components/checkbox_group.dart';
+export 'src/components/content.dart';
+export 'src/components/footer.dart';
+export 'src/components/input_group.dart';
+export 'src/components/logo.dart';
+export 'src/components/overlay.dart';
+export 'src/components/pager.dart';
+export 'src/components/radio_group.dart';
+export 'src/components/side_nav.dart';
+export 'src/components/side_nav_header.dart';
+export 'src/components/side_nav_item.dart';
+export 'src/components/side_nav_menu.dart';
+export 'src/components/side_nav_menu_header.dart';
+export 'src/components/tag.dart';
+export 'src/components/toast_outlet.dart';
+export 'src/components/top_nav.dart';
+export 'src/framework.dart';
+export 'src/services/side_nav.dart';
+export 'src/services/toast.dart';

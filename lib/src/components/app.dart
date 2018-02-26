@@ -4,9 +4,9 @@ import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:angular_router/angular_router.dart';
 
-import 'package:ng_modular_admin/components/footer.dart';
-import 'package:ng_modular_admin/components/side_nav.dart';
-import 'package:ng_modular_admin/components/top_nav.dart';
+import 'footer.dart';
+import 'side_nav.dart';
+import 'top_nav.dart';
 
 /// The top-level component for a Modular Admin application.
 @Component(

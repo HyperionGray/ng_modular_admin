@@ -12,9 +12,9 @@ main (List<String> rawArgs) {
 /// Build a stylesheet for each component.
 buildComponentStyles(bool debug) {
     print('Building component stylesheets…');
-    var componentPath = _getPath('lib/components');
+    var componentPath = _getPath('lib/src/components');
     var componentDir = new Directory(componentPath);
-    var includeDir = _getPath('lib');
+    var includeDir = _getPath('lib/src');
     var sourcePaths = new List<String>();
 
     for (FileSystemEntity entity in componentDir.listSync()) {
@@ -34,12 +34,10 @@ buildComponentStyles(bool debug) {
         String component = basename.substring(0, basename.length - 5);
         String destName = component + '.css';
         String destPath = path.join(componentPath, destName);
+        bool cached = _styleSheetIsCurrent(sourcePath, destPath);
 
-        // TODO temporarily disable cache
-        bool cached = false;
-
-        print(' * lib/components/' + basename +
-              ' → lib/components/' + destName +
+        print(' * lib/src/components/' + basename +
+              ' → lib/src/components/' + destName +
               (cached ? ' (cached)' : ''));
 
         if (cached) {
@@ -65,9 +63,9 @@ buildComponentStyles(bool debug) {
 /// Build a stylesheet for each theme.
 buildSharedStyles(bool debug) {
     print('Building shared stylesheets…');
-    var themeDir = new Directory(_getPath('lib/modular-admin'));
+    var themeDir = new Directory(_getPath('lib/src/modular-admin'));
     var cssDir = _getPath('lib/css');
-    var includeDir = _getPath('lib');
+    var includeDir = _getPath('lib/src');
     var sourcePaths = new List<String>();
 
     for (FileSystemEntity entity in themeDir.listSync()) {
@@ -92,7 +90,7 @@ buildSharedStyles(bool debug) {
         // TODO temporary hack, always build theme:
         bool cached = false;//_styleSheetIsCurrent(sourcePath, destPath);
 
-        print(' * lib/modular-admin/' + basename +
+        print(' * lib/src/modular-admin/' + basename +
               ' → lib/css/' + destName +
               (cached ? ' (cached)' : ''));
 

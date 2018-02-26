@@ -1,6 +1,6 @@
 import 'package:angular/angular.dart';
 
-import 'package:ng_modular_admin/components/side_nav_menu.dart';
+import '../components/side_nav_menu.dart';
 
 /// A service that keeps track of the sidenav's state.
 @Injectable()
