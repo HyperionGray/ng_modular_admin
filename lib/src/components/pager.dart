@@ -54,7 +54,7 @@ class Pager implements OnInit, OnChanges {
     /// When a page is clicked, emit a Page instance.
     final _onSelectPage = new StreamController<Page>.broadcast();
     @Output()
-    Stream<Page> get onSelectPage => _onSelectPage.stream;
+    Stream<Page> get selectPage => _onSelectPage.stream;
 
     /// Automatically hide this element when it has only 1 page.
     @HostBinding('hidden')
