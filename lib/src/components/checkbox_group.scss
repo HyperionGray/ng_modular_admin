@@ -2,58 +2,62 @@
 
 :host {
   display: block;
-	margin-bottom: 1em;
+  margin-bottom: 1em;
 
-  input {
-    visibility: hidden;
+  ::ng-deep {
+    input {
+      visibility: hidden;
 
-    &::after {
-      visibility: visible;
-      font-family: FontAwesome;
-      font-size: 1.2em;
-      position: relative;
-      top: -0.35em;
-      left: -0.25em;
-      color: var(--ma-divider-color);
-      content: "\f0c8"; // fa-square
-      font-weight: 600;
-      cursor: pointer;
+      &::after {
+        visibility: visible;
+        font-family: FontAwesome;
+        font-size: 1.2em;
+        position: relative;
+        top: -0.35em;
+        left: -0.25em;
+        color: var(--ma-divider-color);
+        content: "\f0c8"; // fa-square
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      &:checked::after {
+        content: "\f14a"; // fa-check-square
+        color: var(--ma-primary-color);
+      }
+
+      &:disabled::after {
+        content: "\f096"; // fa-square-o
+        cursor: not-allowed;
+      }
     }
 
-    &:checked::after {
-      content: "\f14a"; // fa-check-square
-      color: var(--ma-primary-color);
-    }
+    label {
+      display:block;
 
-    &:disabled::after {
-      content: "\f096"; // fa-square-o
-      cursor: not-allowed;
-    }
-  }
+      &:first-child {
+        font-weight: 600;
+      }
 
-  label {
-    display:block;
+      &:not(:first-child) {
+        font-weight: 400;
+        cursor: pointer;
+        margin-bottom: 0.5em;
+        margin-left: 0.5em;
+      }
 
-    &:first-child {
-      font-weight: 600;
-    }
-
-    &:not(:first-child) {
-      font-weight: 400;
-      cursor: pointer;
-  		margin-bottom: 0.5em;
-      margin-left: 0.5em;
-    }
-
-    &.disabled {
-      color: var(--ma-divider-color);
-      cursor: not-allowed;
+      &.disabled {
+        color: var(--ma-divider-color);
+        cursor: not-allowed;
+      }
     }
   }
 }
 
 :host(.inline) {
-  input, label {
-    display: inline;
+  ::ng-deep {
+    input, label {
+      display: inline;
+    }
   }
 }

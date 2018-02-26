@@ -1,34 +1,34 @@
 @import 'modular-admin/component';
 
 :host {
-	display: block;
+    display: block;
 }
 
 a {
-	display: block;
-	font-size: 14px;
-	color: var(--ma-side-nav-text-color);
-	text-decoration: none;
-	padding: 15px 10px;
+    display: block;
+    font-size: 14px;
+    color: var(--ma-side-nav-text-color);
+    text-decoration: none;
+    padding: 15px 10px;
 }
 
 a:hover {
-	color: var(--ma-side-nav-active-text-color);
-	background-color: var(--ma-secondary-color-dark);
+    color: var(--ma-side-nav-active-text-color);
+    background-color: var(--ma-secondary-color-dark);
 }
 
 a.router-link-active {
-	color: var(--ma-side-nav-active-text-color);
-	background-color: var(--ma-primary-color);
+    color: var(--ma-side-nav-active-text-color);
+    background-color: var(--ma-primary-color);
 }
 
 a:not([href]):not([tabindex]),
 a:not([href]):not([tabindex]) {
-	color: var(--ma-text-color-inverse);
+    color: var(--ma-text-color-inverse);
 }
 
 // `:host-context(ma-side-nav-menu)` doesn't work in the current
 // version of angular, so we have an annoying workaround:
 :host-context(.is-menu) a {
-	padding: 10px 10px 10px 40px;
+    padding: 10px 10px 10px 40px;
 }

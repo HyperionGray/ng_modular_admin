@@ -36,12 +36,12 @@ buildComponentStyles(bool debug) {
         String destPath = path.join(componentPath, destName);
         bool cached = _styleSheetIsCurrent(sourcePath, destPath);
 
-        print(' * lib/src/components/' + basename +
-              ' → lib/src/components/' + destName +
-              (cached ? ' (cached)' : ''));
-
         if (cached) {
+            print(' * lib/src/components/' + basename + ' (cached)');
             continue;
+        } else {
+            print(' * lib/src/components/' + basename +
+                  ' → lib/src/components/' + destName);
         }
 
         var sasscArgs = ['-I', includeDir];

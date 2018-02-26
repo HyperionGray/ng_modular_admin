@@ -1,18 +1,18 @@
 @import 'modular-admin/component';
 
 :host {
-	display: block;
-	background-color: var(--ma-secondary-color);
-	position: absolute;
-	left: 0;
-	transition: left 0.3s ease;
-	width: var(--ma-side-nav-width);
-	height: 100%;
-	overflow-x: hidden;
-	overflow-y: auto;
+    display: block;
+    background-color: var(--ma-secondary-color);
+    position: absolute;
+    left: 0;
+    transition: left 0.3s ease;
+    width: var(--ma-side-nav-width);
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 :host(.fixed) {
-	position:fixed;
-	height: 100vh;
+    position:fixed;
+    height: 100vh;
 }
