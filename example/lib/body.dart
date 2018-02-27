@@ -6,24 +6,24 @@ import 'package:angular_router/angular_router.dart';
 import 'package:ng_fontawesome/ng_fontawesome.dart';
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 
-import 'package:ng_modular_admin_demo/about.dart';
-import 'package:ng_modular_admin_demo/buttons.dart';
-import 'package:ng_modular_admin_demo/cards.dart';
-import 'package:ng_modular_admin_demo/footer.dart';
-import 'package:ng_modular_admin_demo/forms.dart';
-import 'package:ng_modular_admin_demo/layout.dart';
-import 'package:ng_modular_admin_demo/list_group.dart';
-import 'package:ng_modular_admin_demo/login.dart';
-import 'package:ng_modular_admin_demo/overlay.dart';
-import 'package:ng_modular_admin_demo/pagers.dart';
-import 'package:ng_modular_admin_demo/side-nav.dart';
-import 'package:ng_modular_admin_demo/sign-up.dart';
-import 'package:ng_modular_admin_demo/tables.dart';
-import 'package:ng_modular_admin_demo/tags.dart';
-import 'package:ng_modular_admin_demo/themes.dart';
-import 'package:ng_modular_admin_demo/toast.dart';
-import 'package:ng_modular_admin_demo/top-nav.dart';
-import 'package:ng_modular_admin_demo/typography.dart';
+import 'about.dart';
+import 'buttons.dart';
+import 'cards.dart';
+import 'footer.dart';
+import 'forms.dart';
+import 'layout.dart';
+import 'list_group.dart';
+import 'login.dart';
+import 'overlay.dart';
+import 'pagers.dart';
+import 'side-nav.dart';
+import 'sign-up.dart';
+import 'tables.dart';
+import 'tags.dart';
+import 'themes.dart';
+import 'toast.dart';
+import 'top-nav.dart';
+import 'typography.dart';
 
 /// Top-level component for Modular Admin demo.
 @Component(

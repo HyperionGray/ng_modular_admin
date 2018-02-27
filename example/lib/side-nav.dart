@@ -3,7 +3,7 @@ import 'package:angular_forms/angular_forms.dart';
 
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 
-import 'package:ng_modular_admin_demo/layout.dart';
+import 'layout.dart';
 
 /// Side navigation component.
 @Component(
