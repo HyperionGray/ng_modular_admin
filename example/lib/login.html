@@ -5,23 +5,18 @@
       Ng2 Modular Admin
     </h1>
     <div class='content'>
-      <form (submit)='login()'>
-        <ma-input-group [inline]='true'>
-          <label>
-            <span class='input-label'>Username</span>
-            <input type='text'
-                   [ngFormControl]='usernameControl'
-                   placeholder='Enter your username'>
-          </label>
+      <form (submit)='login()' [ngFormModel]='loginForm'>
+        <ma-input-group [control]='loginForm.controls["username"]'>
+          <label class='input-label'>Username</label>
+          <input type='text'
+                 ngControl='username'
+                 placeholder='Enter any username'>
         </ma-input-group>
-        <ma-input-group [inline]='true'>
-          <label>
-            <span class='input-label'>Password</span>
-            <input type='password'
-                   [(ngModel)]='password'
-                   [ngFormControl]='passwordControl'
-                   placeholder='Enter "password123"'>
-          </label>
+        <ma-input-group [control]='loginForm.controls["password"]'>
+          <label class='input-label'>Password</label>
+          <input type='password'
+                 ngControl='password'
+                 placeholder='Enter "password123"'>
         </ma-input-group>
         <ma-checkbox-group class='text-xs-right'>
           <label>
@@ -31,7 +26,7 @@
         </ma-checkbox-group>
         <ma-button [submit]='true'
                    [block]='true'
-                   [disabled]='!requiredFields.valid'>Login</ma-button>
+                   [disabled]='!loginForm.valid'>Login</ma-button>
         <p class='text-xs-center'>
           Don't have an account?
           <a [routerLink]='["SignUp"]'>Sign up</a>

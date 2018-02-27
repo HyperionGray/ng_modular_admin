@@ -5,6 +5,7 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 
 import 'package:ng_modular_admin/ng_modular_admin.dart';
+import 'package:ng_modular_admin/validators.dart' as MaValidators;
 
 /// Layout component.
 @Component(
@@ -41,8 +42,6 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
             padding: 20px;
         }
         .input-label {
-            min-width: 5em;
-            text-align: right;
         }
     '''],
     templateUrl: 'login.html',
@@ -55,29 +54,30 @@ class LoginComponent {
     /// Starts the shake animation.
     bool shake = false;
 
-    /// Keep track of required fields.
-    String password;
-    Control usernameControl, passwordControl;
-    ControlGroup requiredFields;
+    ControlGroup loginForm;
 
     /// Constructor.
     LoginComponent(this.router) {
-        this.usernameControl = new Control('', Validators.required);
-        this.passwordControl = new Control('', Validators.required);
-        this.requiredFields = new ControlGroup({
-            'username': this.usernameControl,
-            'password': this.passwordControl,
+        final builder = new FormBuilder();
+        this.loginForm = builder.group({
+            'username': ['', MaValidators.required()],
+            'password': ['', MaValidators.required()],
         });
     }
 
     /// Do the shake animation.
     void login() {
-        if (this.password == 'password123') {
+        var password = this.loginForm.controls['password'].value;
+        if (password == 'password123') {
             this.router.navigate(['About']);
         } else {
-            this.password = null;
+            this.loginForm.controls['password'].setErrors({
+                'The password is incorrect.': ''
+            });
             this.shake = true;
-            new Timer(new Duration(seconds: 1), () {this.shake = false;});
+            new Timer(new Duration(seconds: 1), () {
+                this.shake = false;
+            });
         }
     }
 }

@@ -350,22 +350,20 @@ with text.</pre>
         validation, but template-driven validation is also possible.
       </p>
       <form (ngSubmit)='handleSubmit()' [ngFormModel]='demoForm'>
-        <ma-input-group [control]='nameControl'>
+        <ma-input-group [control]='demoForm.controls["name"]'>
           <label>
             Name
             <input type='text'
                    placeholder='Enter your name (required)'
-                   [(ngModel)]='name'
-                   [ngFormControl]='nameControl'>
+                   ngControl='name'>
           </label>
         </ma-input-group>
-        <ma-input-group [control]='ageControl'>
+        <ma-input-group [control]='demoForm.controls["age"]'>
           <label>
             Age
             <input type='text'
                    placeholder='Enter your age'
-                   [(ngModel)]='age'
-                   [ngFormControl]='ageControl'>
+                   ngControl='age'>
           </label>
         </ma-input-group>
         <ma-button [submit]='true' [disabled]='!demoForm.valid'>
@@ -375,63 +373,82 @@ with text.</pre>
       <p>
         The markup for this example form is:
       </p>
-      <pre class='code'>&#x3C;form
-  (ngSubmit)=&#x27;handleSubmit()&#x27;
-  [ngFormModel]=&#x27;demoForm&#x27;&#x3E;
-  &#x3C;ma-input-group [control]=&#x27;nameControl&#x27;&#x3E;
-    &#x3C;label&#x3E;Name&#x3C;/label&#x3E;
-    &#x3C;input
-    type=&#x27;text&#x27;
-    placeholder=&#x27;Enter your name (required)&#x27;
-    [(ngModel)]=&#x27;name&#x27;
-    [ngFormControl]=&#x27;nameControl&#x27;&#x3E;
+      <pre class='code'>&#x3C;form (ngSubmit)=&#x27;handleSubmit()&#x27; [ngFormModel]=&#x27;demoForm&#x27;&#x3E;
+  &#x3C;ma-input-group [control]=&#x27;demoForm.controls[&#x22;name&#x22;]&#x27;&#x3E;
+    &#x3C;label&#x3E;
+      Name
+      &#x3C;input type=&#x27;text&#x27;
+             placeholder=&#x27;Enter your name (required)&#x27;
+             ngControl=&#x27;name&#x27;&#x3E;
+    &#x3C;/label&#x3E;
   &#x3C;/ma-input-group&#x3E;
-  &#x3C;ma-input-group
-    [control]=&#x27;ageControl&#x27;&#x3E;
-    &#x3C;label&#x3E;Age&#x3C;/label&#x3E;
-    &#x3C;input
-      type=&#x27;text&#x27;
-      placeholder=&#x27;Enter your age&#x27;
-      [(ngModel)]=&#x27;age&#x27;
-      [ngFormControl]=&#x27;ageControl&#x27;&#x3E;
+  &#x3C;ma-input-group [control]=&#x27;demoForm.controls[&#x22;age&#x22;]&#x27;&#x3E;
+    &#x3C;label&#x3E;
+      Age
+      &#x3C;input type=&#x27;text&#x27;
+             placeholder=&#x27;Enter your age&#x27;
+             ngControl=&#x27;age&#x27;&#x3E;
+    &#x3C;/label&#x3E;
   &#x3C;/ma-input-group&#x3E;
-  &#x3C;ma-button
-    [submit]=&#x27;true&#x27;
-    [disabled]=&#x27;!demoForm.valid&#x27;&#x3E;
+  &#x3C;ma-button [submit]=&#x27;true&#x27; [disabled]=&#x27;!demoForm.valid&#x27;&#x3E;
     &#x3C;fa name=&#x27;user-plus&#x27;&#x3E;&#x3C;/fa&#x3E; Save
   &#x3C;/ma-button&#x3E;
 &#x3C;/form&#x3E;</pre>
     <p>
-      The symbols <code>demoForm</code>, <code>nameControl</code>, and
-      <code>ageControl</code> are created in the controller using Angular's
-      imperative style of form validation. The controller looks like this:
+      To implement validation, the <code>&lt;form&gt;</code> element must have
+      its <code>[control]</code>directive set to a <code>ControlGroup</code>.
+      Each input needs a control name that corresponds to a control in the
+      control group (see below), e.g. <code>ngControl='name'</code>. Finally,
+      the <code>&lt;ma-input-group&gt;</code> needs its control directive set to
+      the same control as its input. This approach is a bit verbose but it is the
+      only way to work with Angular forms.
     </p>
-    <pre class='code'>import 'package:ng_modular_admin/validators.dart' as MaValidators;
+    <p>
+      The component for this form looks like this:
+    </p>
+    <pre class='code'>import &#x27;dart:html&#x27;;
 
+import &#x27;package:angular/angular.dart&#x27;;
+import &#x27;package:angular_forms/angular_forms.dart&#x27;;
+import &#x27;package:ng_fontawesome/ng_fontawesome.dart&#x27;;
+
+import &#x27;package:ng_modular_admin/ng_modular_admin.dart&#x27;;
+import &#x27;package:ng_modular_admin/validators.dart&#x27; as MaValidators;
+
+/// Forms component.
 @Component(
     selector: &#x27;forms&#x27;,
     templateUrl: &#x27;forms.html&#x27;,
-    directives: const [MA_DIRECTIVES, FaIcon]
+    styles: const [&#x27;&#x27;&#x27;
+        form {
+            max-width: 30em;
+        }
+    &#x27;&#x27;&#x27;],
+    directives: const [CORE_DIRECTIVES, FaIcon, formDirectives, MA_DIRECTIVES]
 )
-class MyComponent {
-    String age = &#x27;&#x27;, name = &#x27;&#x27;;
-
+class FormsComponent {
     ControlGroup demoForm;
-    Control ageControl, nameControl;
 
-    MyComponent() {
-        this.ageControl = new Control(&#x27;&#x27;, MaValidators.integer(min: 0));
-        this.nameControl = new Control(&#x27;&#x27;, MaValidators.required());
-        this.demoForm = new ControlGroup({
-            &#x27;age&#x27;: this.ageControl,
-            &#x27;name&#x27;: this.nameControl,
+    FormsComponent() {
+        final builder = new FormBuilder();
+        this.demoForm = builder.group({
+            &#x27;name&#x27;: [&#x27;&#x27;, MaValidators.required()],
+            &#x27;age&#x27;: [&#x27;&#x27;, MaValidators.integer(min: 0)],
         });
     }
 
     void handleSubmit() {
+        var name = this.demoForm.controls[&#x27;name&#x27;].value;
+        var age = this.demoForm.controls[&#x27;age&#x27;].value;
         window.alert(&#x27;You submitted name=&#x22;$name&#x22;, age=&#x22;$age&#x22;.&#x27;);
     }
 }</pre>
+    <p>
+      The component creates a <code>CongrolGroup</code> using the <code>FormBuilder</code>
+      factory. This control group is the one passed into the form, and the map
+      keys passed to the builder correspond to the control names assigned to each
+      input.
+    </p>
     </ma-card>
   </div>
 </div>

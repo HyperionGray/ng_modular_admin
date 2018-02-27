@@ -3,6 +3,7 @@ import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 
 import 'package:ng_modular_admin/ng_modular_admin.dart';
+import 'package:ng_modular_admin/validators.dart' as MaValidators;
 
 /// Layout component.
 @Component(
@@ -31,19 +32,23 @@ class SignUpComponent {
     Router router;
 
     /// Form controls
-    Control usernameControl, password1Control, password2Control;
-    ControlGroup requiredFields;
+    ControlGroup signupForm;
 
     /// Constructor.
     SignUpComponent(this.router) {
-        this.usernameControl = new Control('', Validators.required);
-        this.password1Control = new Control('', Validators.required);
-        this.password2Control = new Control('', Validators.required);
-        this.requiredFields = new ControlGroup({
-            'username': this.usernameControl,
-            'password1': this.password1Control,
-            'password2': this.password2Control,
+        final builder = new FormBuilder();
+        this.signupForm = builder.group({
+            'username': ['', MaValidators.required()],
+            'password1': ['', MaValidators.required()],
+            'password2': ['', null],
         });
+        this.signupForm.find('password2').validator = composeValidators([
+            MaValidators.required(),
+            MaValidators.matches(
+                this.signupForm.find('password1'),
+                'The two passwords must match.'
+            )
+        ]);
     }
 
     /// Handle form submission

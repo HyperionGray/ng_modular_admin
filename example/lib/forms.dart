@@ -19,21 +19,19 @@ import 'package:ng_modular_admin/validators.dart' as MaValidators;
     directives: const [CORE_DIRECTIVES, FaIcon, formDirectives, MA_DIRECTIVES]
 )
 class FormsComponent {
-    String age = '', name = '';
-
     ControlGroup demoForm;
-    Control ageControl, nameControl;
 
     FormsComponent() {
-        this.ageControl = new Control('', MaValidators.integer(min: 0));
-        this.nameControl = new Control('', MaValidators.required());
-        this.demoForm = new ControlGroup({
-            'age': this.ageControl,
-            'name': this.nameControl,
+        final builder = new FormBuilder();
+        this.demoForm = builder.group({
+            'name': ['', MaValidators.required()],
+            'age': ['', MaValidators.integer(min: 0)],
         });
     }
 
     void handleSubmit() {
+        var name = this.demoForm.controls['name'].value;
+        var age = this.demoForm.controls['age'].value;
         window.alert('You submitted name="$name", age="$age".');
     }
 }

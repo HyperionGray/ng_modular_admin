@@ -6,6 +6,8 @@ import 'package:ng_fontawesome/ng_fontawesome.dart';
 
 import 'package:ng_modular_admin/util.dart';
 
+const INPUT_SEL = 'input[type=text],input[type=password],select,textarea';
+
 /// A container for a label and an input.
 @Component(
     selector: 'ma-input-group',
@@ -51,9 +53,7 @@ class InputGroup implements AfterContentInit, DoCheck {
 
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {
-        var inputs = this.host.nativeElement.querySelectorAll(
-            'input[type=text],input[type=password],select,textarea'
-        );
+        var inputs = this.host.nativeElement.querySelectorAll(INPUT_SEL);
 
         if (inputs.length != 1) {
             var msg = '<ma-input-group> requires exactly one'

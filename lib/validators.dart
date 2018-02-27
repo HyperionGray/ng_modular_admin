@@ -34,6 +34,18 @@ ValidatorFn integer({num min, num max}) {
     };
 }
 
+/// Validates that a control's value matches the value of another control, e.g.
+/// two password fields on a registration form.
+ValidatorFn matches(Control other, String error) {
+    return (AbstractControl control) {
+        var errors = {};
+        if (control.value != other.value) {
+            errors[error] = '';
+        }
+        return errors.length > 0 ? errors : null;
+    };
+}
+
 /// Form value is either blank or can be parsed as a float, with optional min
 /// and max values (inclusive).
 ValidatorFn number({num min, num max}) {
