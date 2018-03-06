@@ -34,8 +34,11 @@ class SignUpComponent {
     /// Form controls
     ControlGroup signupForm;
 
+    DocumentService _doc;
+
     /// Constructor.
-    SignUpComponent(this.router) {
+    SignUpComponent(this._doc, this.router) {
+        this._doc.title = 'Sign Up';
         final builder = new FormBuilder();
         this.signupForm = builder.group({
             'username': ['', MaValidators.required()],

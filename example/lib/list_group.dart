@@ -7,4 +7,10 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
     templateUrl: 'list_group.html',
     directives: const [MA_DIRECTIVES]
 )
-class ListGroupComponent {}
+class ListGroupComponent {
+    DocumentService _doc;
+
+    ListGroupComponent(this._doc) {
+        this._doc.title = 'List Group';
+    }
+}

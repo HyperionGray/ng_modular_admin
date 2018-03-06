@@ -14,8 +14,12 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 class TagsComponent {
     TagsService tagsService;
 
+    DocumentService _doc;
+
     /// Constructor.
-    TagsComponent(this.tagsService);
+    TagsComponent(this._doc, this.tagsService) {
+        this._doc.title = 'Tags';
+    }
 }
 
 /// Service for keeping track of tags (a.k.a. badges).

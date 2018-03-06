@@ -17,6 +17,12 @@ class ButtonsComponent {
     bool disabledDemo = false;
     bool busyDemo = false;
 
+    DocumentService _doc;
+
+    ButtonsComponent(this._doc) {
+        this._doc.title = 'Buttons';
+    }
+
     /// A sample action for responding to a button click.
     void showClickAlert(ButtonClick click) {
         String description = (click.event.currentTarget as Element).text.trim();

@@ -15,9 +15,11 @@ class PagersComponent {
     int maxPages = 5;
     List<String> items;
 
+    DocumentService _doc;
     Page _lastPage;
 
-    PagersComponent() {
+    PagersComponent(this._doc) {
+        this._doc.title = 'Pagers';
         this.updateItems();
     }
 

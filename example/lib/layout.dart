@@ -1,4 +1,5 @@
 import 'package:angular/angular.dart';
+import 'package:angular_forms/angular_forms.dart';
 import 'package:angular_router/angular_router.dart';
 import 'package:ng_modular_admin/ng_modular_admin.dart';
 
@@ -6,9 +7,15 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 @Component(
     selector: 'layout',
     templateUrl: 'layout.html',
-    directives: const [MA_DIRECTIVES, RouterLink]
+    directives: const [formDirectives, MA_DIRECTIVES, RouterLink]
 )
-class LayoutComponent {}
+class LayoutComponent {
+    DocumentService documentService;
+
+    LayoutComponent(this.documentService) {
+        this.documentService.title = 'Layout';
+    }
+}
 
 /// Maintains state related to application layout.
 @Injectable()

@@ -44,13 +44,16 @@ class ThemesComponent implements AfterContentInit {
     String cardPadding = '';
     String contentPadding = '';
     String gutterWidth = '';
+    ElementRef host;
     Timer updateTimer;
     List<String> themes = ['blue', 'red', 'orange', 'purple', 'seagreen'];
 
-    ElementRef host;
+    DocumentService _doc;
 
     /// Constructor.
-    ThemesComponent(this.host);
+    ThemesComponent(this._doc, this.host) {
+        this._doc.title = 'Themes';
+    }
 
     /// Apply a theme to the <ma-app> element.
     void applyTheme(String theme) {

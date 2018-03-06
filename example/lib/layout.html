@@ -1,3 +1,4 @@
+<ma-size-spy></ma-size-spy>
 <ma-card>
   <h2>Application Shell</h2>
   <p class='lead'>
@@ -93,6 +94,69 @@
       layout, look at the <a [routerLink]='["Buttons"]'>Buttons</a> page, which
       has 2 columns of cards.
     </p>
+    </ma-card>
+  </div>
+</div>
+<div class='row'>
+  <div class='col-lg'>
+    <ma-card>
+      <h2>Size Spy</h2>
+      <p class='lead'>
+        Programmatic Bootstrap Sizes
+      </p>
+      <p>
+        Bootstrap includes CSS classes to control page contents based on the
+        viewport size, for example <code>.hidden-sm-down</code> will hide an
+        element when the viewport is <code>xs</code> or <code>sm</code>.
+      </p>
+      <p>
+        The size spy
+        allows you to detect the Bootstrap viewport size programmatically.
+        First, insert an <code>&lt;ma-size-spy&gt;</code> component, then
+        observe the Bootstrap size through the <code>DocumentService</code>.
+        Try resizing the window and observe how the Bootstrap size changes.
+      </p>
+      <p>
+        The current Bootstrap size is: <strong>{{documentService.bootstrapSize}}</strong>.
+      </p>
+      <pre class='code'>&#x3C;p&#x3E;
+  The current Bootstrap size is:
+  &#x3C;strong&#x3E;
+    {{"{"+"{documentService.boostrapSize}"+"}"}}
+  &#x3C;/strong&#x3E;.
+&#x3C;/p&#x3E;</pre>
+    <p>
+      You can also use <code>document.onBootstrapSize.listen(…)</code> to
+      respond to changes in the Bootstrap size.
+    </p>
+    </ma-card>
+  </div>
+  <div class='col-lg'>
+    <ma-card>
+      <h2>Title</h2>
+      <p class='lead'>
+        Customize the document title.
+      </p>
+      <p>
+        The <code>DocumentService</code> allows you to customize the page
+        title, which is composed of a <code>siteName</code> that should be
+        set once at the application level,
+        plus a dynamic <code>title</code> that can be set by each component.
+      </p>
+      <p>
+        Try changing the document title now:
+      </p>
+      <p>
+        <ma-input-group>
+          <label style='width: 7em'>Document Title</label>
+          <input type='text' [(ngModel)]='documentService.title'>
+        </ma-input-group>
+      </p>
+      <pre class='code'>&#x3C;ma-input-group&#x3E;
+  &#x3C;label style=&#x27;width: 7em&#x27;&#x3E;Document Title&#x3C;/label&#x3E;
+  &#x3C;input type=&#x27;text&#x27;
+    (ngModel)]=&#x27;documentService.title&#x27;&#x3E;
+&#x3C;/ma-input-group&#x3E;</pre>
     </ma-card>
   </div>
 </div>

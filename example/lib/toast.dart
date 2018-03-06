@@ -12,8 +12,12 @@ class ToastComponent {
     /// Toast (a.k.a. pop-up notification) service.
     ToastService toastService;
 
+    DocumentService _doc;
+
     /// Constructor.
-    ToastComponent(this.toastService);
+    ToastComponent(this._doc, this.toastService) {
+        this._doc.title = 'Toast';
+    }
 
     /// Create a toast with the specified theme.
     void createToast(String type) {

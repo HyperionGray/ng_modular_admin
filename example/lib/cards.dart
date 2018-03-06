@@ -7,4 +7,10 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
     templateUrl: 'cards.html',
     directives: const [MA_DIRECTIVES]
 )
-class CardsComponent {}
+class CardsComponent {
+    DocumentService _doc;
+
+    CardsComponent(this._doc) {
+        this._doc.title = 'Cards';
+    }
+}

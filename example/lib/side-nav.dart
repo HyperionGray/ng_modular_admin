@@ -19,6 +19,10 @@ class SideNavComponent {
     /// A service that contains layout state.
     LayoutService layoutService;
 
+    DocumentService _doc;
+
     /// Constructor.
-    SideNavComponent(this.layoutService);
+    SideNavComponent(this._doc, this.layoutService) {
+        this._doc.title = 'Side Navigation';
+    }
 }

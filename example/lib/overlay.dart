@@ -20,4 +20,10 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
 class OverlayComponent {
     bool overlayIsVisible = false;
     bool overlayIsOpaque = false;
+
+    DocumentService _doc;
+
+    OverlayComponent(this._doc) {
+        this._doc.title = 'Overlay';
+    }
 }

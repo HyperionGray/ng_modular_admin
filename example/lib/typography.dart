@@ -8,4 +8,10 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
     templateUrl: 'typography.html',
     directives: const [MA_DIRECTIVES, FaIcon]
 )
-class TypographyComponent {}
+class TypographyComponent {
+    DocumentService _doc;
+
+    TypographyComponent(this._doc) {
+        this._doc.title = 'Typography';
+    }
+}

@@ -19,6 +19,10 @@ class TopNavComponent {
     /// A service that contains application state.
     LayoutService layoutService;
 
+    DocumentService _doc;
+
     /// Constructor.
-    TopNavComponent(this.layoutService);
+    TopNavComponent(this._doc, this.layoutService) {
+        this._doc.title = 'Top Navigation';
+    }
 }

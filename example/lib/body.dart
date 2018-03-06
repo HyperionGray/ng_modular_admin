@@ -37,10 +37,9 @@ import 'typography.dart';
     templateUrl: 'body.html',
     directives: const [CORE_DIRECTIVES, FaIcon, formDirectives, MA_DIRECTIVES,
         ROUTER_DIRECTIVES],
-    providers: const [ROUTER_PROVIDERS, MA_PROVIDERS, LayoutService,
-        TagsService,
-        const Provider(LocationStrategy, useClass: HashLocationStrategy),
-    ]
+    providers: const [ROUTER_PROVIDERS, MA_PROVIDERS, DocumentService,
+        LayoutService, TagsService,
+        const Provider(LocationStrategy, useClass: HashLocationStrategy)]
 )
 @RouteConfig(const [
     const Route(path: '/about', name: 'About', component: AboutComponent, useAsDefault: true),

@@ -21,7 +21,10 @@ import 'package:ng_modular_admin/validators.dart' as MaValidators;
 class FormsComponent {
     ControlGroup demoForm;
 
-    FormsComponent() {
+    DocumentService _doc;
+
+    FormsComponent(this._doc) {
+        this._doc.title = 'Forms';
         final builder = new FormBuilder();
         this.demoForm = builder.group({
             'name': ['', MaValidators.required()],

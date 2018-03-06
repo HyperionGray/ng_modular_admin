@@ -9,4 +9,10 @@ import 'package:ng_modular_admin/ng_modular_admin.dart';
     templateUrl: 'about.html',
     directives: const [ROUTER_DIRECTIVES, MA_DIRECTIVES]
 )
-class AboutComponent {}
+class AboutComponent {
+    DocumentService _doc;
+
+    AboutComponent(this._doc) {
+        this._doc.title = 'About';
+    }
+}

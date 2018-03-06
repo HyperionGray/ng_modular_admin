@@ -56,8 +56,11 @@ class LoginComponent {
 
     ControlGroup loginForm;
 
+    DocumentService _doc;
+
     /// Constructor.
-    LoginComponent(this.router) {
+    LoginComponent(this._doc, this.router) {
+        this._doc.title = 'Login';
         final builder = new FormBuilder();
         this.loginForm = builder.group({
             'username': ['', MaValidators.required()],

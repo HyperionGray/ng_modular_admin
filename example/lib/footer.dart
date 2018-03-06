@@ -19,6 +19,10 @@ class FooterComponent {
     /// A service that contains layout state.
     LayoutService layoutService;
 
+    DocumentService _doc;
+
     /// Constructor.
-    FooterComponent(this.layoutService);
+    FooterComponent(this._doc, this.layoutService) {
+        this._doc.title = 'Footer';
+    }
 }
