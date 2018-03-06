@@ -21,6 +21,10 @@ class ButtonsComponent {
 
     ButtonsComponent(this._doc) {
         this._doc.title = 'Buttons';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Buttons'),
+        ];
     }
 
     /// A sample action for responding to a button click.

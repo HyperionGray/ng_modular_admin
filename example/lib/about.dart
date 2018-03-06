@@ -14,5 +14,8 @@ class AboutComponent {
 
     AboutComponent(this._doc) {
         this._doc.title = 'About';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'About', icon: 'info-circle'),
+        ];
     }
 }

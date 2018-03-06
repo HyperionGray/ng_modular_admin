@@ -24,5 +24,9 @@ class FooterComponent {
     /// Constructor.
     FooterComponent(this._doc, this.layoutService) {
         this._doc.title = 'Footer';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Navigation', icon: 'map-signs'),
+            new Breadcrumb(name: 'Footer'),
+        ];
     }
 }

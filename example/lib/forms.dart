@@ -25,6 +25,10 @@ class FormsComponent {
 
     FormsComponent(this._doc) {
         this._doc.title = 'Forms';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Forms'),
+        ];
         final builder = new FormBuilder();
         this.demoForm = builder.group({
             'name': ['', MaValidators.required()],

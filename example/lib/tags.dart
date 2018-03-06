@@ -19,6 +19,10 @@ class TagsComponent {
     /// Constructor.
     TagsComponent(this._doc, this.tagsService) {
         this._doc.title = 'Tags';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Tags'),
+        ];
     }
 }
 

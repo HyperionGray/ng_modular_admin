@@ -24,5 +24,9 @@ class SideNavComponent {
     /// Constructor.
     SideNavComponent(this._doc, this.layoutService) {
         this._doc.title = 'Side Navigation';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Navigation', icon: 'map-signs'),
+            new Breadcrumb(name: 'Side Navigation'),
+        ];
     }
 }

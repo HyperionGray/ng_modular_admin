@@ -12,5 +12,9 @@ class ListGroupComponent {
 
     ListGroupComponent(this._doc) {
         this._doc.title = 'List Group';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'List Group'),
+        ];
     }
 }

@@ -13,5 +13,8 @@ class TypographyComponent {
 
     TypographyComponent(this._doc) {
         this._doc.title = 'Typography';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Typography', icon: 'font'),
+        ];
     }
 }

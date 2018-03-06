@@ -1,4 +1,5 @@
 export 'src/components/app.dart';
+export 'src/components/breadcrumbs.dart';
 export 'src/components/button.dart';
 export 'src/components/button_group.dart';
 export 'src/components/card.dart';

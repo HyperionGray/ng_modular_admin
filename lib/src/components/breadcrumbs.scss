@@ -1,0 +1,10 @@
+@import 'modular-admin/component';
+
+:host {
+  display: block;
+
+  fa.separator {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+}

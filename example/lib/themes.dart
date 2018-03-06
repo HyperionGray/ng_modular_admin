@@ -53,6 +53,9 @@ class ThemesComponent implements AfterContentInit {
     /// Constructor.
     ThemesComponent(this._doc, this.host) {
         this._doc.title = 'Themes';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Themes', icon: 'paint-brush'),
+        ];
     }
 
     /// Apply a theme to the <ma-app> element.

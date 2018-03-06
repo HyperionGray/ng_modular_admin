@@ -1,0 +1,14 @@
+<fa name='home'></fa>
+<span *ngFor='let breadcrumb of documentService.breadcrumbs'>
+  <fa name='angle-right' class='separator'></fa>
+  <span *ngIf='breadcrumb.link == null'>
+    <fa *ngIf='breadcrumb.icon != null' [name]='breadcrumb.icon'></fa>
+    <span *ngIf='breadcrumb.name != null'>{{breadcrumb.name}}</span>
+  </span>
+  <span *ngIf='breadcrumb.link != null'>
+    <a [routerLink]='breadcrumb.link'>
+      <fa *ngIf='breadcrumb.icon != null' [name]='breadcrumb.icon'></fa>
+      <span *ngIf='breadcrumb.name != null'>{{breadcrumb.name}}</span>
+    </a>
+  </span>
+</span>

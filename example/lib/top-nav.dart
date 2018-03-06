@@ -24,5 +24,9 @@ class TopNavComponent {
     /// Constructor.
     TopNavComponent(this._doc, this.layoutService) {
         this._doc.title = 'Top Navigation';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Navigation', icon: 'map-signs'),
+            new Breadcrumb(name: 'Top Navigation'),
+        ];
     }
 }

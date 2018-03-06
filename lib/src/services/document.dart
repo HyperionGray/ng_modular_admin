@@ -9,10 +9,12 @@ enum BootstrapSize {xs, sm, md, lg, xl}
 /// A service that exposes document state.
 @Injectable()
 class DocumentService {
+    List<Breadcrumb> breadcrumbs;
+    String siteName = 'Modular Admin';
+
     BootstrapSize _bootstrapSize;
     StreamController<BootstrapSize> _bootstrapSizeController;
     String _title;
-    String siteName = 'Modular Admin';
 
     /// Getter: bootstrap size.
     BootstrapSize get bootstrapSize => this._bootstrapSize;
@@ -41,6 +43,15 @@ class DocumentService {
     /// Constructor.
     DocumentService() {
         this.title = 'Loading…';
+        this.breadcrumbs = [];
         this._bootstrapSizeController = new StreamController<BootstrapSize>();
     }
+}
+
+/// A breadcrumb for navigation.
+class Breadcrumb {
+    String icon;
+    String name;
+    List link;
+    Breadcrumb({this.icon, this.name, this.link});
 }

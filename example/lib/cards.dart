@@ -12,5 +12,9 @@ class CardsComponent {
 
     CardsComponent(this._doc) {
         this._doc.title = 'Cards';
+        this._doc.breadcrumbs = [
+            new Breadcrumb(name: 'Components', icon: 'gears'),
+            new Breadcrumb(name: 'Cards'),
+        ];
     }
 }

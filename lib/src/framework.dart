@@ -1,4 +1,5 @@
 import 'components/app.dart';
+import 'components/breadcrumbs.dart';
 import 'components/button.dart';
 import 'components/button_group.dart';
 import 'components/card.dart';
@@ -25,6 +26,7 @@ import 'services/toast.dart';
 
 const List<dynamic> MA_DIRECTIVES = const [
     App,
+    Breadcrumbs,
     Button,
     ButtonGroup,
     Card,

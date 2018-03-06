@@ -14,6 +14,9 @@ class LayoutComponent {
 
     LayoutComponent(this.documentService) {
         this.documentService.title = 'Layout';
+        this.documentService.breadcrumbs = [
+            new Breadcrumb(name: 'Layout', icon: 'th'),
+        ];
     }
 }
 
