@@ -1,6 +1,6 @@
 # Modular Admin for Angular Dart
 
-[View Demo](https://hyperiongray.github.io/ng_modular_admin/)
+[View Demo](https://hyperiongray.github.io/ng_modular_admin_demo/)
 
 ## Overview
 
