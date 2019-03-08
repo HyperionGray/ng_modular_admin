@@ -22,4 +22,4 @@ To build styles, run `dart tool/build-styles.dart`.
 
 ---
 
-[![define hyperion gray](https://hyperiongray.s3.amazonaws.com/define-hg.svg)](https://hyperiongray.com/?pk_campaign=github&pk_kwd=ng_modular_admin "Hyperion Gray")
+[![define hyperion gray](https://hyperiongray.s3.amazonaws.com/define-hg.svg)](https://www.hyperiongray.com/?pk_campaign=github&pk_kwd=ng_modular_admin "Hyperion Gray")
