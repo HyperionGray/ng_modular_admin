@@ -6,7 +6,6 @@ import 'package:path/path.dart' as path;
 main (List<String> rawArgs) {
     ArgResults args = _parseArgs(rawArgs);
     buildComponentStyles(args['debug']);
-    buildSharedStyles(args['debug']);
 }
 
 /// Build a stylesheet for each component.
@@ -42,60 +41,6 @@ buildComponentStyles(bool debug) {
         } else {
             print(' * lib/src/components/' + basename +
                   ' → lib/src/components/' + destName);
-        }
-
-        var sasscArgs = ['-I', includeDir];
-
-        if (!debug) {
-            sasscArgs.addAll(['-t', 'compressed']);
-        }
-
-        sasscArgs.addAll([sourcePath, destPath]);
-        var result = Process.runSync('sassc', sasscArgs);
-        if (result.exitCode != 0) {
-            print('ERROR: Failed to compile ' + sourcePath);
-            print(result.stderr);
-            exit(1);
-        }
-    }
-}
-
-/// Build a stylesheet for each theme.
-buildSharedStyles(bool debug) {
-    print('Building shared stylesheets…');
-    var themeDir = new Directory(_getPath('lib/src/modular-admin'));
-    var cssDir = _getPath('lib/css');
-    var includeDir = _getPath('lib/src');
-    var sourcePaths = new List<String>();
-
-    for (FileSystemEntity entity in themeDir.listSync()) {
-        String basename = path.basename(entity.path);
-        String extension = path.extension(entity.path);
-
-        if (basename.startsWith('_') || extension != '.scss') {
-            continue;
-        }
-
-        sourcePaths.add(entity.path);
-    }
-
-    sourcePaths.sort();
-
-    for (String sourcePath in sourcePaths) {
-        String basename = path.basename(sourcePath);
-        String themeName = basename.substring(0, basename.length - 5);
-        String destName = themeName + '.css';
-        String destPath = path.join(cssDir, themeName + '.css');
-
-        // TODO temporary hack, always build theme:
-        bool cached = false;//_styleSheetIsCurrent(sourcePath, destPath);
-
-        print(' * lib/src/modular-admin/' + basename +
-              ' → lib/css/' + destName +
-              (cached ? ' (cached)' : ''));
-
-        if (cached) {
-            continue;
         }
 
         var sasscArgs = ['-I', includeDir];

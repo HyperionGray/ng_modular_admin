@@ -1,9 +1,9 @@
 /*
  * Import mixins.
  */
-@import 'bootstrap/variables';
-@import 'bootstrap/mixins';
-@import 'modular-admin/mixins';
+@import '../bootstrap/variables';
+@import '../bootstrap/mixins';
+@import 'mixins';
 
 /*
  * Import all of Open Sans.
@@ -11,35 +11,35 @@
 $OpenSansPath: "../open-sans/fonts" !default;
 $OpenSansVersion: "1.1.0" !default;
 
-@import 'open-sans/sass/mixins';
-@import 'open-sans/sass/Light';
-@import 'open-sans/sass/LightItalic';
-@import 'open-sans/sass/Regular';
-@import 'open-sans/sass/Italic';
-@import 'open-sans/sass/Semibold';
-@import 'open-sans/sass/SemiboldItalic';
-@import 'open-sans/sass/Bold';
-@import 'open-sans/sass/BoldItalic';
-@import 'open-sans/sass/ExtraBold';
-@import 'open-sans/sass/ExtraBoldItalic';
+@import '../open-sans/sass/mixins';
+@import '../open-sans/sass/Light';
+@import '../open-sans/sass/LightItalic';
+@import '../open-sans/sass/Regular';
+@import '../open-sans/sass/Italic';
+@import '../open-sans/sass/Semibold';
+@import '../open-sans/sass/SemiboldItalic';
+@import '../open-sans/sass/Bold';
+@import '../open-sans/sass/BoldItalic';
+@import '../open-sans/sass/ExtraBold';
+@import '../open-sans/sass/ExtraBoldItalic';
 
 /*
  * Import some things we need from Bootstrap.
  */
 
 $enable-flex: true;
-@import 'bootstrap/reboot';
-@import 'bootstrap/normalize';
-@import 'bootstrap/grid';
-@import 'bootstrap/code';
-@import 'bootstrap/type';
-@import 'bootstrap/utilities';
-@import 'bootstrap/list-group';
+@import '../bootstrap/reboot';
+@import '../bootstrap/normalize';
+@import '../bootstrap/grid';
+@import '../bootstrap/code';
+@import '../bootstrap/type';
+@import '../bootstrap/utilities';
+@import '../bootstrap/list-group';
 
 /*
  * Import Modular Admin.
  */
-@import 'modular-admin/theme';
-@import 'modular-admin/grid';
-@import 'modular-admin/document';
-@import 'modular-admin/typography';
+@import 'theme';
+@import 'grid';
+@import 'document';
+@import 'typography';
