@@ -29,11 +29,6 @@ class InputGroup implements AfterContentInit, DoCheck {
     @Input()
     bool inline = false;
 
-    /// If true, display the input inline with surrounding text.
-    @HostBinding('class.in-text')
-    @Input('in-text')
-    bool inText = false;
-
     /// True if the input passes validation after dirtying.
     @HostBinding('class.success')
     bool success = false;

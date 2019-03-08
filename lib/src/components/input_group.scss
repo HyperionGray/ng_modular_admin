@@ -127,31 +127,6 @@
   }
 }
 
-:host(.in-text) {
-  display: inline-block;
-  margin-bottom: 0.25em;
-
-  & + ma-input-group.in-text {
-    margin-left: 0.5em;
-  }
-
-  ::ng-deep {
-    label {
-      display: flex;
-
-      span {
-        white-space: nowrap;
-      }
-    }
-
-    select {
-      line-height: 1;
-      margin-left: 0.25em;
-      padding: 0.25em 0.5em;
-    }
-  }
-}
-
 :host(.success) {
   ::ng-deep {
     input {

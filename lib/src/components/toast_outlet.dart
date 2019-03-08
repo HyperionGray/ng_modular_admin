@@ -8,7 +8,7 @@ import '../services/toast.dart';
     selector: 'ma-toast-outlet',
     templateUrl: 'toast_outlet.html',
     styleUrls: const ['toast_outlet.css'],
-    directives: const[CORE_DIRECTIVES, FaIcon]
+    directives: const [coreDirectives, FaIcon]
 )
 class ToastOutlet {
     @Input()

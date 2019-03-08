@@ -117,12 +117,8 @@ ma-app {
 // $chart-color-secondary: lighten($chart-color-primary, 20%);
 }
 
-.purple-theme {
-  @include ma-color-palette(primary, #7867A7);
-	// $dashboard-stat-icon-color: #BDBDBD;
-	//
-	// $chart-color-primary: lighten($color-primary, 8%);
-	// $chart-color-secondary: lighten($chart-color-primary, 10%);
+.hyperion-theme {
+  @include ma-color-palette(primary, #450671);
 }
 
 .red-theme {

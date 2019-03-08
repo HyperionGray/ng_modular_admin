@@ -9,15 +9,14 @@ Admin](https://github.com/modularcode/modular-admin-html) to Angular Dart.
 Modular Admin is a Bootstrap 4 admin theme written with HTML, monolithic CSS,
 and some JavaScript. This port focuses on converting monolithic CSS to web
 components with encapsulated styles and reimplementing the JavaScript logic with
-Angular 2 and Dart.
-
-*This project is still alpha quality. Do not use it in your production
-projects!*
+AngularDart.
 
 ## Building
 
 Before building styles, you need `dart` and `sassc` installed, and you need to
-run `pub get`.
+run `pub get`. The current version of C++ sassc (3.5.0) has [a bug that breaks
+Modular Admin](https://github.com/sass/sassc/issues/248). Use sassc 3.4.5
+instead.
 
 To build styles, run `dart tool/build-styles.dart`.
 

@@ -6,7 +6,7 @@
     <span *ngIf='breadcrumb.name != null'>{{breadcrumb.name}}</span>
   </span>
   <span *ngIf='breadcrumb.link != null'>
-    <a [routerLink]='breadcrumb.link'>
+    <a TODOrouterLink='breadcrumb.link'>
       <fa *ngIf='breadcrumb.icon != null' [name]='breadcrumb.icon'></fa>
       <span *ngIf='breadcrumb.name != null'>{{breadcrumb.name}}</span>
     </a>

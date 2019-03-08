@@ -5,7 +5,7 @@ import 'package:angular_forms/angular_forms.dart';
 ValidatorFn integer({num min, num max}) {
     return (AbstractControl control) {
         var parsed;
-        var errors = {};
+        Map<String, dynamic> errors = {};
         if (control.value.trim().isNotEmpty) {
             try {
                 parsed = int.parse(control.value, radix: 10);
@@ -38,7 +38,7 @@ ValidatorFn integer({num min, num max}) {
 /// two password fields on a registration form.
 ValidatorFn matches(Control other, String error) {
     return (AbstractControl control) {
-        var errors = {};
+        Map<String, dynamic> errors = {};
         if (control.value != other.value) {
             errors[error] = '';
         }
@@ -51,7 +51,7 @@ ValidatorFn matches(Control other, String error) {
 ValidatorFn number({num min, num max}) {
     return (AbstractControl control) {
         var parsed;
-        var errors = {};
+        Map<String, dynamic> errors = {};
         if (control.value.trim().isNotEmpty) {
             try {
                 parsed = double.parse(control.value);

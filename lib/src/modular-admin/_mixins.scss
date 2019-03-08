@@ -49,11 +49,11 @@
  * Create palette of lighter/darker colors from a base color.
  */
 @mixin ma-color-palette($paletteName, $baseColor) {
-  --ma-#{$paletteName}-color-lighter: lighten($baseColor, 16%);
-  --ma-#{$paletteName}-color-light: lighten($baseColor, 10%);
-  --ma-#{$paletteName}-color: $baseColor;
-  --ma-#{$paletteName}-color-dark: darken($baseColor, 10%);
-  --ma-#{$paletteName}-color-darker: darken($baseColor, 16%);
+  --ma-#{$paletteName}-color-lighter: #{lighten($baseColor, 16%)};
+  --ma-#{$paletteName}-color-light: #{lighten($baseColor, 10%)};
+  --ma-#{$paletteName}-color: #{$baseColor};
+  --ma-#{$paletteName}-color-dark: #{darken($baseColor, 10%)};
+  --ma-#{$paletteName}-color-darker: #{darken($baseColor, 16%)};
 }
 
 /**

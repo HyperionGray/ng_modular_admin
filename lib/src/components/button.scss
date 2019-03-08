@@ -1,5 +1,17 @@
 @import 'modular-admin/component';
 
+:host {
+  .content ::ng-deep {
+    fa:first-child {
+      margin-right: 0.5rem;
+    }
+
+    span + fa:last-child {
+      margin-left: 0.5rem;
+    }
+  }
+}
+
 button {
   display: inline-block;
   position: relative;
@@ -15,6 +27,7 @@ button {
   font-size: 1rem;
   border-radius: 0;
   margin-bottom: 5px;
+  margin-right: 1rem;
 
   &.primary {
     @include ma-button-variant(primary, var(--ma-button-text-color));
@@ -125,4 +138,5 @@ button {
 // container, so it handles removal of whitespace between buttons.)
 :host-context(.is-button-group) button {
   margin-left: -1px;
+  margin-right: 0;
 }

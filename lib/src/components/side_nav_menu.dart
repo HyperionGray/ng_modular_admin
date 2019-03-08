@@ -18,7 +18,7 @@ class SideNavMenu implements AfterContentInit {
     SideNavMenuHeader header;
 
     @ContentChildren(SideNavItem)
-    QueryList<SideNavItem> items;
+    List<SideNavItem> items;
 
     @HostBinding('class.open')
     bool isOpen = false;

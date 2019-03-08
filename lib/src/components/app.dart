@@ -14,10 +14,10 @@ import 'top_nav.dart';
     templateUrl: 'app.html',
     styleUrls: const ['app.css']
 )
-class App implements AfterViewInit {
+class App implements OnDestroy {
     /// A reference to the top navigation (if there is one).
     @ContentChildren(TopNav)
-    QueryList<TopNav> topNav;
+    set topNav(List<TopNav> topNav) => this.hasTopNav = topNav.length > 0;
 
     /// True if this application has a top nav.
     @HostBinding('class.has-top-nav')
@@ -26,7 +26,7 @@ class App implements AfterViewInit {
 
     /// A reference to the side navigation (if there is one).
     @ContentChildren(SideNav)
-    QueryList<SideNav> sideNav;
+    set sideNav(List<SideNav> sideNav) => this.hasSideNav = sideNav.length > 0;
 
     /// True if this application has a side nav.
     @HostBinding('class.has-side-nav')
@@ -35,43 +35,24 @@ class App implements AfterViewInit {
 
     /// A reference to the footer (if there is one).
     @ContentChildren(Footer)
-    QueryList<Footer> footer;
+    set footer(List<Footer> footer) => this.hasFooter = footer.length > 0;
 
     /// True if this application has a footer.
     @HostBinding('class.has-footer')
     @Input()
     bool hasFooter = false;
 
+    StreamSubscription routerStream;
+
     /// Constructor
     App(Router router) {
-        var rootRouter = router.root;
-
-        rootRouter.subscribe((nextUrl) {
-            // Angular doesn't automatically scroll to the top when the route
-            // changes, so we do that explictly:
+        this.routerStream = router.onRouteActivated.listen((_) {
             window.scrollTo(0, 0);
-
-            // ke sure the current route's nav item is visible in the side
-            // nav.
-            rootRouter.recognize(nextUrl).then((instruction) {
-                // window.console.log(instruction.urlPath);
-                // window.console.log(instruction.urlParams);
-            });
         });
     }
 
-    /// Implementation of AfterViewInit.
-    void ngAfterViewInit() {
-        scheduleMicrotask(updateLayout);
-        this.topNav.changes.listen((_) => updateLayout());
-        this.sideNav.changes.listen((_) => updateLayout());
-        this.footer.changes.listen((_) => updateLayout());
-    }
-
-    /// Check which layout components exist in the DOM.
-    void updateLayout() {
-        this.hasTopNav = this.topNav.length > 0;
-        this.hasSideNav = this.sideNav.length > 0;
-        this.hasFooter = this.footer.length > 0;
+    /// Implementation of OnDestroy.
+    void ngOnDestroy() {
+        this.routerStream.cancel();
     }
 }

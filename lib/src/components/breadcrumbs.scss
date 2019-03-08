@@ -1,14 +1,18 @@
 @import 'modular-admin/component';
 
 :host {
-  display: block;
+    display: block;
 
-  a {
-    text-decoration: none;
-  }
+    a {
+        text-decoration: none;
+    }
 
-  fa.separator {
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-  }
+    fa.separator {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+
+    ::ng-deep fa {
+        margin-right: 0.5rem;
+    }
 }

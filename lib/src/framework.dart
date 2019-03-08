@@ -24,7 +24,7 @@ import 'services/document.dart';
 import 'services/side_nav.dart';
 import 'services/toast.dart';
 
-const List<dynamic> MA_DIRECTIVES = const [
+const List<Type> modularAdminDirectives = [
     App,
     Breadcrumbs,
     Button,
@@ -49,7 +49,7 @@ const List<dynamic> MA_DIRECTIVES = const [
     TopNav,
 ];
 
-const List<dynamic> MA_PROVIDERS = const [
+const List<Type> modularAdminProviders = [
     DocumentService,
     SideNavService,
     ToastService,

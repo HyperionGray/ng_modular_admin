@@ -9,7 +9,13 @@
     font-size: 14px;
     color: var(--ma-side-nav-text-color);
     text-decoration: none;
-    padding: 15px 10px;
+    padding: 10px;
+
+    ::ng-deep fa {
+        margin-right: 0.5rem;
+        position: relative;
+        top: 0.05rem;
+    }
 }
 
 :host(:hover) {

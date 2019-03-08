@@ -9,7 +9,7 @@ import 'package:ng_fontawesome/ng_fontawesome.dart';
     selector: 'ma-button',
     templateUrl: 'button.html',
     styleUrls: const ['button.css'],
-    directives: const [FA_DIRECTIVES]
+    directives: const [coreDirectives, fontAwesomeDirectives]
 )
 class Button implements AfterViewInit {
     /// If true, the button becomes a 100% width block element.
@@ -61,6 +61,16 @@ class Button implements AfterViewInit {
     /// Constructor.
     Button(this.host);
 
+    /// Return a map of classes to apply for this element.
+    Map<String, bool> get classes => {
+        type: true,
+        size: true,
+        'block': block,
+        'outline': outline,
+        'pill-left': pill == 'left' || pill == 'both',
+        'pill-right': pill == 'right' || pill == 'both',
+    };
+
     /// Bind to click event.
     ///
     /// We use this method instead of `HostListener` so that we can set
@@ -71,7 +81,7 @@ class Button implements AfterViewInit {
 
     /// Prevent clicks on disabled buttons and handle navigation for link
     /// buttons.
-    void onClick(MouseEvent event) {
+    void onClick(Event event) {
         if (this.disabled || this.busy) {
             event.stopPropagation();
         } else if (this.href != null) {

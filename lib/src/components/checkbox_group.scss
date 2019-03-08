@@ -10,7 +10,7 @@
 
       &::after {
         visibility: visible;
-        font-family: FontAwesome;
+        font-family: "Font Awesome 5 Free";
         font-size: 1.2em;
         position: relative;
         top: -0.35em;
@@ -27,7 +27,7 @@
       }
 
       &:disabled::after {
-        content: "\f096"; // fa-square-o
+        content: "\f146"; // fa-minus-square
         cursor: not-allowed;
       }
     }

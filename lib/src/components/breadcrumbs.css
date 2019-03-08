@@ -1,1 +1,1 @@
-:host{display:block}:host a{text-decoration:none}:host fa.separator{margin-left:0.5em;margin-right:0.5em}
+:host{display:block}:host a{text-decoration:none}:host fa.separator{margin-left:0.5em;margin-right:0.5em}:host ::ng-deep fa{margin-right:0.5rem}

@@ -1,4 +1,7 @@
+.dart_tool
 .packages
 .pub
+.sass-cache
+build
+doc
 pubspec.lock
-TODO
