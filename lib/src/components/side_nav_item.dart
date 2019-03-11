@@ -6,7 +6,7 @@ import 'package:angular_router/angular_router.dart';
     selector: 'ma-side-nav-item',
     templateUrl: 'side_nav_item.html',
     styleUrls: const ['side_nav_item.css'],
-    directives: const [RouterLink]
+    directives: const [routerDirectives]
 )
 class SideNavItem {
     @Input()
