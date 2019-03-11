@@ -1,4 +1,4 @@
-@import 'modular-admin/component';
+@import '../modular-admin/component';
 
 :host {
     display: block;
@@ -14,4 +14,8 @@
 
 :host(.has-side-nav) {
     padding-left: var(--ma-side-nav-width);
+}
+
+p {
+    color: red;
 }

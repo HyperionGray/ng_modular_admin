@@ -11,14 +11,25 @@ and some JavaScript. This port focuses on converting monolithic CSS to web
 components with encapsulated styles and reimplementing the JavaScript logic with
 AngularDart.
 
-## Building
+## Getting Started
 
-Before building styles, you need `dart` and `sassc` installed, and you need to
-run `pub get`. The current version of C++ sassc (3.5.0) has [a bug that breaks
-Modular Admin](https://github.com/sass/sassc/issues/248). Use sassc 3.4.5
-instead.
+To use `ng_modular_admin` in your own AngularDart project, do the following:
 
-To build styles, run `dart tool/build-styles.dart`.
+1. Add `ng_modular_admin` as a dependency in `pubspec.yaml` (and run `pub get`).
+2. Create an SCSS stylesheet in your main web directory, e.g. `web/theme.scss`
+   and put `@import "package:ng_modular_admin/src/modular-admin/modular-admin";` at the top of this file.
+3. You can add any customizations you want to the SCSS stylesheet you created in
+   step 2. The stylesheet will be built automatically when you use `webdev
+   serve` or `webdev build`.
+4. For any component where you want to use Modular Admin, import
+   `package:ng_modular_admin/ng_modular_admin.dart` and add
+   `modularAdminDirectives` to that component's directives.
+5. Look at the [Layout demo
+   page](https://hyperiongray.github.io/ng_modular_admin_demo/#/layout) to see
+   how to set up the application shell.
+
+You will find more detailed usage information and examples in the demo
+application.
 
 ---
 

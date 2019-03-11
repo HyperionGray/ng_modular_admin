@@ -1,1 +1,0 @@
-.overlay,.overlay-content{position:fixed;top:0;right:0;bottom:0;left:0;overflow:hidden}.overlay{background-color:var(--ma-secondary-color-light);opacity:0.75;z-index:999}.overlay.opaque{opacity:1.0}.overlay-content{display:flex;align-items:center;justify-content:center;z-index:1000}

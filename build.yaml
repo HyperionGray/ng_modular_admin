@@ -1,0 +1,17 @@
+targets:
+  $default:
+    sources:
+      - lib/**
+    builders:
+      sass_builder|component_builder:
+        enabled: true
+        generate_for:
+          - 'lib/src/components/*.scss'
+
+builders:
+  sass_builder|component_builder:
+    build_to: cache
+    import: "package:sass_builder/sass_builder.dart"
+    builder_factories: ["sassBuilder"]
+    build_extensions:
+      .scss: [".css"]

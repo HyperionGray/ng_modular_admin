@@ -1,1 +1,0 @@
-:host{display:block;position:relative;width:100%;min-height:100vh;height:100%;overflow-y:auto;overflow-x:hidden;background-color:var(--ma-background-color);transition:padding-left var(--ma-fast-animation) ease}:host(.has-side-nav){padding-left:var(--ma-side-nav-width)}

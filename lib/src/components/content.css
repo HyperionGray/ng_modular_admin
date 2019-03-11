@@ -1,1 +1,0 @@
-:host{display:block;padding:var(--ma-content-padding)}:host-context(.has-top-nav){padding-top:calc(var(--ma-top-nav-height) + var(--ma-content-padding))}:host-context(.has-footer){padding-bottom:calc(var(--ma-footer-height) + var(--ma-content-padding))}
