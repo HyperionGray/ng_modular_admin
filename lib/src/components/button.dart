@@ -51,10 +51,6 @@ class Button implements AfterViewInit {
     @Input()
     String type = 'primary';
 
-    final _onClick = new StreamController<ButtonClick>.broadcast();
-    @Output()
-    Stream<ButtonClick> get click => _onClick.stream;
-
     /// Reference to the host element.
     ElementRef host;
 
@@ -79,24 +75,14 @@ class Button implements AfterViewInit {
         this.host.nativeElement.addEventListener('click', this.onClick, true);
     }
 
-    /// Prevent clicks on disabled buttons and handle navigation for link
-    /// buttons.
+    /// Prevent click events for busy and disabled buttons. Handle href buttons.
     void onClick(Event event) {
-        if (this.disabled || this.busy) {
+        if (this.busy || this.disabled) {
             event.stopPropagation();
         } else if (this.href != null) {
             window.location.replace(this.href);
             event.stopPropagation();
-        } else {
-            event.stopPropagation();
-            this._onClick.add(new ButtonClick(event, this));
         }
     }
-}
 
-/// A little wrapper for click events that contains a reference to the button.
-class ButtonClick {
-    MouseEvent event;
-    Button button;
-    ButtonClick(this.event, this.button);
 }
