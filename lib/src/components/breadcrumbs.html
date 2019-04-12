@@ -4,9 +4,8 @@
   <span *ngIf='breadcrumb.link == null'>
     <fa *ngIf='breadcrumb.icon != null' [name]='breadcrumb.icon'></fa>
     <span class='breadcrumb' *ngIf='breadcrumb.name != null'>{{breadcrumb.name}}</span>
-  </span>
-  <span *ngIf='breadcrumb.link != null'>
-    <a [routerLink]='breadcrumb.link'>
+  </span><!-- Prevent text node
+  --><span *ngIf='breadcrumb.link != null'><a [routerLink]='breadcrumb.link'>
       <fa *ngIf='breadcrumb.icon != null' [name]='breadcrumb.icon'></fa>
       <span class='breadcrumb' *ngIf='breadcrumb.name != null'>{{breadcrumb.name}}</span>
     </a>

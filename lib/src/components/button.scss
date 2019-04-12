@@ -2,11 +2,7 @@
 
 :host {
   .content ::ng-deep {
-    fa:first-child {
-      margin-right: 0.5rem;
-    }
-
-    span + fa:last-child {
+    fa + *, * fa {
       margin-left: 0.5rem;
     }
   }
