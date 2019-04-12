@@ -12,7 +12,7 @@
         margin-right: 0.5em;
     }
 
-    ::ng-deep fa {
-        margin-right: 0.5rem;
+    fa + span.breadcrumb {
+        margin-left: 0.5rem;
     }
 }
