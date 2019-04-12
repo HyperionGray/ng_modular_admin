@@ -10,7 +10,7 @@ import 'package:angular_router/angular_router.dart';
 )
 class SideNavItem {
     @Input()
-    RouteDefinition route;
+    String route;
 
     @HostBinding('class.inside-menu')
     bool insideMenu = false;

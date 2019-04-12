@@ -52,6 +52,6 @@ class DocumentService {
 class Breadcrumb {
     String icon;
     String name;
-    List link;
+    String link;
     Breadcrumb({this.icon, this.name, this.link});
 }
