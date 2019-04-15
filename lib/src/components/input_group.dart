@@ -40,9 +40,6 @@ class InputGroup implements AfterContentInit, DoCheck {
     /// Reference to the host element.
     ElementRef host;
 
-    /// Name of icon to display.
-    String iconName;
-
     /// Constructor.
     InputGroup(this.host);
 
@@ -79,9 +76,8 @@ class InputGroup implements AfterContentInit, DoCheck {
         this._updateValidity();
     }
 
-    /// Update validity properties from control status.
+    // /// Update validity properties from control status.
     void _updateValidity () {
-        this.iconName = null;
         this.danger = false;
         this.success = false;
         this.warning = false;
@@ -90,15 +86,12 @@ class InputGroup implements AfterContentInit, DoCheck {
             if (control.valid) {
                 if (control.dirty && control.value.trim().isNotEmpty) {
                     this.success = true;
-                    this.iconName = 'check';
                 }
             } else {
                 if (control.touched) {
                     this.danger = true;
-                    this.iconName = 'exclamation-triangle';
                 } else if (control.dirty) {
                     this.warning = true;
-                    this.iconName = 'exclamation-triangle';
                 }
             }
         }

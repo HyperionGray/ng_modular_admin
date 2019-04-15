@@ -1,8 +1,12 @@
 <div class='input'>
   <ng-content></ng-content>
-  <fa *ngIf='iconName != null'
+  <fa *ngIf='success'
       class='validation'
-      [name]='iconName'
+      name='check'
+      [fw]='true'></fa>
+  <fa *ngIf='danger || warning'
+      class='validation'
+      name='exclamation-triangle'
       [fw]='true'></fa>
 </div>
 <div *ngIf='warning || danger' class='validation'>
