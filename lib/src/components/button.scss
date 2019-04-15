@@ -23,7 +23,6 @@ button {
   font-size: 1rem;
   border-radius: 0;
   margin-bottom: 5px;
-  margin-right: 1rem;
 
   &.primary {
     @include ma-button-variant(primary, var(--ma-button-text-color));
