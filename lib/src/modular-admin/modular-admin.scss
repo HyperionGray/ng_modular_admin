@@ -31,11 +31,13 @@ $OpenSansVersion: "1.1.0" !default;
 $enable-flex: true;
 @import '../bootstrap/reboot';
 @import '../bootstrap/normalize';
-@import '../bootstrap/grid';
+
+@import '../bootstrap/alert';
 @import '../bootstrap/code';
-@import '../bootstrap/type';
-@import '../bootstrap/utilities';
+@import '../bootstrap/grid';
 @import '../bootstrap/list-group';
+@import '../bootstrap/utilities';
+@import '../bootstrap/type';
 
 /*
  * Import Modular Admin.
