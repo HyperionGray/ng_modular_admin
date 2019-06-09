@@ -9,7 +9,7 @@ import '../services/document.dart';
     selector: 'ma-breadcrumbs',
     styleUrls: const ['breadcrumbs.css'],
     templateUrl: 'breadcrumbs.html',
-    directives: const [CORE_DIRECTIVES, FaIcon, RouterLink]
+    directives: const [coreDirectives, FaIcon, RouterLink]
 )
 class Breadcrumbs {
     DocumentService documentService;

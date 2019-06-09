@@ -6,4 +6,4 @@ build
 doc
 pubspec.lock
 .idea/
-.android/
+android/

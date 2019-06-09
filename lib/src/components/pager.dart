@@ -13,9 +13,9 @@ import 'package:ng_fontawesome/ng_fontawesome.dart';
     selector: 'ma-pager',
     templateUrl: 'pager.html',
     styleUrls: const ['pager.css'],
-    directives: const [CORE_DIRECTIVES, FaIcon]
+    directives: const [coreDirectives, FaIcon]
 )
-class Pager implements OnInit, OnChanges {
+class Pager implements OnInit, AfterChanges {
     /// If true, the pager is automatically hidden when it only has one page.
     @Input()
     bool autohide = true;
@@ -74,8 +74,8 @@ class Pager implements OnInit, OnChanges {
         }
     }
 
-    /// Implementation of OnChanges.
-    void ngOnChanges(var changes) {
+    /// Implementation of AfterChanges .
+    void ngAfterChanges() async {
         this._updatePages();
     }
 
