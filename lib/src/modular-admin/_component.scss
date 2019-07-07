@@ -2,7 +2,7 @@
  * Standard import for component stylesheets. This provides access
  * to all Bootstrap and Modular Admin variables and mixins.
  */
-
+@import '../bootstrap/bootstrap';
 @import '../bootstrap/variables';
 @import '../bootstrap/mixins';
 @import 'mixins';
