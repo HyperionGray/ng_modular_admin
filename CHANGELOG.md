@@ -1,3 +1,9 @@
+1.0.2
+=====
+
+- Upgrade to Dart 2.7
+- Fix radios and checkboxes.
+
 1.0.0
 =====
 

@@ -1,11 +1,9 @@
 name: ng_modular_admin
-version: 1.0.1
+version: 1.0.2
 description: >
   Modular Admin for Angular Dart is a Boostrap theme for building web
   applications.
 homepage: https://github.com/hyperiongray/ng_modular_admin
-authors:
-- Mark E. Haase <mehaase@gmail.com>
 environment:
   sdk: '>=2.2.0 <3.0.0'
 dependencies:
