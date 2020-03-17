@@ -3,7 +3,9 @@ import 'dart:html';
 import 'package:angular/angular.dart';
 import 'package:ng_fontawesome/ng_fontawesome.dart';
 
-/// A container for a label and an input.
+import 'package:ng_modular_admin/util.dart';
+
+/// A container for a label and a checkbox.
 @Component(
     selector: 'ma-checkbox-group',
     templateUrl: 'checkbox_group.html',
@@ -11,34 +13,26 @@ import 'package:ng_fontawesome/ng_fontawesome.dart';
     directives: const [FaIcon]
 )
 class CheckboxGroup implements AfterContentInit {
-    /// If true, the radio buttons and labels are displayed inline.
-    @HostBinding('class.inline')
-    @Input()
-    bool inline = false;
-
     /// Reference to the host element.
-    ElementRef host;
+    HtmlElement host;
 
     /// Constructor.
     CheckboxGroup(this.host);
 
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {
-        // Wire the labels and radios together (if the user didn't do it).
-        var hostEl = this.host.nativeElement;
-        var inputs = hostEl.querySelectorAll('input[type=checkbox]');
+        // Wire the labels and input together if the user didn't do it.
+        var label = this.host.querySelector('label');
+        var input = this.host.querySelector('input[type=checkbox]');
 
-        if (inputs.length == 0) {
+        if (input == null) {
             var msg = '<ma-checkbox-group> requires at least 1 checkbox';
-            window.console.log(this.host.nativeElement);
+            window.console.log(this.host);
             throw new Exception(msg);
-        }
-
-        for (var input in inputs) {
-            if (input.attributes.containsKey('disabled') &&
-                input.parent.tagName == 'LABEL') {
-                input.parent.classes.add('disabled');
-            }
+        } else if (label?.attributes['for'] == null) {
+            var inputId = 'ma-checkbox-' + randomElementName(8);
+            input.attributes['id'] = inputId;
+            label.attributes['for'] = inputId;
         }
     }
 }

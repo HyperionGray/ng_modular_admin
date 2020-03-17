@@ -5,7 +5,7 @@ import 'package:ng_fontawesome/ng_fontawesome.dart';
 
 import 'package:ng_modular_admin/util.dart';
 
-/// A container for a label and an input.
+/// A container for a label and a radio input.
 @Component(
     selector: 'ma-radio-group',
     templateUrl: 'radio_group.html',
@@ -13,40 +13,26 @@ import 'package:ng_modular_admin/util.dart';
     directives: const [FaIcon]
 )
 class RadioGroup implements AfterContentInit {
-    /// If true, the radio buttons and labels are displayed inline.
-    @HostBinding('class.inline')
-    @Input()
-    bool inline = false;
-
     /// Reference to the host element.
-    ElementRef host;
+    HtmlElement host;
 
     /// Constructor.
     RadioGroup(this.host);
 
     /// Implementation of OnContentInit.
     void ngAfterContentInit() {
-        // Wire the labels and radios together (if the user didn't do it).
-        var hostEl = this.host.nativeElement;
-        var inputs = hostEl.querySelectorAll('input[type=radio]');
+        // Wire the labels and input together if the user didn't do it.
+        var label = this.host.querySelector('label');
+        var input = this.host.querySelector('input[type=radio]');
 
-        if (inputs.length == 0) {
-            var msg = '<ma-radio-group> requires at least 1 radio button';
-            window.console.log(this.host.nativeElement);
+        if (input == null) {
+            var msg = '<ma-radio-group> requires at least 1 radio';
+            window.console.log(this.host);
             throw new Exception(msg);
-        }
-
-        var groupName = 'ma-name-' + randomElementName(8);
-
-        for (var input in inputs) {
-            if (input.attributes['name'] == null) {
-                input.attributes['name'] = groupName;
-            }
-
-            if (input.attributes.containsKey('disabled') &&
-                input.parent.tagName == 'LABEL') {
-                input.parent.classes.add('disabled');
-            }
+        } else if (label?.attributes['for'] == null) {
+            var inputId = 'ma-radio-' + randomElementName(8);
+            input.attributes['id'] = inputId;
+            label.attributes['for'] = inputId;
         }
     }
 }

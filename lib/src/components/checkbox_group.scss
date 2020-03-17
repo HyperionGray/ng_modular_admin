@@ -1,63 +1,59 @@
 @import '../modular-admin/component';
 
 :host {
-  display: block;
-  margin-bottom: 1em;
+    display: block;
+    position: relative;
+    margin-bottom: 0.2em;
 
-  ::ng-deep {
-    input {
-      visibility: hidden;
+    ::ng-deep {
+        input {
+            opacity: 0;
+            z-index: 1;
+            position: absolute;
+            top: 0.4em;
+            left: 0.1em;
+            width: 1.5em;
+            height: 1.5em;
+            cursor: pointer;
+            }
 
-      &::after {
-        visibility: visible;
-        font-family: "Font Awesome 5 Free";
-        font-size: 1.2em;
-        position: relative;
-        top: -0.35em;
-        left: -0.25em;
-        color: var(--ma-divider-color);
-        content: "\f0c8"; // fa-square
-        font-weight: 600;
-        cursor: pointer;
-      }
+            label {
+            // display:block;
+            font-weight: 400;
+            cursor: pointer;
+            margin-bottom: 0;
+            margin-left: 0.5em;
 
-      &:checked::after {
-        content: "\f14a"; // fa-check-square
-        color: var(--ma-primary-color);
-      }
+            &.disabled {
+                color: var(--ma-divider-color);
+                cursor: not-allowed;
+            }
+        }
 
-      &:disabled::after {
+        input + label::before {
+            opacity: 1;
+            font-family: "Font Awesome 5 Free";
+            font-size: 16pt;
+            position: relative;
+            top: 0.1em;
+            left: -0.2em;
+            padding-right: 0.2em;
+            color: var(--ma-divider-color);
+            content: "\f0c8"; // fa-square
+            font-weight: 900;
+        }
+
+        input:checked + label::before {
+            content: "\f14a"; // fa-check-square
+            color: var(--ma-primary-color);
+        }
+
+        input:disabled + label::before {
         content: "\f146"; // fa-minus-square
-        cursor: not-allowed;
-      }
+        }
     }
-
-    label {
-      display:block;
-
-      &:first-child {
-        font-weight: 600;
-      }
-
-      &:not(:first-child) {
-        font-weight: 400;
-        cursor: pointer;
-        margin-bottom: 0.5em;
-        margin-left: 0.5em;
-      }
-
-      &.disabled {
-        color: var(--ma-divider-color);
-        cursor: not-allowed;
-      }
-    }
-  }
 }
 
 :host(.inline) {
-  ::ng-deep {
-    input, label {
-      display: inline;
-    }
-  }
+    display: inline;
 }
